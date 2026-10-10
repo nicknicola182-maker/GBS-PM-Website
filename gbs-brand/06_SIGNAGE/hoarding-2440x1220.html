@@ -21,18 +21,6 @@
   .band-text .strap { font-size: 52rem; letter-spacing: 0.18em; color: var(--gbs-offwhite); font-weight: 500; }
   .band-text .strap .pipe { color: var(--gbs-red); padding: 0 0.3em; }
   .band-text .web { font-family: var(--font-body); font-weight: 600; font-size: 52rem; color: var(--gbs-offwhite); }
-  /* render.mjs seats crop marks and its slug for a 3 mm bleed / 6 mm mark zone. Re-seat them for 10 / 10 and replace the slug. */
-  html.press .page-wrap > div:nth-child(2) { top: 20mm !important; left: 5mm !important; }
-  html.press .page-wrap > div:nth-child(3) { left: 20mm !important; top: 5mm !important; }
-  html.press .page-wrap > div:nth-child(4) { top: 20mm !important; right: 5mm !important; }
-  html.press .page-wrap > div:nth-child(5) { right: 20mm !important; top: 5mm !important; }
-  html.press .page-wrap > div:nth-child(6) { bottom: 20mm !important; left: 5mm !important; }
-  html.press .page-wrap > div:nth-child(7) { left: 20mm !important; bottom: 5mm !important; }
-  html.press .page-wrap > div:nth-child(8) { bottom: 20mm !important; right: 5mm !important; }
-  html.press .page-wrap > div:nth-child(9) { right: 20mm !important; bottom: 5mm !important; }
-  html.press .page-wrap > div:nth-child(10) { display: none !important; }
-  .slug { display: none; position: absolute; left: 0; bottom: calc(-1 * var(--bleed) - 7mm); font: 6pt Inter, Arial, sans-serif; color: #000; letter-spacing: 0.04em; white-space: nowrap; }
-  html.press .slug { display: block; }
   html:not(.press) .page:last-of-type .band-bleed { bottom: 0; height: 180rem; }
 </style>
 </head>
@@ -46,7 +34,6 @@
     <span class="strap">BUILD <span class="pipe">|</span> MAINTAIN <span class="pipe">|</span> IMPROVE</span>
     <span class="web">{{company.domain}}</span>
   </div>
-  <div class="slug">GBS_HORIZON_SIGN_HOARDING_2440x1220 &nbsp;|&nbsp; trim 2440 x 1220 mm &nbsp;|&nbsp; bleed 10 mm &nbsp;|&nbsp; GBS HORIZON v1.0</div>
 </section>
 </body>
 </html>
