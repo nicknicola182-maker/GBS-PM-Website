@@ -8,3 +8,6 @@ This repository is the **GBS Property Maintenance website and Horizon brand prod
 - Website source is `gbs-brand/07_WEBSITE/src`, output `gbs-brand/07_WEBSITE/public` (deploy as-is). QA: `node gbs-brand/tools/qa-site.mjs`.
 - Print sources are HTML with `.page` sections rendered by `gbs-brand/tools/render.mjs` from manifests in `gbs-brand/tools/manifests/`.
 - Brand rules: `gbs-brand/BRAND_RULES.md`. Colours sage #6E7F72, red #E10600, light #DADADA, off-white #F9F9F7; fonts Montserrat (headings) and Inter (body).
+
+## Hosting (live since 10 Oct 2026)
+- Site is live at https://gbs-pm.co.uk on Cloudflare Worker `gbs-pm-website`, built from `main` (root `gbs-brand/07_WEBSITE`, `npx wrangler deploy`). DNS is on Cloudflare; email stays on Fasthosts LiveMail with mail records DNS-only. Details: `gbs-brand/07_WEBSITE/GO-LIVE.md`.

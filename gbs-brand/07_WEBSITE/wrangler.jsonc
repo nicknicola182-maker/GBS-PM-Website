@@ -1,8 +1,23 @@
 {
-  // Optional: deploy the static site to Cloudflare Workers static assets with `npx wrangler deploy` from this folder.
-  // Cloudflare Pages, Netlify or any web host can serve the public/ folder directly instead.
+  // Cloudflare Worker for gbs-pm.co.uk: static site from ./public plus POST /api/enquiry (see worker/index.js).
+  // Deployed automatically from the GitHub repository (root directory gbs-brand/07_WEBSITE, `npx wrangler deploy`).
+  // The Resend API key is NOT here: add it in Cloudflare as a secret named RESEND_API_KEY
+  // (Workers & Pages, gbs-pm-website, Settings, Variables and Secrets). Secrets survive every deploy.
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "gbs-pm-website",
+  "main": "./worker/index.js",
   "compatibility_date": "2025-05-01",
-  "assets": { "directory": "./public", "not_found_handling": "404-page", "html_handling": "auto-trailing-slash" }
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+  "vars": {
+    "ENQUIRY_TO": "info@gbs-pm.co.uk",
+    // Until the domain is verified in Resend, only Resend's onboarding sender is allowed.
+    // After verifying gbs-pm.co.uk in Resend, change this to "GBS Property Maintenance website <enquiries@gbs-pm.co.uk>".
+    "ENQUIRY_FROM": "GBS Property Maintenance website <onboarding@resend.dev>"
+  },
+  "observability": { "enabled": true }
 }
