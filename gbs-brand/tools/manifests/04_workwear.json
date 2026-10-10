@@ -88,5 +88,16 @@
     "dpi": 300,
     "transparent": true,
     "selector": ".page"
+  },
+  {
+    "src": "04_WORKWEAR/placement-sheet.html",
+    "out": "04_WORKWEAR/GBS_HORIZON_WORKWEAR_PLACEMENT-SHEET_A4L_v1.0",
+    "type": "pdf",
+    "trim": [
+      297,
+      210
+    ],
+    "bleed": 0,
+    "press": false
   }
 ]

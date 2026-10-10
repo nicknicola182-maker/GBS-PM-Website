@@ -10,7 +10,8 @@ Files in this folder:
 | `signature.html`, `signature-generic.html`, `signature.txt` | Token sources. Do not install these; they still contain `{{company.*}}` placeholders. |
 | `build-signature.mjs` | Rebuilds the compiled files from `company.json` (`node 09_DIGITAL/email-signature/build-signature.mjs`). |
 | `logo-email-600.png` | The logo the signature loads. The website serves it at `https://gbs-pm.co.uk/assets/img/logo-email-600.png`. |
-| `preview.png` / `preview-local.png` | Review renders only. |
+| `signature.preview.html` | Review copy with the logo loaded from this folder instead of the website. Do not install it. |
+| `preview.png` / `preview-local.png` | Review renders only. `preview.png` shows the alt text where the hosted logo could not be fetched at render time; `preview-local.png` shows the layout with the logo. |
 
 For a second person, copy `signature.html` details or add them to `company.json` under `people` and rebuild.
 

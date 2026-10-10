@@ -2,7 +2,7 @@
 // Renders HTML sources to PDF (screen = trim size, press = trim + bleed + crop marks) and PNG artwork,
 // substituting {{company.*}} tokens from company.json. Usage: node tools/render.mjs [manifest.json] [filter]
 import { chromium } from "playwright";
-import fs from "node:fs"; import path from "node:path"; import { pathToFileURL } from "node:url";
+import fs from "node:fs"; import path from "node:path"; import { pathToFileURL } from "node:url"; import { spawnSync } from "node:child_process";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const manifestPath = process.argv[2] ? path.resolve(process.argv[2]) : path.join(ROOT, "tools", "render-manifest.json");
@@ -18,9 +18,9 @@ export function substitute(html, data) {
   });
 }
 
-const CROP = `
+const CROP = (bleed, marks) => `
 (function(){
-  const marks = 6, bleed = 3, len = 4, gap = 1; // mm
+  const marks = ${marks}, bleed = ${bleed}, len = 4, gap = 1; // mm
   document.querySelectorAll('.page').forEach(pg => {
     const wrap = document.createElement('div'); wrap.className = 'page-wrap';
     pg.parentNode.insertBefore(wrap, pg); wrap.appendChild(pg);
@@ -36,8 +36,8 @@ const CROP = `
       }
     }
     const slug = document.createElement('div');
-    slug.style.cssText = 'position:absolute;left:' + (marks + bleed) + 'mm;bottom:1.5mm;font:6pt Inter,Arial,sans-serif;color:#000;letter-spacing:0.04em;';
-    slug.textContent = (document.title || '') + '  |  trim ' + (pg.dataset.trim || '') + '  |  bleed 3 mm  |  GBS HORIZON v1.0  |  ' + new Date().toISOString().slice(0,10);
+    slug.style.cssText = 'position:absolute;left:' + (marks + bleed) + 'mm;right:' + (marks + bleed) + 'mm;bottom:1.2mm;font:5pt Inter,Arial,sans-serif;color:#000;letter-spacing:0.03em;white-space:nowrap;overflow:hidden;';
+    slug.textContent = (document.title || '') + ' | trim ' + (pg.dataset.trim || '') + ' | bleed ' + bleed + ' mm | v1.0 | ' + new Date().toISOString().slice(0,10);
     wrap.appendChild(slug);
   });
   document.documentElement.classList.add('press');
@@ -66,7 +66,7 @@ for (const job of jobs) {
         console.log(`  pdf  ${job.out}_SCREEN.pdf (${tw}x${th}mm)`);
       }
       if (job.press !== false) {
-        await page.evaluate(CROP);
+        await page.evaluate(CROP(bleed, marks));
         const W = tw + 2 * (bleed + marks), H = th + 2 * (bleed + marks);
         await page.pdf({ path: `${outBase}_PRESS.pdf`, width: `${W}mm`, height: `${H}mm`, printBackground: true, margin: { top: 0, right: 0, bottom: 0, left: 0 }, preferCSSPageSize: false });
         console.log(`  pdf  ${job.out}_PRESS.pdf (${W}x${H}mm incl. ${bleed}mm bleed + marks)`);
@@ -82,6 +82,8 @@ for (const job of jobs) {
       const opts = { path: `${outBase}.png`, omitBackground: !!job.transparent };
       if (el) await el.screenshot(opts); else await p2.screenshot({ ...opts, fullPage: false });
       await p2.context().close();
+      // write physical resolution metadata so suppliers see the intended print size
+      spawnSync("python3", ["-I", "-c", "import sys;from PIL import Image;p=sys.argv[1];d=int(sys.argv[2]);im=Image.open(p);im.save(p,dpi=(d,d))", `${outBase}.png`, String(dpi)]);
       console.log(`  png  ${job.out}.png (${job.widthMM}x${job.heightMM}mm @ ${dpi}dpi)`);
     } else if (type === "screenshot") {
       await page.setViewportSize({ width: job.width || 1440, height: job.height || 900 });

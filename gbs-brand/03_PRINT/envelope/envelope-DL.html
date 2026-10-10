@@ -13,13 +13,7 @@
   /* render.mjs positions crop marks and its slug for a 3 mm bleed. This sheet has none, so the marks are pulled in
      by 3 mm (child order: 1 = page, 2-9 = marks LT-h, LT-v, RT-h, RT-v, LB-h, LB-v, RB-h, RB-v, 10 = slug) and the
      renderer slug (which reads "bleed 3 mm") is replaced by .slug below. */
-  html.press .page-wrap > div:nth-child(2), html.press .page-wrap > div:nth-child(4) { transform: translateY(-3mm); }
-  html.press .page-wrap > div:nth-child(6), html.press .page-wrap > div:nth-child(8) { transform: translateY(3mm); }
-  html.press .page-wrap > div:nth-child(3), html.press .page-wrap > div:nth-child(7) { transform: translateX(-3mm); }
-  html.press .page-wrap > div:nth-child(5), html.press .page-wrap > div:nth-child(9) { transform: translateX(3mm); }
-  html.press .page-wrap > div:nth-child(10) { display: none; }
   .slug { display: none; }
-  html.press .slug { display: block; position: absolute; left: 0; bottom: -4.5mm; font: 6pt Inter, Arial, sans-serif; color: #000; letter-spacing: 0.04em; white-space: nowrap; }
 
   .logo { position: absolute; left: 12mm; top: 10mm; width: 45mm; }
   .logo img { width: 100%; display: block; }
