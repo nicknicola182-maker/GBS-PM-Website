@@ -13,8 +13,8 @@ Mirrors section 11 of the production manual. Nothing goes to external manufactur
 | Legal name, company number, office, disclosures | Done from `company.json` (16560774, 5-6 Tile Kiln Lane N13 6BX, VAT GB 500 0054 76) | Confirm registered office is the trading address; confirm "England and Wales" |
 | Dummy contact information replaced | Done: all templates driven by `company.json` | Independent check of every rendered PDF before print |
 | Business stationery PDF/X proof | Press PDFs with bleed and crop marks supplied | Printer to impose and convert to PDF/X-4; approve one hard proof |
-| Embroidered stitch-out and wash test | Artwork and placement sheets supplied | Digitise, sew-out, 5-cycle wash test |
-| Van dimensional survey and first-vehicle proof | 1:10 layouts on a generic medium panel van | Survey the actual vehicle, re-scale, physical positioning proof |
+| Embroidered stitch-out and wash test | Artwork and placement sheets supplied; chest descriptor is 3.9 mm cap height at 95 mm, below the 5 mm test | Digitise, sew-out at 5 mm, 6 mm and actual size; fall back to the 105 mm mark or wordmark-only if the descriptor does not hold; 5-cycle wash test |
+| Van dimensional survey and first-vehicle proof | Layout sheets on a generic medium panel van (sides 1:15, rear and front 1:10) | Survey the actual vehicle, re-scale, physical positioning proof |
 | Signage consent, safety method and fabrication drawing | Artwork supplied | Site-specific sizes, landlord consent, fixing specification, RAMS |
 | Website mobile/desktop, WCAG, performance and legal pages | Built and QA'd in Chromium at 1440 px and 390 px; no cookies; privacy notice included | Deploy, test on real devices, review privacy notice, configure form endpoint |
 | Archive and release register | `Asset_Production_Register.csv` updated | Keep a version log as suppliers return proofs |

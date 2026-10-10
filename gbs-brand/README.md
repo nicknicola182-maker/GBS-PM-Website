@@ -15,7 +15,7 @@ The folder numbering follows section 10 of `GBS_Horizon_Brand_Production_Manual_
 | `02_COLOUR_TYPE` | Brand quick guide PDF (colour, type, logo variants, clear space, misuse), palette files. |
 | `03_PRINT` | Letterhead, business cards, compliment slip, envelopes, quotation / invoice / job report templates, 8 pp brochure. HTML sources plus `_SCREEN` (trim) and `_PRESS` (bleed + crop marks) PDFs. |
 | `04_WORKWEAR` | 300 dpi transfer artwork (chest, back, sleeve, hi-vis), placement sheets, embroidery brief. |
-| `05_VEHICLES` | 1:10 van livery layout sheets (sides, rear, bonnet), full-scale vector panels, fabrication notes. |
+| `05_VEHICLES` | Van livery layout sheets (sides at 1:15, rear and bonnet at 1:10, all dimensions in full-scale mm), full-scale vector panels, fabrication notes. |
 | `06_SIGNAGE` | Site board, hoarding panel, entrance sign, resident works notice. |
 | `07_WEBSITE` | Static website. Deploy `07_WEBSITE/public` as-is. See `07_WEBSITE/README.md`. |
 | `08_APPROVALS` | Production register (status per asset), release checklist and sign-off sheet, the supplied v1 register. |

@@ -10,7 +10,7 @@ P05,Quotation / invoice / job report templates,Medium,Editable template,Director
 W01,T-shirts white/sage,High,Artwork + physical print sample,Garment supplier + Director,Delivered: 300 dpi chest/back artwork + placement sheet; sample pending,04_WORKWEAR
 W02,Polo embroidery,High,Digitised stitch file + sew-out,Garment supplier + Director,Artwork and embroidery brief delivered; digitising and sew-out pending,04_WORKWEAR
 W03,Jackets / PPE,Medium,Branding zones + sample,H&S + Director,Placement sheet delivered; sample pending,04_WORKWEAR
-V01,White van side / rear,High,Measured 1:1 wrap files,Fleet supplier + Director,Delivered: 1:10 layouts + full-scale vector panels on a generic van; survey pending,05_VEHICLES
+V01,White van side / rear,High,Measured 1:1 wrap files,Fleet supplier + Director,Delivered: layout sheets (sides 1:15, rear/front 1:10) + full-scale vector panels on a generic van; survey pending,05_VEHICLES
 S01,Site signage,Medium,Fabrication drawing + approvals,Project manager + Director,Delivered: site board; hoarding; entrance sign; works notice,06_SIGNAGE
 D01,Website desktop + mobile,High,Design system / responsive pages,Web lead + Director,Delivered: static site in 07_WEBSITE/public with QA report; deployment pending,07_WEBSITE
 D02,Email signature,High,HTML signature + install guide,Director,Delivered,09_DIGITAL/email-signature
