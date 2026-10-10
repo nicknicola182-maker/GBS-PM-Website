@@ -7,6 +7,8 @@ const company = JSON.parse(fs.readFileSync(path.join(ROOT, "company.json"), "utf
 const today = new Date().toISOString().slice(0, 10);
 company.formAction = company.formEndpoint || `mailto:${company.email}`;
 company.formEnctype = company.formEndpoint ? "multipart/form-data" : "text/plain";
+company.servicesJsonLd = company.services.map(s => JSON.stringify(s)).join(", ");
+company.serviceOptions = company.services.map(s => `<option>${s}</option>`).join("\n                ");
 
 const sub = (html, data) => html.replace(/\{\{\s*([\w.\-]+)\s*\}\}/g, (m, key) => {
   const v = key.split(".").reduce((o, k) => (o == null ? undefined : o[k]), data);
