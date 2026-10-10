@@ -33,6 +33,8 @@ The site is live at https://gbs-pm.co.uk and https://www.gbs-pm.co.uk. This page
 3. QA: `node gbs-brand/tools/qa-site.mjs`.
 4. Commit the source and the rebuilt `public` folder, open a pull request, merge to `main`. The Worker redeploys within about a minute.
 
+If a merge does not deploy, open the Worker's Settings tab and look at the Builds section. A blue banner saying the project is disconnected from your Git account means GitHub can no longer notify Cloudflare: click Manage next to the repository and re-authorise GitHub. Reconnecting does not rebuild by itself; the next push to `main` does.
+
 ## Things never to change without checking email first
 
 - Do not delete or proxy (orange cloud) any MX, TXT, DKIM, DMARC or autodiscover record in the Cloudflare DNS zone.
