@@ -10,7 +10,7 @@ Outputs: `GBS_HORIZON_BROCHURE_A4-8PP_v1.0_SCREEN.pdf` (trim size, for email and
 |---|---|---|
 | 1 | Cover: company profile, reversed logo on sage, horizon bars | Outer (cover) |
 | 2 | Who we are, at a glance, Build / Maintain / Improve | Outer (cover) |
-| 3 | Services overview (six service cards) | Inner (text) |
+| 3 | Services overview (fourteen service cards) | Inner (text) |
 | 4 | Planned maintenance and reactive repairs, how jobs are reported | Inner (text) |
 | 5 | Fire door services, five-step process | Inner (text) |
 | 6 | Refurbishment and insurance reinstatement | Inner (text) |

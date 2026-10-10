@@ -66,10 +66,17 @@
   .bmi p { font-size: 9.5pt; margin: 0; }
 
   /* p3 Services */
-  .cards { flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; gap: 5mm; }
-  .card { background: var(--gbs-sage-tint); padding: 5mm 5.5mm; border-top: 1.5pt solid var(--gbs-sage); }
-  .card-n { font-family: var(--font-heading); font-weight: 700; font-size: 7.5pt; letter-spacing: 0.12em; color: var(--gbs-red); display: block; margin-bottom: 2mm; }
-  .card h3 { font-size: 11pt; margin-bottom: 2.5mm; }
+  .cards { flex: 1; display: grid; grid-template-columns: 1fr 1fr 1fr; grid-auto-rows: 1fr; gap: 3mm; min-height: 0; }
+  .card { background: var(--gbs-sage-tint); padding: 2.6mm 3.2mm 2.2mm; border-top: 1.5pt solid var(--gbs-sage); overflow: hidden; }
+  .card-n { font-family: var(--font-heading); font-weight: 700; font-size: 6.5pt; letter-spacing: 0.12em; color: var(--gbs-red); display: block; margin-bottom: 1.2mm; }
+  .card h3 { font-size: 8.6pt; line-height: 1.2; margin-bottom: 1.4mm; }
+  .cards ul.dash li { font-size: 7.4pt; line-height: 1.28; margin-bottom: 0.6mm; padding-left: 3.4mm; }
+  .cards ul.dash li::before { width: 2mm; }
+  .card.accent { background: var(--gbs-sage); border-top-color: var(--gbs-sage-deep); }
+  .card.accent h3, .card.accent li { color: var(--gbs-offwhite); }
+  .card.accent .card-n { color: var(--gbs-offwhite); opacity: 0.85; }
+  .card.accent ul.dash li::before { background: var(--gbs-offwhite); }
+  .sectors p.approved { font-size: 8.5pt; line-height: 1.4; margin: 3mm 0 0; padding-top: 3mm; border-top: 0.5pt solid var(--gbs-light); color: var(--gbs-ink-soft); }
 
   /* p4 Planned & reactive */
   .halves { display: grid; grid-template-columns: 1fr 1fr; gap: 10mm; position: relative; }
@@ -160,7 +167,7 @@
   </div>
   <div class="cover-top">
     <div class="cover-eyebrow"><span class="eyebrow">Company profile</span><span class="cover-year num">{{company.year}}</span></div>
-    <p class="cover-line"><span class="rule"></span>Maintenance, repair, refurbishment and fire door services for residential blocks and managed property portfolios across London.</p>
+    <p class="cover-line"><span class="rule"></span>Comprehensive building maintenance, repair and fire door services for managing agents, property managers, landlords and commercial clients across London.</p>
   </div>
 </section>
 
@@ -169,21 +176,21 @@
   <div class="inner">
     <header class="ph">
       <span class="eyebrow">Who we are</span>
-      <h1 class="lead">Specialist maintenance, repair, refurbishment and fire door services for residential blocks and managed property portfolios across London.</h1>
+      <h1 class="lead">Comprehensive building maintenance and repair services for managing agents, property managers, landlords and commercial clients across London.</h1>
     </header>
     <div class="two-side">
       <div class="cols">
         <div class="col">
           <h3>What we do</h3>
-          <p>GBS Property Maintenance carries out planned and reactive maintenance, repairs, refurbishment and fire door works to residential blocks and managed property across London. The work ranges from a single make-safe visit to programmed cyclical decorations and full communal refurbishments. Every job is scoped, priced and reported in the same consistent format.</p>
-          <p>Building fabric, joinery, decoration and plumbing works are carried out by our site teams. Where statutory certification is required, for example electrical installation work, we bring in certified partners and include their certificates in the job record.</p>
+          <p>GBS Property Maintenance, Go Building Solutions, delivers dependable planned maintenance, reactive repairs and larger project works across residential and commercial property portfolios. The work ranges from a single make-safe visit to programmed cyclical decorations, roofing and access works, and full communal refurbishments. Every job is scoped, priced and reported in the same consistent format.</p>
+          <p>Our trades cover general building maintenance, electrical and plumbing, bathrooms and kitchens, carpentry and flooring, decorating, roofing and leak investigation, windows, drainage and groundworks, rope and powered access, metalwork and waste removal, with fire doors and firestopping as our specialism. Certification is issued wherever the works require it.</p>
         </div>
         <div class="col">
           <h3>How we work</h3>
           <p>Each instruction receives a written Scope of Works and a priced quotation before works start. RAMS are issued before attendance, access is arranged with your site contact and residents are notified where works affect them.</p>
           <p>On completion you receive a Job Report with photographic evidence, the materials used and any further recommendations. Variations are agreed in writing before we proceed, so the invoice matches the instruction.</p>
           <h3>Who we work for</h3>
-          <p>Our clients are property managers, managing agents, facilities managers, residents' management companies and insurance handlers. They are accountable for buildings that must stay safe, compliant and well presented while people live in them. We work to their reporting, approval and access procedures rather than asking them to work to ours.</p>
+          <p>Our clients are managing agents, property managers, landlords and commercial clients. We are approved contractors for a number of leading managing agents and property management companies, including {{company.approvedForText}}, and work closely with their property management teams to their reporting, approval and access procedures.</p>
         </div>
       </div>
       <aside class="panel glance">
@@ -213,68 +220,143 @@
   <div class="inner">
     <header class="ph">
       <span class="eyebrow">Services</span>
-      <h1>One contractor, six services.</h1>
-      <p class="stand">One instruction route for everything a managed residential building needs, from a planned programme to an emergency make-safe. Each service is scoped, priced and reported in the same format.</p>
+      <h1>One contractor, fourteen services.</h1>
+      <p class="stand">One instruction route for everything a managed building needs, from an emergency make-safe to a block-wide programme.</p>
     </header>
     <div class="cards">
       <article class="card">
         <span class="card-n">01</span>
-        <h3>Planned &amp; preventative maintenance</h3>
+        <h3>General building maintenance and emergency repairs</h3>
         <ul class="dash">
-          <li>Cyclical maintenance programmes for communal areas and external fabric</li>
-          <li>Scheduled inspections with condition notes and photographs</li>
-          <li>Forward works plans and annual budgets for agents and directors</li>
-          <li>Minor repairs completed during the visit where authorised</li>
+          <li>Emergency make-safe, boarding up and temporary repairs</li>
+          <li>Communal area repairs, locks, closers and ironmongery</li>
+          <li>Planned preventative maintenance visits with defect logs</li>
         </ul>
       </article>
       <article class="card">
         <span class="card-n">02</span>
-        <h3>Reactive repairs</h3>
+        <h3>Electrical and plumbing works</h3>
         <ul class="dash">
-          <li>Emergency make-safe, urgent and routine repairs</li>
-          <li>Plumbing leaks, doors and ironmongery, glazing, roofs and gutters</li>
-          <li>Minor electrical and lighting via certified partners where certification is required</li>
-          <li>Job Report with photographic evidence on completion</li>
+          <li>Lighting, emergency lighting and fault finding</li>
+          <li>Leaks, bursts, overflows and waste pipework</li>
+          <li>Tanks, pumps and booster sets; certified where required</li>
         </ul>
       </article>
       <article class="card">
         <span class="card-n">03</span>
-        <h3>Fire door services</h3>
+        <h3>Bathroom and kitchen installations</h3>
         <ul class="dash">
-          <li>Survey and inspection of fire door assemblies</li>
-          <li>Measured defect assessment against BS 8214 and manufacturer instructions</li>
-          <li>Compliant repair first; FD30 or FD60 supply and install where needed</li>
-          <li>Inspection records supporting the responsible person's duties</li>
+          <li>Strip-out, first fix and making good</li>
+          <li>Plumbing and electrical connection and certification</li>
+          <li>Accessible bathrooms and wet-room adaptations</li>
         </ul>
       </article>
       <article class="card">
         <span class="card-n">04</span>
-        <h3>Refurbishment &amp; redecoration</h3>
+        <h3>Carpentry, joinery, tiling and flooring</h3>
         <ul class="dash">
-          <li>Communal hallway, stairwell and entrance refurbishment</li>
-          <li>Void property refurbishment between tenancies</li>
-          <li>External redecoration and making good</li>
-          <li>Specification, programme and resident notices managed for you</li>
+          <li>Doors, frames, architraves, skirting and handrails</li>
+          <li>Communal floor coverings and safety flooring</li>
+          <li>Wall and floor tiling and bespoke joinery repairs</li>
         </ul>
       </article>
       <article class="card">
         <span class="card-n">05</span>
-        <h3>Insurance reinstatement works</h3>
+        <h3>Painting and decorating</h3>
         <ul class="dash">
-          <li>Escape-of-water, impact and storm damage reinstatement</li>
-          <li>Schedules of works for loss adjusters and claims handlers</li>
-          <li>Strip-out, drying coordination and reinstatement</li>
-          <li>Transparent breakdowns of labour and materials</li>
+          <li>Communal hallways, stairwells and plant rooms</li>
+          <li>External redecoration programmes</li>
+          <li>Preparation and repair before any finish goes on</li>
         </ul>
       </article>
       <article class="card">
         <span class="card-n">06</span>
-        <h3>Compliance support &amp; reporting</h3>
+        <h3>Roofing, waterproofing and leak investigation</h3>
         <ul class="dash">
-          <li>Inspection records, certificates and photographs filed by property</li>
-          <li>Defect schedules mapped to a cost plan for phased spending</li>
-          <li>Reports written for directors, agents and insurers</li>
-          <li>Support with fire door checks under the Fire Safety (England) Regulations 2022</li>
+          <li>Leak tracing with a written findings report</li>
+          <li>Flat and pitched roof repairs and overlays</li>
+          <li>Gutters, roofline, balcony and walkway waterproofing</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card-n">07</span>
+        <h3>Window replacement and repairs</h3>
+        <ul class="dash">
+          <li>Like-for-like window and door replacement</li>
+          <li>Glazed units, hinges, handles, locks and restrictors</li>
+          <li>Sealant, weatherproofing and draught repairs</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card-n">08</span>
+        <h3>Drainage, groundworks and grounds maintenance</h3>
+        <ul class="dash">
+          <li>Drain clearance, repairs and surveys</li>
+          <li>Groundworks, paving, kerbing and slab repairs</li>
+          <li>Grounds maintenance, fencing and boundary repairs</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card-n">09</span>
+        <h3>Fire doors and firestopping</h3>
+        <ul class="dash">
+          <li>Inspection to BS 8214 and manufacturer instructions</li>
+          <li>Compliant repair first; FD30 and FD60 supply and install</li>
+          <li>Firestopping, compartmentation and inspection records</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card-n">10</span>
+        <h3>Rope-access and powered-access works</h3>
+        <ul class="dash">
+          <li>Rope-access inspections, repairs and sealant works</li>
+          <li>Cherry picker and scissor lift works</li>
+          <li>High-level gutter, facade and cladding works</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card-n">11</span>
+        <h3>Road repairs, line marking and resin works</h3>
+        <ul class="dash">
+          <li>Pothole and tarmac surface repairs</li>
+          <li>Car park line marking and bay numbering</li>
+          <li>Resin-bound and anti-slip surfacing</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card-n">12</span>
+        <h3>Bespoke metalwork</h3>
+        <ul class="dash">
+          <li>Railings, gates, balustrades and handrails</li>
+          <li>Security grilles and bin store enclosures</li>
+          <li>Galvanised and powder-coated finishes</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card-n">13</span>
+        <h3>Waste removal</h3>
+        <ul class="dash">
+          <li>Strip-out and project waste removed as works progress</li>
+          <li>Bulk and fly-tipped waste cleared from communal areas</li>
+          <li>Waste transfer documentation supplied</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card-n">14</span>
+        <h3>Insurance-related works</h3>
+        <ul class="dash">
+          <li>Escape-of-water, impact and storm damage reinstatement</li>
+          <li>Schedules of works for handlers and loss adjusters</li>
+          <li>Photographic evidence from first attendance to completion</li>
+        </ul>
+      </article>
+      <article class="card accent">
+        <span class="card-n">Every job</span>
+        <h3>Reporting and commercial clarity</h3>
+        <ul class="dash">
+          <li>Scope and priced breakdown, labour and materials separated</li>
+          <li>RAMS before works; Job Report with photographs after</li>
+          <li>Variations agreed in writing before we proceed</li>
         </ul>
       </article>
     </div>
@@ -475,11 +557,12 @@
         <h3>Sectors we serve</h3>
         <ul class="dash">
           <li>Residential blocks and estates</li>
-          <li>Managing agents</li>
-          <li>Facilities managers</li>
+          <li>Managing agents and property managers</li>
+          <li>Landlords and commercial clients</li>
           <li>Insurance handlers and loss adjusters</li>
           <li>Housing providers</li>
         </ul>
+        <p class="approved">Approved contractor for leading managing agents and property management companies including {{company.approvedForText}}.</p>
       </div>
     </div>
   </div>
