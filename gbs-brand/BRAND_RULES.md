@@ -5,7 +5,7 @@ Condensed from `GBS_Horizon_Brand_Production_Manual_v1` so every file in this pa
 ## 1. Identity
 
 - Trading identity: **GBS Property Maintenance**. The visible logo never shows "LTD".
-- Legal entity for disclosures: **GBS Property Maintenance Ltd**, registered in England and Wales, company number 16560774, registered office 5-6 Tile Kiln Lane, London N13 6BX, VAT GB 500 0054 76. These must appear on letters, order forms, invoices, quotations, email footers and the website footer.
+- Legal entity for disclosures: **GBS Property Maintenance Ltd**, registered in England and Wales, company number 16560774, registered office Woodgate House, 2-8 Games Road, Cockfosters EN4 9HN (trading address 5-6 Tile Kiln Lane, London N13 6BX), VAT GB 500 0054 76. These must appear on letters, order forms, invoices, quotations, email footers and the website footer.
 - Strapline: **BUILD | MAINTAIN | IMPROVE** (pipes in red). Drop it where it would be illegible (anything under about 60 mm wide in print or 300 px on screen).
 - Positioning: specialist maintenance, repair, refurbishment and fire door services for residential blocks and managed property portfolios. Tone: concise, technical, dependable. No generic builder imagery, no unsupported claims, no accreditations unless they are listed in `company.json`.
 
