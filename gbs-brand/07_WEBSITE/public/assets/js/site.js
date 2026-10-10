@@ -1,6 +1,10 @@
 /* GBS Property Maintenance - site script (no dependencies). Mobile navigation and contact form handling. */
 (function () {
   "use strict";
+  /**
+   * Mobile navigation: the menu is hidden under 860 px and revealed by the toggle button,
+   * with aria-expanded kept in sync so screen readers announce the state. Escape closes it.
+   */
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.getElementById("site-nav");
   if (toggle && nav) {
@@ -18,8 +22,14 @@
   var status = document.getElementById("form-status");
   var endpoint = form.getAttribute("data-endpoint") || "";
   var mailto = form.getAttribute("data-mailto") || "";
+  /** Writes feedback into the live region under the form so the visitor knows what happened. */
   var setStatus = function (msg, state) { if (status) { status.textContent = msg; status.setAttribute("data-state", state || ""); } };
 
+  /**
+   * Submission has two modes so the site works without any third-party service:
+   * posts to a configured form endpoint when one is set in company.json, otherwise
+   * opens the visitor's email client with the enquiry pre-filled (mailto).
+   */
   form.addEventListener("submit", function (e) {
     if (form.querySelector("[name='website']").value) { e.preventDefault(); return; } // honeypot
     if (!form.checkValidity()) { return; } // browser shows validation messages
