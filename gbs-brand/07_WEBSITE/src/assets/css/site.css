@@ -188,6 +188,9 @@ textarea{min-height:150px;resize:vertical}
 .hp{position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden}
 .form-status{font-weight:600;color:var(--sage-deep);margin:0}
 .form-status[data-state="error"]{color:var(--red)}
+.form-sent{background:var(--sage-tint);border:1px solid var(--sage-tint-2);border-left:6px solid var(--red);border-radius:var(--radius);padding:var(--s4) var(--s4) var(--s3)}
+.form-sent h3{margin-bottom:var(--s2)}
+.form-sent p:last-child{margin:0}
 
 /* Prose pages */
 .prose{max-width:72ch}
