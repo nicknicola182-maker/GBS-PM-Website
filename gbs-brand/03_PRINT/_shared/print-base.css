@@ -47,3 +47,10 @@ a { color: inherit; text-decoration: none; }
 .bars i:nth-child(2) { height: 0.76em; box-shadow: inset 0 0 0 0.05em var(--gbs-sage); background: transparent; }
 .bars i:nth-child(3) { height: 1em; background: var(--gbs-red); }
 .bars i:nth-child(4) { height: 0.5em; }
+
+/* Screen PDFs: Chromium adds a blank trailing page if a bleed element on the LAST page extends below the page box.
+   Clamp last-page bleeds to the trim in screen mode (press mode wraps pages, so it is unaffected). */
+html:not(.press) .page:last-of-type .bleed,
+html:not(.press) .page:last-of-type .bleed-bottom,
+html:not(.press) .page:last-of-type .bleed-left,
+html:not(.press) .page:last-of-type .bleed-right { bottom: 0; }

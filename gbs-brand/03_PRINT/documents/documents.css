@@ -28,7 +28,7 @@
          color: var(--gbs-sage); margin-bottom: 1.5mm; }
 
 /* Flowing content region (tables, totals, panels, sign-off) */
-.content { position: absolute; left: 20mm; right: 20mm; top: 102mm; bottom: 32mm; font-size: 9pt; line-height: 1.45; }
+.content { position: absolute; left: 20mm; right: 20mm; top: 101mm; bottom: 34mm; font-size: 9pt; line-height: 1.45; }
 .section { margin-top: 6mm; }
 .section:first-child { margin-top: 0; }
 
@@ -47,7 +47,7 @@ table.items { width: 100%; border-collapse: collapse; font-size: 9pt; line-heigh
 .totals .total { font-family: var(--font-heading); font-weight: 600; font-size: 11pt; color: var(--gbs-sage); border-top: 0.5pt solid var(--gbs-sage);
                  border-bottom: none; margin-top: 0.5mm; }
 
-.panel { background: var(--gbs-sage-tint); padding: 4mm 5.5mm 4.5mm; margin-top: 6mm; font-size: 8.5pt; line-height: 1.45; }
+.panel { background: var(--gbs-sage-tint); padding: 4mm 5.5mm 4.5mm; margin-top: 6mm; font-size: 8.5pt; line-height: 1.4; }
 .panel h3 { font-size: 7.5pt; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2mm; }
 .panel ol, .panel ul { margin: 0; padding-left: 4.5mm; }
 .panel li { margin-bottom: 0.4mm; }
@@ -56,9 +56,9 @@ table.items { width: 100%; border-collapse: collapse; font-size: 9pt; line-heigh
 
 .box { border: 0.5pt solid var(--gbs-light); padding: 2.5mm 3mm; color: var(--gbs-ink-soft); line-height: 1.5; }
 
-.sign { display: grid; grid-template-columns: 1fr 1fr; column-gap: 10mm; margin-top: 6mm; font-size: 8.5pt; line-height: 1.4; }
+.sign { display: grid; grid-template-columns: 1fr 1fr; column-gap: 10mm; margin-top: 5mm; font-size: 8.5pt; line-height: 1.4; }
 .sign .fields { display: grid; grid-template-columns: 1fr 1fr; column-gap: 5mm; row-gap: 1.5mm; }
-.sign .field { border-bottom: 0.5pt solid var(--gbs-ink-soft); padding-top: 5.5mm; color: var(--gbs-ink-soft); font-size: 7.5pt; }
+.sign .field { border-bottom: 0.5pt solid var(--gbs-ink-soft); padding-top: 5mm; color: var(--gbs-ink-soft); font-size: 7.5pt; }
 .sign .field.wide { grid-column: 1 / -1; }
 
 /* Photo grid (job report page 2) */
@@ -68,8 +68,8 @@ table.items { width: 100%; border-collapse: collapse; font-size: 9pt; line-heigh
 .caption { margin-top: 1.5mm; font-size: 8pt; line-height: 1.4; color: var(--gbs-ink-soft); }
 .caption b { font-family: var(--font-heading); font-weight: 600; color: var(--gbs-sage); margin-right: 1.5mm; }
 
-/* Footer (letterhead pattern) */
-.foot-rule { position: absolute; left: 20mm; right: 20mm; bottom: 27mm; height: 0.5pt; background: var(--gbs-light); }
+/* Footer (letterhead pattern; foot-rule raised 3 mm so it clears the strapline cap height) */
+.foot-rule { position: absolute; left: 20mm; right: 20mm; bottom: 30mm; height: 0.5pt; background: var(--gbs-light); }
 .footer { position: absolute; left: 20mm; right: 20mm; bottom: 14mm; }
 .footer .strap { display: block; text-align: center; margin-bottom: 3mm; }
 .footer .legal { text-align: center; }

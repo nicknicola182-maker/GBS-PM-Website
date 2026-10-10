@@ -32,3 +32,6 @@
 .sage .strap { position: absolute; color: var(--gbs-offwhite); font-size: 7pt; white-space: nowrap; }
 .sage .strap-centre { left: 7mm; right: 7mm; top: 36.5mm; text-align: center; }
 .sage .strap-left { left: 7mm; top: 36.5mm; }
+
+/* Press sheet is only 103 mm wide: keep the renderer slug (10th child of .page-wrap) on one line so it stays out of the bleed. */
+html.press .page-wrap > div:nth-child(10) { white-space: nowrap; font-size: 4.5pt !important; }
