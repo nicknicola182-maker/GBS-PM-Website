@@ -1,0 +1,34 @@
+/* GBS HORIZON business cards v1.0 - shared by the four card sources in this folder.
+   Trim 85 x 55 mm, 3 mm bleed (solid sage sides use .bleed), live text kept 7 mm inside trim (5 mm minimum).
+   Type: name Montserrat 600 10 pt; everything else 7-7.5 pt; numerals tabular. */
+:root { --trim-w: 85mm; --trim-h: 55mm; }
+.page { background: #fff; }
+.page.sage { background: var(--gbs-sage); }
+.page.sage .bleed { background: var(--gbs-sage); }
+
+/* White side: logo top-left, header rule with red tick, name/role bottom-left, contacts bottom-right */
+.logo { position: absolute; left: 7mm; top: 7mm; width: 40mm; }
+.logo img { width: 100%; display: block; }
+.header-rule { position: absolute; left: 7mm; right: 7mm; top: 27mm; height: 0.5pt; background: var(--gbs-sage); }
+.header-rule::after { content: ""; position: absolute; right: 0; top: -1.25pt; width: 7mm; height: 1.75pt; background: var(--gbs-red); }
+.person { position: absolute; left: 7mm; bottom: 7.5mm; width: 40mm; }
+.name { font-family: var(--font-heading); font-weight: 600; font-size: 10pt; line-height: 1.2; color: var(--gbs-sage); }
+.role { font-family: var(--font-heading); font-weight: 500; font-size: 7pt; line-height: 1.3; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gbs-ink-soft); margin-top: 0.8mm; }
+.contact { position: absolute; right: 7mm; bottom: 7mm; text-align: right; font-size: 7.5pt; line-height: 1.5; color: var(--gbs-ink); white-space: nowrap; }
+.contact .k { font-family: var(--font-heading); font-weight: 600; font-size: 7pt; letter-spacing: 0.08em; color: var(--gbs-sage); margin-right: 1.2mm; }
+.contact .web { color: var(--gbs-red); font-weight: 600; }
+
+/* Centred white side (colourway B back) */
+.centred .logo { left: 50%; top: 7mm; transform: translateX(-50%); }
+.centred .header-rule { top: 26mm; }
+.centred .person { left: 7mm; right: 7mm; width: auto; top: 29mm; bottom: auto; text-align: center; }
+.centred .contact { left: 7mm; right: 7mm; top: 38mm; bottom: auto; text-align: center; line-height: 1.45; }
+.centred .contact .sep { color: var(--gbs-light); padding: 0 1.6mm; }
+
+/* Solid sage side */
+.sage .logo-centre { position: absolute; left: 50%; top: 15mm; width: 40mm; transform: translateX(-50%); }
+.sage .logo-left { position: absolute; left: 7mm; top: 16mm; width: 40mm; }
+.sage .logo-centre img, .sage .logo-left img { width: 100%; display: block; }
+.sage .strap { position: absolute; color: var(--gbs-offwhite); font-size: 7pt; white-space: nowrap; }
+.sage .strap-centre { left: 7mm; right: 7mm; top: 36.5mm; text-align: center; }
+.sage .strap-left { left: 7mm; top: 36.5mm; }

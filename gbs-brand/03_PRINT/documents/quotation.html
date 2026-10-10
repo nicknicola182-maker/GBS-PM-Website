@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_DOCUMENT_QUOTATION_A4</title>
+<link rel="stylesheet" href="../../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../_shared/print-base.css">
+<link rel="stylesheet" href="documents.css">
+</head>
+<body>
+
+<section class="page" data-trim="210 x 297 mm" aria-label="Quotation">
+  <div class="logo"><img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg" alt="GBS Property Maintenance"></div>
+  <div class="contact">
+    <strong>{{company.tradingName}}</strong><br>
+    {{company.address.line1}}<br>{{company.address.town}} {{company.address.postcode}}<br>
+    <span class="num">{{company.phone}}</span><br>
+    {{company.email}}<br>
+    <span class="web">{{company.domain}}</span>
+  </div>
+  <div class="header-rule"></div>
+  <div class="doc-title">
+    <h1>Quotation</h1>
+    <div class="sub">[Property address and nature of works, e.g. fire door remedial works to communal areas]</div>
+  </div>
+  <dl class="meta">
+    <dt>Quotation ref</dt><dd>[GBS-Q-0000]</dd>
+    <dt>Date</dt><dd>[DD/MM/YYYY]</dd>
+    <dt>Valid until</dt><dd>[DD/MM/YYYY]</dd>
+    <dt>Prepared by</dt><dd>{{company.people.0.name}}</dd>
+  </dl>
+  <div class="parties">
+    <div>
+      <div class="label">Client</div>
+      [Client name]<br>[Company / managing agent]<br>[Address line 1]<br>[Town] [Postcode]
+    </div>
+    <div>
+      <div class="label">Site address</div>
+      [Block / property name]<br>[Address line 1]<br>[Town] [Postcode]<br>[Site contact and telephone]
+    </div>
+  </div>
+  <div class="content">
+    <table class="items">
+      <thead><tr><th style="width:9mm">Item</th><th>Description</th><th class="r" style="width:12mm">Qty</th><th class="c" style="width:13mm">Unit</th><th class="r" style="width:22mm">Rate (£)</th><th class="r" style="width:25mm">Amount (£)</th></tr></thead>
+      <tbody>
+        <tr><td class="n">1</td><td>[Scope of Works: brief description of item]</td><td class="r">0</td><td class="c">Nr</td><td class="r">0.00</td><td class="r">0.00</td></tr>
+        <tr><td class="n">2</td><td>[Supply &amp; Install: FD30S fire door set]</td><td class="r">0</td><td class="c">Nr</td><td class="r">0.00</td><td class="r">0.00</td></tr>
+        <tr><td class="n">3</td><td>[Remedial Works: fire door, make good]</td><td class="r">0</td><td class="c">Nr</td><td class="r">0.00</td><td class="r">0.00</td></tr>
+        <tr><td class="n">4</td><td>[Reactive Repairs: communal area repair]</td><td class="r">0</td><td class="c">m²</td><td class="r">0.00</td><td class="r">0.00</td></tr>
+        <tr><td class="n">5</td><td>[Planned Preventative Maintenance visit]</td><td class="r">0</td><td class="c">Visit</td><td class="r">0.00</td><td class="r">0.00</td></tr>
+        <tr><td class="n">6</td><td>[Preliminaries: access, protection, waste]</td><td class="r">0</td><td class="c">Item</td><td class="r">0.00</td><td class="r">0.00</td></tr>
+      </tbody>
+    </table>
+    <div class="totals">
+      <div><span>Subtotal (excl. VAT)</span><span>£0.00</span></div>
+      <div><span>VAT at 20%</span><span>£0.00</span></div>
+      <div class="total"><span>Total</span><span>£0.00</span></div>
+    </div>
+    <div class="panel">
+      <h3>Terms</h3>
+      <ol>
+        <li>This quotation is valid for 30 days from the date shown above.</li>
+        <li>Works are priced as described in the Scope of Works. Any Variation or additional works will be priced separately and agreed in writing before they proceed.</li>
+        <li>Access to the site and all affected areas is to be provided by the client on the agreed dates.</li>
+        <li>Payment is due 30 days from the date of invoice unless otherwise agreed in writing.</li>
+        <li>All prices exclude VAT, which is charged at the prevailing rate.</li>
+      </ol>
+    </div>
+    <div class="sign">
+      <div>
+        <div class="label">Accepted on behalf of the client</div>
+        <div class="fields"><div class="field">Signature</div><div class="field">Date</div><div class="field wide">Name and position</div></div>
+      </div>
+      <div>
+        <div class="label">For {{company.tradingName}}</div>
+        <div class="fields"><div class="field">Signature</div><div class="field">Date</div><div class="field wide">{{company.people.0.name}}, {{company.people.0.role}}</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-rule"></div>
+  <div class="footer">
+    <span class="strap">BUILD <span class="pipe">|</span> MAINTAIN <span class="pipe">|</span> IMPROVE</span>
+    <div class="legal">{{company.legalName}} &nbsp;·&nbsp; Registered in {{company.placeOfRegistration}}, company number <span class="num">{{company.companyNumber}}</span> &nbsp;·&nbsp; Registered office: {{company.registeredOffice}} &nbsp;·&nbsp; VAT registration number <span class="num">{{company.vatNumber}}</span></div>
+  </div>
+  <div class="side-bars-bleed"><i></i><i></i><i></i></div>
+</section>
+
+</body>
+</html>

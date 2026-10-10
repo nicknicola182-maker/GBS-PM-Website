@@ -1,0 +1,90 @@
+/* GBS HORIZON A4 document frame v1.0 - shared by quotation.html, invoice.html and job-report.html.
+   Trim 210 x 297 mm, 20 mm margins, live text 10 mm minimum inside trim. Header and footer follow the letterhead. */
+:root { --trim-w: 210mm; --trim-h: 297mm; }
+
+/* Header (letterhead pattern, slightly compacted) */
+.logo { position: absolute; left: 20mm; top: 14mm; width: 48mm; }
+.logo img { width: 100%; display: block; }
+.contact { position: absolute; right: 20mm; top: 15mm; text-align: right; font-size: 8pt; line-height: 1.45; color: var(--gbs-ink); }
+.contact strong { font-family: var(--font-heading); font-weight: 600; color: var(--gbs-sage); letter-spacing: 0.02em; }
+.contact .web { color: var(--gbs-red); font-weight: 600; }
+.header-rule { position: absolute; left: 20mm; right: 20mm; top: 43mm; height: 0.5pt; background: var(--gbs-sage); }
+.header-rule::after { content: ""; position: absolute; right: 0; top: -1.75pt; width: 18mm; height: 2.25pt; background: var(--gbs-red); }
+
+/* Title row: document title left, reference block right */
+.doc-title { position: absolute; left: 20mm; top: 49mm; width: 95mm; }
+.doc-title h1 { font-size: 22pt; font-weight: 700; letter-spacing: -0.005em; }
+.doc-title .sub { margin-top: 1.5mm; font-size: 9.5pt; line-height: 1.4; color: var(--gbs-ink-soft); }
+.meta { position: absolute; right: 20mm; top: 50mm; display: grid; grid-template-columns: auto auto; column-gap: 6mm; row-gap: 1.2mm;
+        font-size: 9pt; line-height: 1.35; font-variant-numeric: tabular-nums; margin: 0; }
+.meta dt { font-family: var(--font-heading); font-weight: 600; font-size: 6.5pt; letter-spacing: 0.1em; text-transform: uppercase;
+           color: var(--gbs-sage); align-self: baseline; padding-top: 0.6mm; }
+.meta dd { margin: 0; text-align: right; }
+
+/* Client / site address blocks */
+.parties { position: absolute; left: 20mm; right: 20mm; top: 74mm; display: grid; grid-template-columns: 1fr 1fr; column-gap: 10mm;
+           font-size: 9.5pt; line-height: 1.45; }
+.label { font-family: var(--font-heading); font-weight: 600; font-size: 6.5pt; letter-spacing: 0.1em; text-transform: uppercase;
+         color: var(--gbs-sage); margin-bottom: 1.5mm; }
+
+/* Flowing content region (tables, totals, panels, sign-off) */
+.content { position: absolute; left: 20mm; right: 20mm; top: 102mm; bottom: 32mm; font-size: 9pt; line-height: 1.45; }
+.section { margin-top: 6mm; }
+.section:first-child { margin-top: 0; }
+
+table.items { width: 100%; border-collapse: collapse; font-size: 9pt; line-height: 1.4; font-variant-numeric: tabular-nums; }
+.items th { background: var(--gbs-sage); color: var(--gbs-offwhite); font-family: var(--font-heading); font-weight: 600; font-size: 7pt;
+            letter-spacing: 0.08em; text-transform: uppercase; text-align: left; padding: 2.2mm 2.5mm; vertical-align: middle; }
+.items td { padding: 1.9mm 2.5mm; border-bottom: 0.5pt solid var(--gbs-light); vertical-align: top; }
+.items .r { text-align: right; }
+.items .c { text-align: center; }
+.items .n { color: var(--gbs-ink-soft); }
+.items .ph { color: var(--gbs-ink-soft); }
+.items.compact td { padding: 1.7mm 2.5mm; }
+
+.totals { margin: 3mm 0 0 auto; width: 72mm; font-size: 9pt; font-variant-numeric: tabular-nums; }
+.totals div { display: flex; justify-content: space-between; padding: 1.1mm 2.5mm; border-bottom: 0.5pt solid var(--gbs-light); }
+.totals .total { font-family: var(--font-heading); font-weight: 600; font-size: 11pt; color: var(--gbs-sage); border-top: 0.5pt solid var(--gbs-sage);
+                 border-bottom: none; margin-top: 0.5mm; }
+
+.panel { background: var(--gbs-sage-tint); padding: 4mm 5.5mm 4.5mm; margin-top: 6mm; font-size: 8.5pt; line-height: 1.45; }
+.panel h3 { font-size: 7.5pt; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2mm; }
+.panel ol, .panel ul { margin: 0; padding-left: 4.5mm; }
+.panel li { margin-bottom: 0.4mm; }
+.panel p { margin: 0 0 1mm; }
+.panel .accent { display: inline-block; width: 10mm; height: 0.6mm; background: var(--gbs-red); margin-bottom: 2.5mm; }
+
+.box { border: 0.5pt solid var(--gbs-light); padding: 2.5mm 3mm; color: var(--gbs-ink-soft); line-height: 1.5; }
+
+.sign { display: grid; grid-template-columns: 1fr 1fr; column-gap: 10mm; margin-top: 6mm; font-size: 8.5pt; line-height: 1.4; }
+.sign .fields { display: grid; grid-template-columns: 1fr 1fr; column-gap: 5mm; row-gap: 1.5mm; }
+.sign .field { border-bottom: 0.5pt solid var(--gbs-ink-soft); padding-top: 5.5mm; color: var(--gbs-ink-soft); font-size: 7.5pt; }
+.sign .field.wide { grid-column: 1 / -1; }
+
+/* Photo grid (job report page 2) */
+.photos { position: absolute; left: 20mm; right: 20mm; top: 58mm; display: grid; grid-template-columns: 1fr 1fr; column-gap: 6mm; row-gap: 5mm; }
+.photo { border: 0.5pt dashed var(--gbs-sage-tint-2); background: #F4F5F3; height: 54mm; display: flex; align-items: center; justify-content: center;
+         font-family: var(--font-heading); font-weight: 500; font-size: 9pt; letter-spacing: 0.08em; color: var(--gbs-ink-soft); }
+.caption { margin-top: 1.5mm; font-size: 8pt; line-height: 1.4; color: var(--gbs-ink-soft); }
+.caption b { font-family: var(--font-heading); font-weight: 600; color: var(--gbs-sage); margin-right: 1.5mm; }
+
+/* Footer (letterhead pattern) */
+.foot-rule { position: absolute; left: 20mm; right: 20mm; bottom: 27mm; height: 0.5pt; background: var(--gbs-light); }
+.footer { position: absolute; left: 20mm; right: 20mm; bottom: 14mm; }
+.footer .strap { display: block; text-align: center; margin-bottom: 3mm; }
+.footer .legal { text-align: center; }
+.page-no { position: absolute; right: 20mm; bottom: 14mm; font-size: 7pt; color: var(--gbs-ink-soft); font-variant-numeric: tabular-nums; }
+/* Horizon side bars (letterhead motif); class contains "bleed" so QA ignores the 3 mm run-off below trim. */
+.side-bars-bleed { position: absolute; right: 0; bottom: calc(-1 * var(--bleed)); width: 7mm; height: calc(36mm + var(--bleed)); }
+.side-bars-bleed i { position: absolute; bottom: 0; background: var(--gbs-sage); }
+.side-bars-bleed i:nth-child(1) { right: 5.4mm; width: 0.45mm; height: calc(12mm + var(--bleed)); }
+.side-bars-bleed i:nth-child(2) { right: 3.4mm; width: 1.3mm; height: calc(23mm + var(--bleed)); background: var(--gbs-red); }
+.side-bars-bleed i:nth-child(3) { right: 1.6mm; width: 1.3mm; height: calc(36mm + var(--bleed)); }
+
+/* Continuation page (job report photographic record) */
+.cont .logo { width: 40mm; top: 14mm; }
+.cont .contact { top: 15mm; }
+.cont .header-rule { top: 36mm; }
+.cont .doc-title { top: 41mm; }
+.cont .doc-title h1 { font-size: 15pt; }
+.cont .meta { top: 42mm; }

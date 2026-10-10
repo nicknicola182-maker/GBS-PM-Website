@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_ENVELOPE_DL_220x110</title>
+<link rel="stylesheet" href="../../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../_shared/print-base.css">
+<style>
+  /* 220 x 110 mm, no bleed (manifest: "bleed": 0, "marks": 6). Front keeps the right 60 % and the bottom 20 mm clear
+     for the address and postal indicia. Back carries the return address on the flap (long-edge / wallet flap assumed). */
+  :root { --trim-w: 220mm; --trim-h: 110mm; --bleed: 0mm; --marks: 6mm; }
+  /* render.mjs positions crop marks and its slug for a 3 mm bleed. This sheet has none, so the marks are pulled in
+     by 3 mm (child order: 1 = page, 2-9 = marks LT-h, LT-v, RT-h, RT-v, LB-h, LB-v, RB-h, RB-v, 10 = slug) and the
+     renderer slug (which reads "bleed 3 mm") is replaced by .slug below. */
+  html.press .page-wrap > div:nth-child(2), html.press .page-wrap > div:nth-child(4) { transform: translateY(-3mm); }
+  html.press .page-wrap > div:nth-child(6), html.press .page-wrap > div:nth-child(8) { transform: translateY(3mm); }
+  html.press .page-wrap > div:nth-child(3), html.press .page-wrap > div:nth-child(7) { transform: translateX(-3mm); }
+  html.press .page-wrap > div:nth-child(5), html.press .page-wrap > div:nth-child(9) { transform: translateX(3mm); }
+  html.press .page-wrap > div:nth-child(10) { display: none; }
+  .slug { display: none; }
+  html.press .slug { display: block; position: absolute; left: 0; bottom: -4.5mm; font: 6pt Inter, Arial, sans-serif; color: #000; letter-spacing: 0.04em; white-space: nowrap; }
+
+  .logo { position: absolute; left: 12mm; top: 10mm; width: 45mm; }
+  .logo img { width: 100%; display: block; }
+  .header-rule { position: absolute; left: 12mm; width: 45mm; top: 33mm; height: 0.5pt; background: var(--gbs-sage); }
+  .header-rule::after { content: ""; position: absolute; right: 0; top: -1.75pt; width: 12mm; height: 2.25pt; background: var(--gbs-red); }
+  .return { position: absolute; left: 0; right: 0; top: 11mm; display: flex; justify-content: center; align-items: center; gap: 3mm;
+            font-size: 8pt; line-height: 1.4; color: var(--gbs-ink); white-space: nowrap; }
+  .return img { width: 8mm; display: block; }
+  .return .k { font-family: var(--font-heading); font-weight: 600; font-size: 7pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gbs-sage); margin-right: 1mm; }
+</style>
+</head>
+<body>
+
+<section class="page" data-trim="220 x 110 mm" aria-label="Envelope front">
+  <div class="logo"><img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg" alt="GBS Property Maintenance"></div>
+  <div class="header-rule"></div>
+  <div class="slug">GBS_HORIZON_ENVELOPE_DL_220x110_v1.0  |  trim 220 x 110 mm  |  bleed 0 mm  |  GBS HORIZON v1.0  |  <span class="date"></span></div>
+</section>
+
+<section class="page" data-trim="220 x 110 mm" aria-label="Envelope back (flap)">
+  <div class="return">
+    <img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_ICON_SAGE-RED_v1.0.svg" alt="">
+    <span><span class="k">If undelivered please return to</span>{{company.tradingName}}, {{company.addressOneLine}}</span>
+  </div>
+  <div class="slug">GBS_HORIZON_ENVELOPE_DL_220x110_v1.0  |  trim 220 x 110 mm  |  bleed 0 mm  |  GBS HORIZON v1.0  |  <span class="date"></span></div>
+</section>
+
+<script>document.querySelectorAll('.slug .date').forEach(function (e) { e.textContent = new Date().toISOString().slice(0, 10); });</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_DOCUMENT_JOB-REPORT_A4</title>
+<link rel="stylesheet" href="../../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../_shared/print-base.css">
+<link rel="stylesheet" href="documents.css">
+</head>
+<body>
+
+<section class="page" data-trim="210 x 297 mm" aria-label="Job report page 1">
+  <div class="logo"><img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg" alt="GBS Property Maintenance"></div>
+  <div class="contact">
+    <strong>{{company.tradingName}}</strong><br>
+    {{company.address.line1}}<br>{{company.address.town}} {{company.address.postcode}}<br>
+    <span class="num">{{company.phone}}</span><br>
+    {{company.email}}<br>
+    <span class="web">{{company.domain}}</span>
+  </div>
+  <div class="header-rule"></div>
+  <div class="doc-title">
+    <h1>Job Report</h1>
+    <div class="sub">[Property address and nature of works, e.g. Reactive Repairs to communal entrance door]</div>
+  </div>
+  <dl class="meta">
+    <dt>Report number</dt><dd>[GBS-JR-0000]</dd>
+    <dt>Job reference</dt><dd>[GBS-J-0000]</dd>
+    <dt>Date of visit</dt><dd>[DD/MM/YYYY]</dd>
+    <dt>Operatives</dt><dd>[Operative name(s)]</dd>
+    <dt>Time on site</dt><dd>[00:00] to [00:00]</dd>
+  </dl>
+  <div class="parties">
+    <div>
+      <div class="label">Client</div>
+      [Client name]<br>[Company / managing agent]<br>[Address line 1]<br>[Town] [Postcode]
+    </div>
+    <div>
+      <div class="label">Site address</div>
+      [Block / property name]<br>[Address line 1]<br>[Town] [Postcode]<br>[Site contact and telephone]
+    </div>
+  </div>
+  <div class="content">
+    <div class="section">
+      <div class="label">Works completed</div>
+      <div class="box">[Describe the works carried out on this visit: areas attended, items repaired or replaced, tests carried out and results. Reference the Scope of Works or Job reference where applicable.]<br><br>[Continue as required.]</div>
+    </div>
+    <div class="section">
+      <div class="label">Materials used</div>
+      <table class="items compact">
+        <thead><tr><th style="width:8mm">Item</th><th>Description</th><th class="r" style="width:16mm">Qty</th><th class="c" style="width:16mm">Unit</th><th style="width:56mm">Notes</th></tr></thead>
+        <tbody>
+          <tr><td class="n">1</td><td>[Material / component]</td><td class="r">0</td><td class="c">Nr</td><td class="ph">[Supplier / batch reference]</td></tr>
+          <tr><td class="n">2</td><td>[Material / component]</td><td class="r">0</td><td class="c">Nr</td><td class="ph">[Notes]</td></tr>
+          <tr><td class="n">3</td><td>[Material / component]</td><td class="r">0</td><td class="c">m</td><td class="ph">[Notes]</td></tr>
+          <tr><td class="n">4</td><td>[Material / component]</td><td class="r">0</td><td class="c">Item</td><td class="ph">[Notes]</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <div class="label">Defects / follow-on works noted</div>
+      <div class="box">[Record any defects observed, items that could not be completed on this visit and recommended follow-on works. State whether a further quotation or Variation is required.]</div>
+    </div>
+    <div class="sign">
+      <div>
+        <div class="label">Client sign-off</div>
+        <div class="fields"><div class="field">Signature</div><div class="field">Date</div><div class="field wide">Name and position</div></div>
+      </div>
+      <div>
+        <div class="label">Operative sign-off</div>
+        <div class="fields"><div class="field">Signature</div><div class="field">Date</div><div class="field wide">Name</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-no">Page 1 of 2</div>
+  <div class="foot-rule"></div>
+  <div class="footer">
+    <span class="strap">BUILD <span class="pipe">|</span> MAINTAIN <span class="pipe">|</span> IMPROVE</span>
+    <div class="legal">{{company.legalName}} &nbsp;·&nbsp; Registered in {{company.placeOfRegistration}}, company number <span class="num">{{company.companyNumber}}</span> &nbsp;·&nbsp; Registered office: {{company.registeredOffice}} &nbsp;·&nbsp; VAT registration number <span class="num">{{company.vatNumber}}</span></div>
+  </div>
+  <div class="side-bars-bleed"><i></i><i></i><i></i></div>
+</section>
+
+<section class="page cont" data-trim="210 x 297 mm" aria-label="Job report page 2 - photographic record">
+  <div class="logo"><img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg" alt="GBS Property Maintenance"></div>
+  <div class="contact"><span class="web">{{company.domain}}</span></div>
+  <div class="header-rule"></div>
+  <div class="doc-title">
+    <h1>Job Report &middot; Photographic record</h1>
+    <div class="sub">[Property address]</div>
+  </div>
+  <dl class="meta">
+    <dt>Report number</dt><dd>[GBS-JR-0000]</dd>
+    <dt>Date of visit</dt><dd>[DD/MM/YYYY]</dd>
+  </dl>
+  <div class="photos">
+    <div><div class="photo">[Photo]</div><div class="caption"><b>1</b>[Location / description, before]</div></div>
+    <div><div class="photo">[Photo]</div><div class="caption"><b>2</b>[Location / description, after]</div></div>
+    <div><div class="photo">[Photo]</div><div class="caption"><b>3</b>[Location / description]</div></div>
+    <div><div class="photo">[Photo]</div><div class="caption"><b>4</b>[Location / description]</div></div>
+    <div><div class="photo">[Photo]</div><div class="caption"><b>5</b>[Location / description]</div></div>
+    <div><div class="photo">[Photo]</div><div class="caption"><b>6</b>[Location / description]</div></div>
+  </div>
+  <div class="page-no">Page 2 of 2</div>
+  <div class="foot-rule"></div>
+  <div class="footer">
+    <div class="legal">{{company.legalName}} &nbsp;·&nbsp; Registered in {{company.placeOfRegistration}}, company number <span class="num">{{company.companyNumber}}</span> &nbsp;·&nbsp; Registered office: {{company.registeredOffice}} &nbsp;·&nbsp; VAT registration number <span class="num">{{company.vatNumber}}</span></div>
+  </div>
+  <div class="side-bars-bleed"><i></i><i></i><i></i></div>
+</section>
+
+</body>
+</html>

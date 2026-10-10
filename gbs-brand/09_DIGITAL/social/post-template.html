@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_SOCIAL_POST-TEMPLATE_1080x1080</title>
+<link rel="stylesheet" href="../../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../../03_PRINT/_shared/print-base.css">
+<style>
+  :root { --trim-w: 1080px; --trim-h: 1080px; }
+  html, body { background: var(--gbs-offwhite); }
+  .page { background: var(--gbs-offwhite); }
+  .panel { position: absolute; left: 0; top: 0; width: 1080px; height: 400px; background: var(--gbs-sage); }
+  .panel img { position: absolute; left: 80px; top: 92px; width: 440px; display: block; }
+  .panel .eyebrow { position: absolute; right: 80px; top: 104px; font-size: 20px; color: var(--gbs-offwhite); letter-spacing: 0.18em; }
+  .headline { position: absolute; left: 80px; top: 480px; width: 920px; font-family: var(--font-heading); font-weight: 700; font-size: 68px; line-height: 1.1; color: var(--gbs-sage); }
+  .support { position: absolute; left: 80px; top: 740px; width: 920px; font-family: var(--font-body); font-weight: 400; font-size: 30px; line-height: 1.4; color: var(--gbs-ink); }
+  .foot { position: absolute; left: 80px; right: 80px; bottom: 76px; height: 48px; border-top: 2px solid var(--gbs-light); }
+  .foot .web { position: absolute; left: 0; bottom: -2px; font-family: var(--font-body); font-weight: 600; font-size: 24px; color: var(--gbs-red); letter-spacing: 0.01em; }
+  .foot .bars { position: absolute; right: 0; bottom: 0; font-size: 44px; }
+  .note { position: absolute; left: 80px; top: 420px; font-family: var(--font-body); font-size: 16px; color: var(--gbs-ink-soft); }
+</style>
+</head>
+<body>
+<section class="page" data-trim="1080 x 1080 px" aria-label="Social post template">
+  <div class="panel">
+    <img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_REVERSED-NOSTRAP_OFFWHITE-RED_v1.0.svg" alt="GBS Property Maintenance">
+    <span class="eyebrow">[TOPIC]</span>
+  </div>
+  <div class="note">Template: replace bracketed text. Keep headline to three lines and supporting line to two.</div>
+  <div class="headline">[Headline]</div>
+  <div class="support">[Supporting line]</div>
+  <div class="foot">
+    <span class="web">{{company.domain}}</span>
+    <span class="bars"><i></i><i></i><i></i><i></i></span>
+  </div>
+</section>
+</body>
+</html>

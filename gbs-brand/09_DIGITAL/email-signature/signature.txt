@@ -1,0 +1,12 @@
+{{company.people.0.name}}
+{{company.people.0.role}}, {{company.tradingName}}
+
+M: {{company.people.0.mobile}}
+L: {{company.phone}}
+E: {{company.people.0.email}}
+W: {{company.url}}
+
+{{company.tradingName}} · {{company.addressOneLine}}
+BUILD | MAINTAIN | IMPROVE
+
+{{company.legalName}} · Registered in {{company.placeOfRegistration}}, company number {{company.companyNumber}} · Registered office: {{company.registeredOffice}} · VAT registration number {{company.vatNumber}}

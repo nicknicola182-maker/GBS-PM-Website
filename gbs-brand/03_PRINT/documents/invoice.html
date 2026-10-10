@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_DOCUMENT_INVOICE_A4</title>
+<link rel="stylesheet" href="../../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../_shared/print-base.css">
+<link rel="stylesheet" href="documents.css">
+</head>
+<body>
+
+<section class="page" data-trim="210 x 297 mm" aria-label="Invoice">
+  <div class="logo"><img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg" alt="GBS Property Maintenance"></div>
+  <div class="contact">
+    <strong>{{company.tradingName}}</strong><br>
+    {{company.address.line1}}<br>{{company.address.town}} {{company.address.postcode}}<br>
+    <span class="num">{{company.phone}}</span><br>
+    {{company.email}}<br>
+    <span class="web">{{company.domain}}</span>
+  </div>
+  <div class="header-rule"></div>
+  <div class="doc-title">
+    <h1>Invoice</h1>
+    <div class="sub">[Property address and description of works invoiced]</div>
+  </div>
+  <dl class="meta">
+    <dt>Invoice number</dt><dd>[GBS-INV-0000]</dd>
+    <dt>Invoice date</dt><dd>[DD/MM/YYYY]</dd>
+    <dt>Payment due</dt><dd>[DD/MM/YYYY]</dd>
+    <dt>Quotation ref</dt><dd>[GBS-Q-0000]</dd>
+    <dt>Your order / PO</dt><dd>[Client reference]</dd>
+  </dl>
+  <div class="parties">
+    <div>
+      <div class="label">Client</div>
+      [Client name]<br>[Company / managing agent]<br>[Address line 1]<br>[Town] [Postcode]
+    </div>
+    <div>
+      <div class="label">Site address</div>
+      [Block / property name]<br>[Address line 1]<br>[Town] [Postcode]<br>[Site contact and telephone]
+    </div>
+  </div>
+  <div class="content">
+    <table class="items">
+      <thead><tr><th style="width:9mm">Item</th><th>Description</th><th class="r" style="width:12mm">Qty</th><th class="c" style="width:13mm">Unit</th><th class="r" style="width:22mm">Rate (£)</th><th class="r" style="width:25mm">Amount (£)</th></tr></thead>
+      <tbody>
+        <tr><td class="n">1</td><td>[Scope of Works: brief description of item]</td><td class="r">0</td><td class="c">Nr</td><td class="r">0.00</td><td class="r">0.00</td></tr>
+        <tr><td class="n">2</td><td>[Supply &amp; Install: FD30S fire door set]</td><td class="r">0</td><td class="c">Nr</td><td class="r">0.00</td><td class="r">0.00</td></tr>
+        <tr><td class="n">3</td><td>[Remedial Works: fire door, make good]</td><td class="r">0</td><td class="c">Nr</td><td class="r">0.00</td><td class="r">0.00</td></tr>
+        <tr><td class="n">4</td><td>[Reactive Repairs: communal area repair]</td><td class="r">0</td><td class="c">m²</td><td class="r">0.00</td><td class="r">0.00</td></tr>
+        <tr><td class="n">5</td><td>[Planned Preventative Maintenance visit]</td><td class="r">0</td><td class="c">Visit</td><td class="r">0.00</td><td class="r">0.00</td></tr>
+        <tr><td class="n">6</td><td>[Preliminaries: access, protection, waste]</td><td class="r">0</td><td class="c">Item</td><td class="r">0.00</td><td class="r">0.00</td></tr>
+      </tbody>
+    </table>
+    <div class="totals">
+      <div><span>Subtotal (excl. VAT)</span><span>£0.00</span></div>
+      <div><span>VAT at 20%</span><span>£0.00</span></div>
+      <div class="total"><span>Total</span><span>£0.00</span></div>
+    </div>
+    <div class="panel">
+      <h3>Payment</h3>
+      <p><strong>Bank details:</strong> [Account name] &nbsp;·&nbsp; Sort code [Sort code] &nbsp;·&nbsp; Account number [Account number]. Please quote the invoice number as the payment reference.</p>
+      <p><strong>Payment due date:</strong> [DD/MM/YYYY]. Payment terms are 30 days from the date of invoice unless otherwise agreed in writing.</p>
+      <p>Interest may be charged on late payment under the Late Payment of Commercial Debts (Interest) Act 1998.</p>
+      <p style="margin:0">Queries regarding this invoice should be raised with {{company.people.0.name}} on <span class="num">{{company.phone}}</span> or {{company.email}} within 7 days of receipt.</p>
+    </div>
+  </div>
+  <div class="foot-rule"></div>
+  <div class="footer">
+    <span class="strap">BUILD <span class="pipe">|</span> MAINTAIN <span class="pipe">|</span> IMPROVE</span>
+    <div class="legal">{{company.legalName}} &nbsp;·&nbsp; Registered in {{company.placeOfRegistration}}, company number <span class="num">{{company.companyNumber}}</span> &nbsp;·&nbsp; Registered office: {{company.registeredOffice}} &nbsp;·&nbsp; VAT registration number <span class="num">{{company.vatNumber}}</span></div>
+  </div>
+  <div class="side-bars-bleed"><i></i><i></i><i></i></div>
+</section>
+
+</body>
+</html>

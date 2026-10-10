@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_GIFT_CONTENTS-CARD_A6_105x148</title>
+<link rel="stylesheet" href="../../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../../03_PRINT/_shared/print-base.css">
+<style>
+  :root { --trim-w: 105mm; --trim-h: 148mm; }
+  .ground { background: var(--gbs-offwhite); }
+  .strip { position: absolute; left: 12mm; top: 12mm; width: 46mm; }
+  .strip img { width: 100%; display: block; }
+  .eyebrow { position: absolute; left: 12mm; top: 28mm; }
+  h2 { position: absolute; left: 12mm; top: 33mm; font-size: 15pt; }
+  .list { position: absolute; left: 12mm; right: 12mm; top: 46mm; font-size: 9pt; line-height: 1.5; color: var(--gbs-ink); }
+  .list div { position: relative; padding: 0 0 2.6mm 6mm; }
+  .list div::before { content: ""; position: absolute; left: 0; top: 1.6mm; width: 2.2mm; height: 2.2mm; background: var(--gbs-sage); }
+  .list div.opt::before { background: transparent; box-shadow: inset 0 0 0 0.4mm var(--gbs-sage); }
+  .list span { color: var(--gbs-ink-soft); }
+  .note { position: absolute; left: 12mm; right: 12mm; top: 104mm; font-size: 8pt; line-height: 1.5; color: var(--gbs-ink-soft); }
+  .rule { position: absolute; left: 12mm; right: 12mm; bottom: 24mm; }
+  .contact { position: absolute; left: 12mm; right: 12mm; bottom: 12mm; font-size: 7.5pt; line-height: 1.6; color: var(--gbs-ink); }
+  .contact .web { color: var(--gbs-red); font-weight: 600; }
+</style>
+</head>
+<body>
+<section class="page" data-trim="105 x 148 mm" aria-label="Gift pack contents card">
+  <div class="bleed ground"></div>
+  <div class="strip"><img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_STRIP_SAGE-RED_v1.0.svg" alt="GBS Property Maintenance"></div>
+  <div class="eyebrow">Client gift pack</div>
+  <h2>In this pack</h2>
+  <div class="list">
+    <div>A5 notebook <span>- site and job notes, ruled pages</span></div>
+    <div>11 oz mug</div>
+    <div>Metal pen</div>
+    <div>Welcome letter <span>- your account contact and how to raise jobs</span></div>
+    <div>Thank-you card</div>
+    <div class="opt">[Tea / biscuits] <span>- optional, remove if not included</span></div>
+  </div>
+  <div class="note">Everything here is produced in the UK where we could source it. The box and tissue are recyclable; the notebook cover is FSC-certified card. [Confirm with suppliers before printing.]</div>
+  <div class="rule rule-light"></div>
+  <div class="contact">
+    Jobs and enquiries: <span class="num">{{company.phone}}</span> &nbsp;·&nbsp; {{company.email}}<br>
+    <span class="web">{{company.domain}}</span> &nbsp;·&nbsp; {{company.hours}}
+  </div>
+</section>
+</body>
+</html>

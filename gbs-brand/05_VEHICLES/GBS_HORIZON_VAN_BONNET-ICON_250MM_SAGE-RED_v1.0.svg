@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250mm" height="207.031mm" viewBox="0 0 250 207.031" role="img" aria-label="GBS Horizon icon, bonnet emblem 250 mm">
+<title>GBS Horizon icon, bonnet emblem 250 mm</title>
+<!-- GBS HORIZON vehicle livery panel v1.0 | user unit = 1 mm at full vehicle scale | source: GBS_HORIZON_ICON_SAGE-RED_v1.0.svg | bonnet emblem -->
+<g id="artwork" transform="scale(1.562) translate(32 2)">
+<rect fill="#6E7F72" x="0" y="83" width="6" height="42"/>
+<path fill="#6E7F72" fill-rule="evenodd" d="M16 30h20v95h-20z M21 35v90h10v-90z"/>
+<rect fill="#E10600" x="46" y="0" width="20" height="125"/>
+<rect fill="#6E7F72" x="76" y="63" width="20" height="62"/>
+<rect fill="#6E7F72" x="-30" y="125" width="156" height="3.5"/>
+</g>
+</svg>
