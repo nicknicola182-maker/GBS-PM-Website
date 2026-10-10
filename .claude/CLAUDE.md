@@ -1,9 +1,6 @@
-# workers-ai-streaming
+# GBS-PM-Website (formerly workers-ai-streaming)
 
-Two independent things live in this repository:
-
-1. **Root: Cloudflare Workers AI streaming endpoint** (`src/index.ts`, `wrangler.jsonc`, TypeScript). See `README.md`.
-2. **`gbs-brand/`: GBS Property Maintenance brand production pack** (static website + logo masters + print, workwear, vehicle, signage, digital and merchandise artwork). Plain HTML/CSS/JS, no framework, no database, no authentication.
+This repository is the **GBS Property Maintenance website and Horizon brand production pack** (`gbs-brand/`): static website plus logo masters and print, workwear, vehicle, signage, digital and merchandise artwork. Plain HTML/CSS/JS, no framework, no database, no authentication. The former Workers AI streaming endpoint at the repository root was removed (see git history).
 
 ## gbs-brand conventions
 - `gbs-brand/company.json` is the single source of truth for company particulars; every output uses `{{company.*}}` tokens.
