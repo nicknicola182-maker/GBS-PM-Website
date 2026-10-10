@@ -1,0 +1,3 @@
+[
+  { "src": "03_PRINT/brochure/brochure.html", "out": "03_PRINT/brochure/GBS_HORIZON_BROCHURE_A4-8PP_v1.0", "type": "pdf", "trim": [210, 297], "bleed": 3 }
+]

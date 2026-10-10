@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_BRAND-GUIDE_A4</title>
+<link rel="stylesheet" href="../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../03_PRINT/_shared/print-base.css">
+<style>
+  :root { --trim-w: 210mm; --trim-h: 297mm; }
+  .page { padding: 18mm 16mm 16mm; }
+  .head { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 0.5pt solid var(--gbs-sage); padding-bottom: 3mm; margin-bottom: 8mm; }
+  .head .t { font-family: var(--font-heading); font-weight: 700; font-size: 9pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gbs-sage); }
+  .head .n { font-size: 7.5pt; color: var(--gbs-ink-soft); }
+  .foot { position: absolute; left: 16mm; right: 16mm; bottom: 9mm; display: flex; justify-content: space-between; font-size: 7pt; color: var(--gbs-ink-soft); border-top: 0.5pt solid var(--gbs-light); padding-top: 2mm; }
+  h1 { font-size: 24pt; margin-bottom: 4mm; }
+  h2 { font-size: 13pt; margin: 6mm 0 2.5mm; }
+  p, li { font-size: 9.5pt; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+  .sw { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; margin: 2mm 0 4mm; }
+  .sw div { border: 0.5pt solid var(--gbs-light); }
+  .sw i { display: block; height: 26mm; }
+  .sw b { display: block; font-family: var(--font-heading); font-size: 8pt; padding: 2mm 2mm 0; color: var(--gbs-ink); }
+  .sw span { display: block; font-size: 7.5pt; padding: 0.5mm 2mm 2mm; color: var(--gbs-ink-soft); }
+  .logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+  .logo-grid figure { margin: 0; border: 0.5pt solid var(--gbs-light); padding: 6mm; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3mm; min-height: 38mm; }
+  .logo-grid figure.sage { background: var(--gbs-sage); }
+  .logo-grid figure.dark { background: #333; }
+  .logo-grid img { width: 52mm; }
+  .logo-grid img.icon { width: 18mm; }
+  .logo-grid figcaption { font-size: 7pt; color: var(--gbs-ink-soft); text-align: center; }
+  .logo-grid figure.sage figcaption, .logo-grid figure.dark figcaption { color: var(--gbs-offwhite); }
+  .type-sample { border-top: 0.5pt solid var(--gbs-light); padding: 3mm 0; display: grid; grid-template-columns: 38mm 1fr; gap: 4mm; align-items: baseline; }
+  .type-sample small { font-size: 7.5pt; color: var(--gbs-ink-soft); }
+  .clear { position: relative; width: 96mm; margin: 3mm auto; padding: 12mm; border: 0.5pt dashed var(--gbs-red); }
+  .clear img { width: 100%; display: block; }
+  .clear .x { position: absolute; font-size: 7pt; color: var(--gbs-red); font-family: var(--font-heading); font-weight: 700; }
+  .dont { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+  .dont figure { margin: 0; border: 0.5pt solid var(--gbs-light); padding: 3mm; text-align: center; }
+  .dont img { width: 32mm; margin: 0 auto 1.5mm; }
+  .dont figcaption { font-size: 7.5pt; color: var(--gbs-red); font-weight: 600; }
+  table { border-collapse: collapse; width: 100%; font-size: 8.5pt; margin: 2mm 0 4mm; }
+  th, td { text-align: left; padding: 1.6mm 2mm; border-bottom: 0.5pt solid var(--gbs-light); vertical-align: top; }
+  th { font-family: var(--font-heading); font-weight: 600; color: var(--gbs-sage); background: var(--gbs-sage-tint); }
+  code { font-family: Consolas, Menlo, monospace; font-size: 8pt; }
+</style>
+</head>
+<body>
+
+<section class="page" data-trim="210 x 297 mm">
+  <div class="head"><span class="t">GBS Horizon · Brand quick guide</span><span class="n">v1.0 · {{company.year}}</span></div>
+  <h1>Identity, colour and typography</h1>
+  <p>This sheet condenses the production manual into the rules suppliers and staff need day to day. The full manual and the production register sit in <code>08_APPROVALS</code>.</p>
+  <h2>Colour</h2>
+  <div class="sw">
+    <div><i style="background:#6E7F72"></i><b>Primary sage grey</b><span>#6E7F72 · RGB 110 127 114<br>Logo, headings, panels, uniforms</span></div>
+    <div><i style="background:#E10600"></i><b>GBS red</b><span>#E10600 · RGB 225 6 0<br>Descriptor, icon highlight, CTAs</span></div>
+    <div><i style="background:#DADADA"></i><b>Light grey</b><span>#DADADA · RGB 218 218 218<br>Dividers, supporting graphics</span></div>
+    <div><i style="background:#F9F9F7;border-bottom:0.5pt solid #DADADA"></i><b>Off-white</b><span>#F9F9F7 · RGB 249 249 247<br>Paper and page background</span></div>
+  </div>
+  <p>Working digital values, not certified spot inks: printers convert through their ICC profile and supply a drawdown for approval. Body text uses a dark sage-neutral (#2E3531); charcoal grey is not part of the system. Red is an accent and never a background for body text.</p>
+  <h2>Typography</h2>
+  <div class="type-sample"><small>Montserrat Bold · headings</small><span style="font-family:var(--font-heading);font-weight:700;font-size:18pt;color:var(--gbs-sage)">Maintaining exceptional spaces</span></div>
+  <div class="type-sample"><small>Montserrat Bold · descriptor</small><span style="font-family:var(--font-heading);font-weight:700;font-size:10pt;letter-spacing:.12em;color:var(--gbs-red)">PROPERTY MAINTENANCE</span></div>
+  <div class="type-sample"><small>Montserrat Medium · strapline</small><span style="font-family:var(--font-heading);font-weight:500;font-size:9pt;letter-spacing:.18em;color:var(--gbs-sage)">BUILD <span style="color:var(--gbs-red)">|</span> MAINTAIN <span style="color:var(--gbs-red)">|</span> IMPROVE</span></div>
+  <div class="type-sample"><small>Inter Regular · body</small><span>Scheduled programmes that keep communal areas, external fabric and building services in good order. Numerals 0123456789 are tabular for prices, dates and references.</span></div>
+  <div class="type-sample"><small>Inter SemiBold · labels</small><span style="font-weight:600">Scope of Works · Remedial Works · Supply &amp; Install · Job Report</span></div>
+  <table>
+    <tr><th>Context</th><th>Sizes</th></tr>
+    <tr><td>A4 brochure</td><td>H1 26-32 pt · H2 14-18 pt · body 9.5-11 pt · footnotes 7.5 pt minimum</td></tr>
+    <tr><td>Stationery</td><td>Letter body 10-11 pt · legal footer 7.5-9 pt</td></tr>
+    <tr><td>Website</td><td>Display 48-64 px desktop / 32-40 px mobile · H2 30-40 / 24-30 px · body 16-18 px</td></tr>
+  </table>
+  <div class="foot"><span>GBS Horizon brand quick guide</span><span>1 / 3</span></div>
+</section>
+
+<section class="page" data-trim="210 x 297 mm">
+  <div class="head"><span class="t">GBS Horizon · Brand quick guide</span><span class="n">v1.0 · {{company.year}}</span></div>
+  <h1>Logo masters</h1>
+  <p>All masters are outlined vectors in <code>01_LOGO_MASTER/svg</code> with PNG exports in <code>01_LOGO_MASTER/png</code>. The visible logo never carries "Ltd"; the legal name appears in disclosures instead.</p>
+  <div class="logo-grid">
+    <figure><img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY_SAGE-RED_v1.0.svg" alt=""><figcaption>Primary with strapline · white / off-white grounds</figcaption></figure>
+    <figure><img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg" alt=""><figcaption>Primary without strapline · stationery headers, chest prints</figcaption></figure>
+    <figure class="sage"><img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_REVERSED_OFFWHITE-RED_v1.0.svg" alt=""><figcaption>Reversed on solid sage (manual-approved)</figcaption></figure>
+    <figure class="sage"><img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_REVERSED-SOFT_OFFWHITE_v1.0.svg" alt=""><figcaption>Reversed, soft descriptor · small sizes on sage</figcaption></figure>
+    <figure><img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_MONO_SAGE_v1.0.svg" alt=""><figcaption>Single-ink sage · stamps, etching, one-colour print</figcaption></figure>
+    <figure class="dark"><img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_MONO_WHITE_v1.0.svg" alt=""><figcaption>Single-ink white · tonal garments, dark grounds</figcaption></figure>
+    <figure><img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_STRIP_SAGE-RED_v1.0.svg" alt="" style="width:78mm"><figcaption>Strip · lanyards, pens, van rear, narrow bands</figcaption></figure>
+    <figure><img class="icon" src="../01_LOGO_MASTER/svg/GBS_HORIZON_ICON_SAGE-RED_v1.0.svg" alt=""><img class="icon" src="../01_LOGO_MASTER/svg/GBS_HORIZON_ICON_SIMPLIFIED_SAGE-RED_v1.0.svg" alt="" style="margin-left:6mm"><figcaption>Horizon icon and simplified icon (embroidery, under 20 mm)</figcaption></figure>
+  </div>
+  <h2>Minimum sizes</h2>
+  <p>Primary lockup: 35 mm wide in print, 100 mm in embroidery, 140 px on screen. Drop the strapline below 60 mm / 300 px. Icon: 8 mm print, 20 mm embroidery (simplified version). Proof every first application physically.</p>
+  <div class="foot"><span>GBS Horizon brand quick guide</span><span>2 / 3</span></div>
+</section>
+
+<section class="page" data-trim="210 x 297 mm">
+  <div class="head"><span class="t">GBS Horizon · Brand quick guide</span><span class="n">v1.0 · {{company.year}}</span></div>
+  <h1>Clear space, construction and misuse</h1>
+  <p>Unit X is the cap height of the GBS wordmark. Keep at least 1X clear on every side. The red bar top aligns with the cap-height line; all bars stand on the baseline rule, which extends from the left edge of the G to the right edge of the last bar.</p>
+  <div class="clear">
+    <span class="x" style="top:4mm;left:50%">1X</span><span class="x" style="bottom:4mm;left:50%">1X</span>
+    <span class="x" style="left:4mm;top:50%">1X</span><span class="x" style="right:4mm;top:50%">1X</span>
+    <img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY_SAGE-RED_v1.0.svg" alt="">
+  </div>
+  <table>
+    <tr><th>Element</th><th>Construction (X = 100 units)</th></tr>
+    <tr><td>Wordmark</td><td>Montserrat SemiBold, cap height 1X, tracking +0.08 em, sage</td></tr>
+    <tr><td>Baseline rule</td><td>0.035X thick, 0.25X below the wordmark baseline</td></tr>
+    <tr><td>Bars (left to right)</td><td>Solid 0.06 × 0.42X · hollow 0.20 × 0.95X (stroke 0.05X) · red 0.20 × 1.25X · solid 0.20 × 0.62X · gaps 0.10X · icon starts 0.24X after the S</td></tr>
+    <tr><td>Descriptor</td><td>PROPERTY MAINTENANCE, Montserrat Bold, red, tracking +0.12 em, 96% of lockup width, 0.28X below the rule</td></tr>
+    <tr><td>Strapline</td><td>Montserrat Medium, sage, tracking +0.15 em, cap height 60% of descriptor, red pipes, 0.02X rules to the lockup edges</td></tr>
+  </table>
+  <h2>Do not</h2>
+  <div class="dont">
+    <figure><img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg" alt="" style="transform:scaleX(1.5);width:30mm"><figcaption>Stretch or condense</figcaption></figure>
+    <figure><img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg" alt="" style="transform:rotate(-12deg)"><figcaption>Rotate</figcaption></figure>
+    <figure style="background:#E10600"><img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg" alt=""><figcaption style="color:#fff">Place on red or low-contrast grounds</figcaption></figure>
+    <figure><img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg" alt="" style="filter:drop-shadow(1mm 1mm 1mm rgba(0,0,0,.5))"><figcaption>Add shadows, gradients or effects</figcaption></figure>
+    <figure><img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_MONO_SAGE_v1.0.svg" alt="" style="filter:hue-rotate(160deg) saturate(3)"><figcaption>Recolour outside the approved set</figcaption></figure>
+    <figure><span style="display:block;font-family:Georgia,serif;font-size:16pt;color:#6E7F72;margin:4mm 0 3mm">GBS</span><figcaption>Substitute fonts or redraw the bars</figcaption></figure>
+  </div>
+  <div class="foot"><span>GBS Horizon brand quick guide</span><span>3 / 3</span></div>
+</section>
+
+</body>
+</html>

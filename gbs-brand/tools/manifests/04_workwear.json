@@ -1,0 +1,103 @@
+[
+  {
+    "src": "04_WORKWEAR/workwear-chest-95mm-sage-red.html",
+    "out": "04_WORKWEAR/GBS_HORIZON_WORKWEAR_CHEST_95MM_SAGE-RED_v1.0",
+    "type": "png",
+    "widthMM": 95,
+    "heightMM": 38.24,
+    "dpi": 300,
+    "transparent": true,
+    "selector": ".page"
+  },
+  {
+    "src": "04_WORKWEAR/workwear-chest-95mm-offwhite-red.html",
+    "out": "04_WORKWEAR/GBS_HORIZON_WORKWEAR_CHEST_95MM_OFFWHITE-RED_v1.0",
+    "type": "png",
+    "widthMM": 95,
+    "heightMM": 38.24,
+    "dpi": 300,
+    "transparent": true,
+    "selector": ".page"
+  },
+  {
+    "src": "04_WORKWEAR/workwear-back-260mm-sage-red.html",
+    "out": "04_WORKWEAR/GBS_HORIZON_WORKWEAR_BACK_260MM_SAGE-RED_v1.0",
+    "type": "png",
+    "widthMM": 260,
+    "heightMM": 126.31,
+    "dpi": 300,
+    "transparent": true,
+    "selector": ".page"
+  },
+  {
+    "src": "04_WORKWEAR/workwear-back-260mm-offwhite-red.html",
+    "out": "04_WORKWEAR/GBS_HORIZON_WORKWEAR_BACK_260MM_OFFWHITE-RED_v1.0",
+    "type": "png",
+    "widthMM": 260,
+    "heightMM": 126.31,
+    "dpi": 300,
+    "transparent": true,
+    "selector": ".page"
+  },
+  {
+    "src": "04_WORKWEAR/workwear-sleeve-40mm-sage-red.html",
+    "out": "04_WORKWEAR/GBS_HORIZON_WORKWEAR_SLEEVE_40MM_SAGE-RED_v1.0",
+    "type": "png",
+    "widthMM": 48.3,
+    "heightMM": 40,
+    "dpi": 300,
+    "transparent": true,
+    "selector": ".page"
+  },
+  {
+    "src": "04_WORKWEAR/workwear-sleeve-40mm-offwhite-red.html",
+    "out": "04_WORKWEAR/GBS_HORIZON_WORKWEAR_SLEEVE_40MM_OFFWHITE-RED_v1.0",
+    "type": "png",
+    "widthMM": 48.3,
+    "heightMM": 40,
+    "dpi": 300,
+    "transparent": true,
+    "selector": ".page"
+  },
+  {
+    "src": "04_WORKWEAR/workwear-hivis-back-260mm-black.html",
+    "out": "04_WORKWEAR/GBS_HORIZON_WORKWEAR_HIVIS-BACK_260MM_BLACK_v1.0",
+    "type": "png",
+    "widthMM": 260,
+    "heightMM": 126.31,
+    "dpi": 300,
+    "transparent": true,
+    "selector": ".page"
+  },
+  {
+    "src": "04_WORKWEAR/workwear-hivis-back-nostrap-260mm-black.html",
+    "out": "04_WORKWEAR/GBS_HORIZON_WORKWEAR_HIVIS-BACK-NOSTRAP_260MM_BLACK_v1.0",
+    "type": "png",
+    "widthMM": 260,
+    "heightMM": 104.64,
+    "dpi": 300,
+    "transparent": true,
+    "selector": ".page"
+  },
+  {
+    "src": "04_WORKWEAR/workwear-hivis-chest-95mm-black.html",
+    "out": "04_WORKWEAR/GBS_HORIZON_WORKWEAR_HIVIS-CHEST_95MM_BLACK_v1.0",
+    "type": "png",
+    "widthMM": 95,
+    "heightMM": 38.24,
+    "dpi": 300,
+    "transparent": true,
+    "selector": ".page"
+  },
+  {
+    "src": "04_WORKWEAR/placement-sheet.html",
+    "out": "04_WORKWEAR/GBS_HORIZON_WORKWEAR_PLACEMENT-SHEET_A4L_v1.0",
+    "type": "pdf",
+    "trim": [
+      297,
+      210
+    ],
+    "bleed": 0,
+    "press": false
+  }
+]

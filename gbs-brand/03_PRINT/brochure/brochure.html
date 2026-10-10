@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_BROCHURE_A4-8PP</title>
+<link rel="stylesheet" href="../../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../_shared/print-base.css">
+<style>
+  /* GBS HORIZON company profile brochure - A4 portrait, 8 pp, 3 mm bleed, 12 mm margins.
+     Pages 2-7 share .inner (content box) and .pf (running footer). Covers use full-bleed sage panels. */
+  :root { --trim-w: 210mm; --trim-h: 297mm; --m: 12mm; }
+  .page { font-size: 10pt; line-height: 1.45; color: var(--gbs-ink); }
+  img { display: block; }
+
+  /* Inside-page scaffolding */
+  .inner { position: absolute; left: var(--m); right: var(--m); top: var(--m); bottom: 24mm; display: flex; flex-direction: column; }
+  .ph { margin-bottom: 6mm; }
+  .ph .eyebrow { display: block; margin-bottom: 3mm; }
+  .ph h1 { max-width: 186mm; }
+  .stand { font-size: 11pt; line-height: 1.4; color: var(--gbs-ink-soft); max-width: 150mm; margin: 3.5mm 0 0; }
+  h2 { margin-bottom: 2.5mm; }
+  h3 { font-size: 10.5pt; margin: 0 0 1.5mm; }
+  h4 { font-size: 9.5pt; font-weight: 600; margin: 0 0 1.5mm; }
+  p { margin: 0 0 2.2mm; }
+  ul.dash { list-style: none; margin: 0; padding: 0; }
+  ul.dash li { position: relative; padding-left: 4.5mm; margin-bottom: 1.4mm; font-size: 9.5pt; line-height: 1.4; }
+  ul.dash li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 2.4mm; height: 0.5pt; background: var(--gbs-sage); }
+  ul.dash li b { font-weight: 600; color: var(--gbs-sage); }
+  .panel { background: var(--gbs-sage-tint); padding: 6mm; }
+  .panel h3 { margin-bottom: 2.5mm; }
+  .pf { position: absolute; left: var(--m); right: var(--m); bottom: var(--m); display: flex; justify-content: space-between; align-items: baseline;
+        font-size: 7pt; letter-spacing: 0.04em; color: var(--gbs-ink-soft); padding-top: 2mm; border-top: 0.5pt solid var(--gbs-light); }
+  .verso .pf { flex-direction: row-reverse; }
+  .pf .bars { height: 0.9em; margin-right: 1.5mm; vertical-align: -0.05em; }
+  .pf .pf-num { font-family: var(--font-heading); font-weight: 600; color: var(--gbs-sage); }
+
+  /* Cover */
+  .cover-paper { background: var(--gbs-offwhite); }
+  .cover-panel { top: 99mm; background: var(--gbs-sage); }
+  .cover-logo { position: absolute; left: 50%; top: 53mm; width: 120mm; transform: translateX(-50%); }
+  .horizon { position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: flex-end; justify-content: space-between; }
+  .horizon i { display: block; width: 1.4mm; background: var(--gbs-offwhite); }
+  .horizon i.hollow { background: transparent; box-shadow: inset 0 0 0 0.35mm var(--gbs-offwhite); }
+  .horizon i.red { background: var(--gbs-red); }
+  .cover-top { position: absolute; left: var(--m); right: var(--m); top: var(--m); height: calc(99mm - var(--m)); }
+  .cover-eyebrow { display: flex; justify-content: space-between; align-items: baseline; }
+  .cover-year { font-family: var(--font-heading); font-weight: 600; font-size: 7.5pt; letter-spacing: 0.12em; color: var(--gbs-sage); }
+  .cover-line { position: absolute; left: 0; bottom: 10mm; max-width: 118mm; font-family: var(--font-heading); font-weight: 600; font-size: 12pt; line-height: 1.3; color: var(--gbs-sage); margin: 0; }
+  .cover-line .rule { width: 18mm; height: 1.5pt; background: var(--gbs-red); margin-bottom: 4mm; }
+
+  /* p2 Who we are */
+  .lead { font-size: 28pt; }
+  .two-side { display: grid; grid-template-columns: 1fr 58mm; gap: 8mm; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+  .cols h3 { margin-top: 1mm; }
+  .cols p { font-size: 9.5pt; line-height: 1.45; margin-bottom: 2.4mm; }
+  .glance .bars { height: 3.2mm; margin-bottom: 3mm; }
+  .glance dl { margin: 0; }
+  .glance dt { font-family: var(--font-heading); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 6.5pt; color: var(--gbs-sage); margin-top: 3.2mm; }
+  .glance dd { margin: 0.6mm 0 0; font-size: 9.5pt; line-height: 1.4; }
+  .glance .strap { display: block; margin-top: 7mm; font-size: 7pt; }
+  .bmi { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6mm; margin-top: auto; padding-top: 5mm; border-top: 0.5pt solid var(--gbs-light); }
+  .bmi h3 { font-size: 9pt; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 2mm; }
+  .bmi h3 .pipe { color: var(--gbs-red); }
+  .bmi p { font-size: 9.5pt; margin: 0; }
+
+  /* p3 Services */
+  .cards { flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; gap: 5mm; }
+  .card { background: var(--gbs-sage-tint); padding: 5mm 5.5mm; border-top: 1.5pt solid var(--gbs-sage); }
+  .card-n { font-family: var(--font-heading); font-weight: 700; font-size: 7.5pt; letter-spacing: 0.12em; color: var(--gbs-red); display: block; margin-bottom: 2mm; }
+  .card h3 { font-size: 11pt; margin-bottom: 2.5mm; }
+
+  /* p4 Planned & reactive */
+  .halves { display: grid; grid-template-columns: 1fr 1fr; gap: 10mm; position: relative; }
+  .halves::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 0.5pt; background: var(--gbs-light); }
+  .halves h3 { margin-top: 3mm; }
+  .prio { list-style: none; margin: 0; padding: 0; }
+  .prio li { display: grid; grid-template-columns: 28mm 1fr; gap: 3mm; padding: 2.4mm 0; border-top: 0.5pt solid var(--gbs-light); font-size: 9.5pt; line-height: 1.4; }
+  .prio li:last-child { border-bottom: 0.5pt solid var(--gbs-light); }
+  .prio .tag { font-family: var(--font-heading); font-weight: 600; font-size: 7.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gbs-sage); padding-top: 0.5mm; }
+  .prio .tag.hot { color: var(--gbs-red); }
+  .report { margin-top: auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6mm; }
+  .report h3 { grid-column: 1 / -1; margin-bottom: 0; }
+  .report p { font-size: 9.5pt; margin: 0; }
+
+  /* p5 Fire door */
+  .fd { display: grid; grid-template-columns: 1fr 1fr; gap: 10mm; }
+  .fd h3 { margin-top: 3mm; }
+  .fd .panel { margin-top: 4mm; padding: 5mm; }
+  .fd .panel p { font-size: 9.5pt; margin: 0; }
+  .steps { margin-top: auto; }
+  .steps h3 { margin-bottom: 3mm; }
+  .steps-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5mm; }
+  .step { border-top: 1.5pt solid var(--gbs-sage); padding-top: 2.5mm; position: relative; }
+  .step .n { font-family: var(--font-heading); font-weight: 700; color: var(--gbs-red); font-size: 7.5pt; letter-spacing: 0.12em; display: block; margin-bottom: 1.5mm; }
+  .step p { font-size: 8.5pt; line-height: 1.4; margin: 0; color: var(--gbs-ink-soft); }
+  .step:not(:last-child)::after { content: ""; position: absolute; right: -3.3mm; top: 2.6mm; width: 1.5mm; height: 1.5mm; border-top: 0.5pt solid var(--gbs-sage); border-right: 0.5pt solid var(--gbs-sage); transform: rotate(45deg); }
+
+  /* p6 Refurbishment & reinstatement */
+  .sect { padding-bottom: 6mm; }
+  .sect + .sect { padding-top: 6mm; border-top: 0.5pt solid var(--gbs-light); }
+  .three { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6mm; margin-top: 2mm; }
+  .three p { font-size: 9.5pt; margin: 0; }
+  .twin { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-top: 2mm; }
+  .twin .panel { padding: 5mm; }
+
+  /* p7 How we work */
+  .values { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm 10mm; }
+  .value { border-top: 1.5pt solid var(--gbs-sage); padding-top: 3mm; }
+  .value h3 { font-size: 12pt; margin-bottom: 2mm; }
+  .value p { font-size: 9.5pt; margin: 0; }
+  .pull { margin: auto 0; max-width: 140mm; font-family: var(--font-heading); font-weight: 600; font-size: 17pt; line-height: 1.25; color: var(--gbs-sage); }
+  .pull .rule { display: block; width: 18mm; height: 1.5pt; background: var(--gbs-red); margin-bottom: 4mm; }
+  .bottom-row { display: grid; grid-template-columns: 1fr 56mm; gap: 8mm; align-items: stretch; }
+  .sectors .bars { height: 3.2mm; margin-bottom: 3mm; }
+  .sectors li { margin-bottom: 2mm; }
+
+  /* Back cover */
+  .back-panel { background: var(--gbs-sage); }
+  .back-inner { position: absolute; left: var(--m); right: var(--m); top: var(--m); bottom: 24mm; color: var(--gbs-offwhite); display: flex; flex-direction: column; }
+  .back-logo { width: 72mm; margin-top: 6mm; }
+  .back .eyebrow { color: var(--gbs-offwhite); opacity: 0.85; display: block; margin-bottom: 3mm; }
+  .back h2 { color: var(--gbs-offwhite); font-size: 22pt; font-weight: 700; margin-bottom: 4mm; }
+  .cta { margin-top: 30mm; max-width: 120mm; }
+  .cta p { font-size: 10.5pt; line-height: 1.5; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm 8mm; margin-top: 10mm; max-width: 150mm; }
+  .contact-grid .lbl { display: block; font-family: var(--font-heading); font-weight: 600; text-transform: uppercase; font-size: 6.5pt; letter-spacing: 0.12em; opacity: 0.8; margin-bottom: 1mm; }
+  .contact-grid .val { font-size: 11pt; font-weight: 500; }
+  .person { margin-top: 10mm; padding-top: 4mm; border-top: 0.5pt solid rgba(249,249,247,0.4); font-size: 10pt; max-width: 150mm; }
+  .person b { font-family: var(--font-heading); font-weight: 600; }
+  .person .sep { opacity: 0.6; padding: 0 1.5mm; }
+  .back-legal { margin-top: auto; color: var(--gbs-offwhite); opacity: 0.8; font-size: 7.5pt; line-height: 1.4; max-width: 160mm; }
+  .back-horizon i { width: 1.2mm; }
+
+  /* Screen PDF only: Chromium adds a blank page when a bleed element on the LAST page extends below the page box
+     (the forced breaks absorb this on earlier pages; press mode wraps pages so it is unaffected). Pull the back-cover
+     bleed boxes up to the trim edge and shift the bars visually (transform does not affect pagination). */
+  html:not(.press) .page:last-of-type .bleed, html:not(.press) .page:last-of-type .bleed-bottom { bottom: 0; }
+  html:not(.press) .page:last-of-type .back-horizon { transform: translateY(3mm); }
+</style>
+</head>
+<body>
+
+<!-- ============ p1 COVER ============ -->
+<section class="page cover" data-trim="210 x 297 mm" aria-label="Cover">
+  <div class="bleed cover-paper"></div>
+  <div class="bleed-bottom cover-panel">
+    <img class="cover-logo" src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_REVERSED_OFFWHITE-RED_v1.0.svg" alt="GBS Property Maintenance - Build, Maintain, Improve">
+    <div class="horizon" aria-hidden="true">
+      <i style="height:8mm"></i><i style="height:11mm"></i><i style="height:9mm"></i><i style="height:14mm"></i><i style="height:12mm"></i><i style="height:17mm"></i>
+      <i style="height:15mm"></i><i style="height:20mm"></i><i style="height:13mm"></i><i style="height:23mm"></i><i style="height:18mm"></i><i class="hollow" style="height:26mm"></i>
+      <i style="height:21mm"></i><i style="height:29mm"></i><i style="height:24mm"></i><i style="height:32mm"></i><i style="height:27mm"></i><i class="red" style="height:36mm"></i>
+      <i style="height:30mm"></i><i style="height:25mm"></i><i style="height:33mm"></i><i style="height:22mm"></i><i style="height:28mm"></i><i style="height:19mm"></i>
+      <i style="height:24mm"></i><i style="height:16mm"></i><i style="height:27mm"></i><i style="height:21mm"></i><i style="height:18mm"></i><i style="height:23mm"></i>
+      <i style="height:15mm"></i><i class="hollow" style="height:19mm"></i><i style="height:13mm"></i><i style="height:17mm"></i><i style="height:11mm"></i><i style="height:15mm"></i>
+      <i style="height:12mm"></i><i style="height:10mm"></i><i style="height:14mm"></i><i style="height:9mm"></i><i style="height:12mm"></i><i style="height:8mm"></i>
+      <i style="height:11mm"></i><i style="height:9mm"></i><i style="height:7mm"></i><i style="height:10mm"></i><i style="height:8mm"></i><i style="height:7mm"></i>
+    </div>
+  </div>
+  <div class="cover-top">
+    <div class="cover-eyebrow"><span class="eyebrow">Company profile</span><span class="cover-year num">{{company.year}}</span></div>
+    <p class="cover-line"><span class="rule"></span>Maintenance, repair, refurbishment and fire door services for residential blocks and managed property portfolios across London.</p>
+  </div>
+</section>
+
+<!-- ============ p2 WHO WE ARE ============ -->
+<section class="page verso" data-trim="210 x 297 mm" aria-label="Who we are">
+  <div class="inner">
+    <header class="ph">
+      <span class="eyebrow">Who we are</span>
+      <h1 class="lead">Specialist maintenance, repair, refurbishment and fire door services for residential blocks and managed property portfolios across London.</h1>
+    </header>
+    <div class="two-side">
+      <div class="cols">
+        <div class="col">
+          <h3>What we do</h3>
+          <p>GBS Property Maintenance carries out planned and reactive maintenance, repairs, refurbishment and fire door works to residential blocks and managed property across London. The work ranges from a single make-safe visit to programmed cyclical decorations and full communal refurbishments. Every job is scoped, priced and reported in the same consistent format.</p>
+          <p>Building fabric, joinery, decoration and plumbing works are carried out by our site teams. Where statutory certification is required, for example electrical installation work, we bring in certified partners and include their certificates in the job record.</p>
+        </div>
+        <div class="col">
+          <h3>How we work</h3>
+          <p>Each instruction receives a written Scope of Works and a priced quotation before works start. RAMS are issued before attendance, access is arranged with your site contact and residents are notified where works affect them.</p>
+          <p>On completion you receive a Job Report with photographic evidence, the materials used and any further recommendations. Variations are agreed in writing before we proceed, so the invoice matches the instruction.</p>
+          <h3>Who we work for</h3>
+          <p>Our clients are property managers, managing agents, facilities managers, residents' management companies and insurance handlers. They are accountable for buildings that must stay safe, compliant and well presented while people live in them. We work to their reporting, approval and access procedures rather than asking them to work to ours.</p>
+        </div>
+      </div>
+      <aside class="panel glance">
+        <span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <h3>At a glance</h3>
+        <dl>
+          <dt>Trading name</dt><dd>{{company.tradingName}}</dd>
+          <dt>Legal name</dt><dd>{{company.legalName}}</dd>
+          <dt>Service area</dt><dd>{{company.serviceArea}}</dd>
+          <dt>Office hours</dt><dd>{{company.hours}}</dd>
+          <dt>Insurance</dt><dd>{{company.insurance}}</dd>
+        </dl>
+        <span class="strap">BUILD <span class="pipe">|</span> MAINTAIN <span class="pipe">|</span> IMPROVE</span>
+      </aside>
+    </div>
+    <div class="bmi">
+      <div><h3>Build</h3><p>New installations and replacement elements where repair is no longer viable: fire doors, ironmongery, joinery, glazing and finishes, supplied and installed to the agreed specification.</p></div>
+      <div><h3>Maintain</h3><p>Planned, cyclical and reactive maintenance that keeps the building safe and presentable between larger projects, with a record of every visit.</p></div>
+      <div><h3>Improve</h3><p>Refurbishment and redecoration that lift the standard of communal areas and void properties, planned around residents and the service charge year.</p></div>
+    </div>
+  </div>
+  <footer class="pf"><span class="pf-name"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>{{company.tradingName}}</span><span class="pf-num num">2</span></footer>
+</section>
+
+<!-- ============ p3 SERVICES OVERVIEW ============ -->
+<section class="page recto" data-trim="210 x 297 mm" aria-label="Services overview">
+  <div class="inner">
+    <header class="ph">
+      <span class="eyebrow">Services</span>
+      <h1>One contractor, six services.</h1>
+      <p class="stand">One instruction route for everything a managed residential building needs, from a planned programme to an emergency make-safe. Each service is scoped, priced and reported in the same format.</p>
+    </header>
+    <div class="cards">
+      <article class="card">
+        <span class="card-n">01</span>
+        <h3>Planned &amp; preventative maintenance</h3>
+        <ul class="dash">
+          <li>Cyclical maintenance programmes for communal areas and external fabric</li>
+          <li>Scheduled inspections with condition notes and photographs</li>
+          <li>Forward works plans and annual budgets for agents and directors</li>
+          <li>Minor repairs completed during the visit where authorised</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card-n">02</span>
+        <h3>Reactive repairs</h3>
+        <ul class="dash">
+          <li>Emergency make-safe, urgent and routine repairs</li>
+          <li>Plumbing leaks, doors and ironmongery, glazing, roofs and gutters</li>
+          <li>Minor electrical and lighting via certified partners where certification is required</li>
+          <li>Job Report with photographic evidence on completion</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card-n">03</span>
+        <h3>Fire door services</h3>
+        <ul class="dash">
+          <li>Survey and inspection of fire door assemblies</li>
+          <li>Measured defect assessment against BS 8214 and manufacturer instructions</li>
+          <li>Compliant repair first; FD30 or FD60 supply and install where needed</li>
+          <li>Inspection records supporting the responsible person's duties</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card-n">04</span>
+        <h3>Refurbishment &amp; redecoration</h3>
+        <ul class="dash">
+          <li>Communal hallway, stairwell and entrance refurbishment</li>
+          <li>Void property refurbishment between tenancies</li>
+          <li>External redecoration and making good</li>
+          <li>Specification, programme and resident notices managed for you</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card-n">05</span>
+        <h3>Insurance reinstatement works</h3>
+        <ul class="dash">
+          <li>Escape-of-water, impact and storm damage reinstatement</li>
+          <li>Schedules of works for loss adjusters and claims handlers</li>
+          <li>Strip-out, drying coordination and reinstatement</li>
+          <li>Transparent breakdowns of labour and materials</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card-n">06</span>
+        <h3>Compliance support &amp; reporting</h3>
+        <ul class="dash">
+          <li>Inspection records, certificates and photographs filed by property</li>
+          <li>Defect schedules mapped to a cost plan for phased spending</li>
+          <li>Reports written for directors, agents and insurers</li>
+          <li>Support with fire door checks under the Fire Safety (England) Regulations 2022</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+  <footer class="pf"><span class="pf-name"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>{{company.tradingName}}</span><span class="pf-num num">3</span></footer>
+</section>
+
+<!-- ============ p4 PLANNED MAINTENANCE & REACTIVE REPAIRS ============ -->
+<section class="page verso" data-trim="210 x 297 mm" aria-label="Planned maintenance and reactive repairs">
+  <div class="inner">
+    <header class="ph">
+      <span class="eyebrow">Planned &amp; reactive</span>
+      <h1>Planned maintenance and reactive repairs</h1>
+      <p class="stand">Two routes into the same team: a programme that keeps the building ahead of its defects, and a reactive service for everything the programme cannot predict.</p>
+    </header>
+    <div class="halves">
+      <div>
+        <h2>Planned &amp; preventative maintenance</h2>
+        <p>A planned programme sets out what is inspected and maintained, how often and at what cost, so the agent and the directors can budget for it. Visits are scheduled in advance, residents are notified and each visit is recorded with photographs.</p>
+        <h3>Typical scope</h3>
+        <ul class="dash">
+          <li><b>Communal areas:</b> entrance halls, stairwells, corridors, bin stores and plant rooms</li>
+          <li><b>Cyclical decorations:</b> internal and external redecoration on an agreed cycle</li>
+          <li><b>Roof and gutter maintenance:</b> gutter clearance, outlets, flashings and minor roof repairs</li>
+          <li><b>Doors and ironmongery:</b> entrance doors, closers, locks, hinges and door furniture</li>
+          <li><b>Plumbing leaks and make-safe:</b> isolating, containing and repairing leaks to communal and flat services</li>
+          <li><b>Glazing:</b> replacement of broken or failed units and beading</li>
+          <li><b>Minor electrical and lighting:</b> lamp and fitting replacement, with certified partners where statutory certification is required</li>
+          <li><b>Void property works:</b> repairs, cleaning and redecoration between tenancies</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Reactive repairs</h2>
+        <p>Reactive instructions are triaged on receipt and given one of four priorities, so that you know what to expect and when. The priority is agreed with you, not imposed, and can be changed if the situation on site changes.</p>
+        <h3>Response approach</h3>
+        <ul class="prio">
+          <li><span class="tag hot">Emergency make-safe</span><span>Immediate danger, loss of security or active water ingress. We attend as a priority to make the property safe and secure, then quote for the permanent repair.</span></li>
+          <li><span class="tag">Urgent</span><span>A fault affecting occupation or a service, such as a failed closer on a fire door or a contained leak. Attendance is booked at the earliest available slot and confirmed with your site contact.</span></li>
+          <li><span class="tag">Routine</span><span>Defects that do not affect safety or occupation. Grouped with other works at the property where sensible, to reduce visits and cost.</span></li>
+          <li><span class="tag">Planned</span><span>Works programmed in advance with a specification, a fixed date and resident notices, usually arising from a survey or a planned programme.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel report">
+      <h3>How jobs are reported</h3>
+      <p><b>Job Report.</b> Every completed job is closed with a Job Report describing the works carried out, the materials used and any further recommendations.</p>
+      <p><b>Photographic evidence.</b> Before, during and after photographs are included, so the report stands on its own for a director, an insurer or an auditor.</p>
+      <p><b>Certificates and records.</b> Where certified partners are used, their certificates are attached, and fire door works are recorded on the building's door schedule.</p>
+    </div>
+  </div>
+  <footer class="pf"><span class="pf-name"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>{{company.tradingName}}</span><span class="pf-num num">4</span></footer>
+</section>
+
+<!-- ============ p5 FIRE DOOR SERVICES ============ -->
+<section class="page recto" data-trim="210 x 297 mm" aria-label="Fire door services">
+  <div class="inner">
+    <header class="ph">
+      <span class="eyebrow">Specialism</span>
+      <h1>Fire door services</h1>
+      <p class="stand">A fire door only performs if it was installed correctly, is maintained and is checked. GBS surveys, repairs, installs and maintains fire door assemblies in residential buildings, and produces the records a responsible person needs to evidence their checks.</p>
+    </header>
+    <div class="fd">
+      <div>
+        <h2>Survey and inspection</h2>
+        <p>Every fire door assembly is surveyed against BS 8214, Approved Document B and the manufacturer's installation instructions. We record what we measure, not only what we see, so that defects can be prioritised and costed from the survey alone.</p>
+        <h3>What we assess and measure</h3>
+        <ul class="dash">
+          <li><b>Gaps:</b> head, sides and threshold, measured and recorded against the manufacturer's tolerances</li>
+          <li><b>Leaf and frame:</b> condition, damage, warping and evidence of previous repairs</li>
+          <li><b>Intumescent strips and smoke seals:</b> presence, continuity and condition</li>
+          <li><b>Closers:</b> operation, closing from any angle and reliable latching</li>
+          <li><b>Hinges and ironmongery:</b> number, fixings, rating and condition</li>
+          <li><b>Glazing:</b> fire-rated glass, beads and intumescent glazing seals</li>
+          <li><b>Signage:</b> mandatory signage present and correct for the door's function</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Repair before replacement</h2>
+        <p>Where a door can be brought back to a compliant condition, we repair it: seals, closers, hinges, gap adjustment and approved leaf repairs. Where it cannot, we supply and install FD30 or FD60 door assemblies to suit the building's fire strategy.</p>
+        <p>Remedial works are set out in a schedule mapped to a cost plan, door by door, so you can prioritise by risk and phase the spend across the service charge year.</p>
+        <div class="panel">
+          <h3>Supporting the responsible person</h3>
+          <p>The Fire Safety (England) Regulations 2022 require the responsible person in a residential building over 11 m to carry out quarterly checks of fire doors in communal areas, and to use best endeavours to check flat entrance doors annually. Our inspection programmes, door schedules and records are written to support those duties and to sit in the building's fire safety file.</p>
+        </div>
+        <h3>Assemblies covered</h3>
+        <ul class="dash">
+          <li>Flat entrance doors</li>
+          <li>Communal corridor, lobby and stairwell doors</li>
+          <li>Riser, cupboard and service doors</li>
+          <li>Plant room, bin store and car park doors</li>
+        </ul>
+      </div>
+    </div>
+    <div class="steps">
+      <h3>How a fire door instruction runs</h3>
+      <div class="steps-row">
+        <div class="step"><span class="n">01</span><h4>Survey</h4><p>Door-by-door inspection with measurements and photographs.</p></div>
+        <div class="step"><span class="n">02</span><h4>Report</h4><p>Defect schedule with priority ratings and photographic evidence.</p></div>
+        <div class="step"><span class="n">03</span><h4>Cost plan</h4><p>Priced remedial schedule, repair or replace, phased to your budget.</p></div>
+        <div class="step"><span class="n">04</span><h4>Remedial works</h4><p>Repairs and installations to specification, with residents notified.</p></div>
+        <div class="step"><span class="n">05</span><h4>Certification and records</h4><p>Completion certificate, updated door schedule and records for the fire safety file.</p></div>
+      </div>
+    </div>
+  </div>
+  <footer class="pf"><span class="pf-name"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>{{company.tradingName}}</span><span class="pf-num num">5</span></footer>
+</section>
+
+<!-- ============ p6 REFURBISHMENT & INSURANCE REINSTATEMENT ============ -->
+<section class="page verso" data-trim="210 x 297 mm" aria-label="Refurbishment and insurance reinstatement">
+  <div class="inner">
+    <header class="ph">
+      <span class="eyebrow">Refurbishment &amp; reinstatement</span>
+      <h1>Refurbishment and insurance reinstatement</h1>
+      <p class="stand">Two kinds of project with one objective: returning a space to the standard it should be at, with a clear specification, a clear price and a clear record.</p>
+    </header>
+    <div class="sect">
+      <h2>Refurbishment and redecoration</h2>
+      <p>Refurbishment is planned around the people who use the building. Access is kept open, dust and noise are controlled, and residents receive notices before works start and when the programme changes.</p>
+      <div class="three">
+        <div><h3>Communal hallways</h3><p>Entrance halls, stairwells and corridors: decoration, flooring, joinery repairs, door and ironmongery replacement and signage, with lighting works through certified partners where certification is required.</p></div>
+        <div><h3>Void properties</h3><p>Full or partial refurbishment between tenancies: strip-out, repairs, kitchen and bathroom works, decoration and cleaning, handed back ready for the next occupier.</p></div>
+        <div><h3>External redecoration and make good</h3><p>Cyclical external decoration, render and masonry repairs, rainwater goods and fascias, with making good after other trades or damage.</p></div>
+      </div>
+    </div>
+    <div class="sect">
+      <h2>Insurance reinstatement works</h2>
+      <p>We work directly with loss adjusters, claims handlers and the managing agent on escape-of-water, impact and similar damage claims. The schedule of works is written so that the handler can approve it from the desk, and the invoice breaks down in the same way.</p>
+      <div class="twin">
+        <div class="panel">
+          <h3>What the handler receives</h3>
+          <ul class="dash">
+            <li>Schedule of works set out by room and by element</li>
+            <li>Labour and materials shown separately, with a transparent breakdown</li>
+            <li>Photographs of the damage, the strip-out and the completed reinstatement</li>
+            <li>Variations raised and agreed before the work is done, not after</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Sequence on site</h3>
+          <ul class="dash">
+            <li>Make-safe and strip-out of damaged finishes and fittings</li>
+            <li>Drying coordinated with the drying contractor, with moisture readings recorded</li>
+            <li>Reinstatement of finishes and fittings to match the existing</li>
+            <li>Final inspection and sign-off with the resident and the agent</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bmi">
+      <div><h3>Specification</h3><p>A written specification and a priced Scope of Works, with options where finishes or products can be chosen.</p></div>
+      <div><h3>Programme</h3><p>A dated programme with resident notices, access arrangements and a named site contact for the duration.</p></div>
+      <div><h3>Handover</h3><p>Snagging walked with you, a Job Report with photographs, and product information and guarantees for the file.</p></div>
+    </div>
+  </div>
+  <footer class="pf"><span class="pf-name"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>{{company.tradingName}}</span><span class="pf-num num">6</span></footer>
+</section>
+
+<!-- ============ p7 HOW WE WORK ============ -->
+<section class="page recto" data-trim="210 x 297 mm" aria-label="How we work">
+  <div class="inner">
+    <header class="ph">
+      <span class="eyebrow">How we work</span>
+      <h1>What you can expect from GBS</h1>
+      <p class="stand">Four commitments that shape how every job is scoped, carried out and closed.</p>
+    </header>
+    <div class="values">
+      <div class="value">
+        <h3>Trusted expertise</h3>
+        <p>Our teams know how residential blocks are built, managed and occupied, and we scope works accordingly. Advice is practical and given in writing, so you can rely on it when a decision is questioned later.</p>
+      </div>
+      <div class="value">
+        <h3>Exceptional standards</h3>
+        <p>Works are carried out to the relevant British Standards, the manufacturer's instructions and the agreed specification. We photograph what we find and what we leave, and we do not sign off work we would not stand behind.</p>
+      </div>
+      <div class="value">
+        <h3>Long-term partnerships</h3>
+        <p>The next job is easier when the contractor already knows the building, so we keep records by property: access notes, previous works and outstanding recommendations. We aim to be the contractor you call first, not the one you have to brief from scratch.</p>
+      </div>
+      <div class="value">
+        <h3>Sustainable communities</h3>
+        <p>Buildings that are maintained last longer, cost less to run and are better places to live. We repair before we replace, specify durable materials and plan works to minimise disruption to residents.</p>
+      </div>
+    </div>
+    <p class="pull"><span class="rule"></span>A scope you can approve, a price you can defend and a record you can file.</p>
+    <div class="bottom-row">
+      <div class="panel">
+        <h3>Commercial clarity</h3>
+        <ul class="dash">
+          <li><b>Scope:</b> a short-form Scope of Works for approval, with the detailed breakdown behind it</li>
+          <li><b>Pricing:</b> labour and materials shown separately, with options where there is a genuine choice</li>
+          <li><b>Variations:</b> agreed in writing before we proceed, never added to the invoice afterwards</li>
+          <li><b>RAMS:</b> risk assessments and method statements issued before works start</li>
+          <li><b>Approval:</b> works begin on your written instruction, and your order reference is carried through to the Job Report and the invoice</li>
+        </ul>
+      </div>
+      <div class="sectors">
+        <span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <h3>Sectors we serve</h3>
+        <ul class="dash">
+          <li>Residential blocks and estates</li>
+          <li>Managing agents</li>
+          <li>Facilities managers</li>
+          <li>Insurance handlers and loss adjusters</li>
+          <li>Housing providers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer class="pf"><span class="pf-name"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>{{company.tradingName}}</span><span class="pf-num num">7</span></footer>
+</section>
+
+<!-- ============ p8 BACK COVER ============ -->
+<section class="page back" data-trim="210 x 297 mm" aria-label="Back cover">
+  <div class="bleed back-panel"></div>
+  <div class="bleed-bottom">
+    <div class="horizon back-horizon" aria-hidden="true">
+      <i style="height:7mm"></i><i style="height:8mm"></i><i style="height:7mm"></i><i style="height:9mm"></i><i style="height:8mm"></i><i style="height:10mm"></i>
+      <i style="height:9mm"></i><i style="height:11mm"></i><i style="height:8mm"></i><i style="height:12mm"></i><i style="height:10mm"></i><i class="hollow" style="height:13mm"></i>
+      <i style="height:11mm"></i><i style="height:14mm"></i><i style="height:12mm"></i><i style="height:15mm"></i><i style="height:13mm"></i><i style="height:17mm"></i>
+      <i style="height:14mm"></i><i style="height:13mm"></i><i style="height:16mm"></i><i style="height:12mm"></i><i style="height:14mm"></i><i style="height:11mm"></i>
+      <i style="height:12mm"></i><i style="height:9mm"></i><i style="height:13mm"></i><i style="height:11mm"></i><i style="height:10mm"></i><i style="height:12mm"></i>
+      <i style="height:9mm"></i><i class="hollow" style="height:10mm"></i><i style="height:8mm"></i><i style="height:9mm"></i><i style="height:7mm"></i><i style="height:8mm"></i>
+      <i style="height:7mm"></i><i style="height:7mm"></i><i style="height:8mm"></i><i style="height:6mm"></i><i style="height:7mm"></i><i style="height:6mm"></i>
+      <i style="height:7mm"></i><i style="height:6mm"></i><i style="height:6mm"></i><i style="height:7mm"></i><i style="height:6mm"></i><i style="height:6mm"></i>
+    </div>
+  </div>
+  <div class="back-inner">
+    <img class="back-logo" src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_REVERSED_OFFWHITE-RED_v1.0.svg" alt="GBS Property Maintenance - Build, Maintain, Improve">
+    <div class="cta">
+      <span class="eyebrow">Get in touch</span>
+      <h2>Request a quote</h2>
+      <p>Send us the property address, a short description of the works and any photographs or reports you already hold. We will confirm whether a site visit is needed, then issue a Scope of Works and a quotation for your approval.</p>
+    </div>
+    <div class="contact-grid">
+      <div><span class="lbl">Telephone</span><span class="val num">{{company.phone}}</span></div>
+      <div><span class="lbl">Email</span><span class="val">{{company.email}}</span></div>
+      <div><span class="lbl">Web</span><span class="val">{{company.url}}</span></div>
+      <div><span class="lbl">Office</span><span class="val">{{company.addressOneLine}}</span></div>
+    </div>
+    <div class="person"><b>{{company.people.0.name}}</b><span class="sep">·</span>{{company.people.0.role}}<span class="sep">·</span><span class="num">{{company.people.0.mobile}}</span></div>
+    <div class="back-legal">{{company.legalName}} · Registered in {{company.placeOfRegistration}}, company number <span class="num">{{company.companyNumber}}</span> · Registered office: {{company.registeredOffice}} · VAT registration number <span class="num">{{company.vatNumber}}</span></div>
+  </div>
+</section>
+
+</body>
+</html>

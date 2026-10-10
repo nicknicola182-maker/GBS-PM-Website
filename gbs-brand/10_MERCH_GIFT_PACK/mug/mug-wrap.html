@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_MERCH_MUG-WRAP_200x90</title>
+<link rel="stylesheet" href="../../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../../03_PRINT/_shared/print-base.css">
+<style>
+  :root { --trim-w: 200mm; --trim-h: 90mm; }
+  .ground { background: var(--gbs-offwhite); }
+  .sage .ground { background: var(--gbs-sage); }
+  .logo { position: absolute; left: 50%; top: 50%; width: 90mm; transform: translate(-50%, -50%); }
+  .logo img { width: 100%; display: block; }
+  .web { position: absolute; right: 10mm; top: 50%; transform: translateY(-50%); font-family: var(--font-body); font-weight: 500; font-size: 8pt; letter-spacing: 0.04em; color: var(--gbs-sage); }
+  .sage .web { color: var(--gbs-offwhite); }
+  .handle { position: absolute; top: 10mm; bottom: 10mm; width: 0; border-left: 0.25pt dashed var(--gbs-light); }
+  .handle.l { left: 10mm; } .handle.r { right: 10mm; }
+</style>
+</head>
+<body>
+
+<section class="page" data-trim="200 x 90 mm" aria-label="Mug wrap - off-white">
+  <div class="bleed ground"></div>
+  <div class="logo"><img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY_SAGE-RED_v1.0.svg" alt="GBS Property Maintenance - Build, Maintain, Improve"></div>
+  <div class="web">{{company.domain}}</div>
+</section>
+
+<section class="page sage" data-trim="200 x 90 mm" aria-label="Mug wrap - sage">
+  <div class="bleed ground"></div>
+  <div class="logo"><img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_REVERSED_OFFWHITE-RED_v1.0.svg" alt="GBS Property Maintenance - Build, Maintain, Improve"></div>
+  <div class="web">{{company.domain}}</div>
+</section>
+
+</body>
+</html>

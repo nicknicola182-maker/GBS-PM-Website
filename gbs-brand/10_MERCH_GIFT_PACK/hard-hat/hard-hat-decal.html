@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_MERCH_HARD-HAT-DECAL_60x40</title>
+<link rel="stylesheet" href="../../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../../03_PRINT/_shared/print-base.css">
+<style>
+  /* 2 mm bleed for the decal cutter. --marks is raised to 7 mm so the renderer's crop marks (placed at 9 mm) still sit on the trim line. */
+  :root { --trim-w: 60mm; --trim-h: 40mm; --bleed: 2mm; --marks: 7mm; }
+  .ground { background: #fff; }
+  .lockup { position: absolute; left: 50%; top: 50%; width: 44mm; transform: translate(-50%, -52%); }
+  .lockup img { width: 100%; display: block; }
+</style>
+</head>
+<body>
+<section class="page" data-trim="60 x 40 mm" aria-label="Hard hat decal">
+  <div class="bleed ground"></div>
+  <div class="lockup"><img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_WORDMARK_SAGE-RED_v1.0.svg" alt="GBS"></div>
+</section>
+</body>
+</html>

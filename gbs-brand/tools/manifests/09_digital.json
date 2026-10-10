@@ -1,0 +1,51 @@
+[
+ {
+  "src": "09_DIGITAL/email-signature/signature.preview.html",
+  "out": "09_DIGITAL/email-signature/preview",
+  "type": "screenshot",
+  "width": 640,
+  "height": 360
+ },
+ {
+  "src": "09_DIGITAL/email-signature/signature.preview.html",
+  "out": "09_DIGITAL/email-signature/preview-local",
+  "type": "screenshot",
+  "width": 640,
+  "height": 360
+ },
+ {
+  "src": "09_DIGITAL/social/linkedin-banner.html",
+  "out": "09_DIGITAL/social/GBS_HORIZON_SOCIAL_LINKEDIN-BANNER_1584x396_v1.0",
+  "type": "screenshot",
+  "width": 1584,
+  "height": 396
+ },
+ {
+  "src": "09_DIGITAL/social/linkedin-profile.html",
+  "out": "09_DIGITAL/social/GBS_HORIZON_SOCIAL_LINKEDIN-PROFILE_400x400_v1.0",
+  "type": "screenshot",
+  "width": 400,
+  "height": 400
+ },
+ {
+  "src": "09_DIGITAL/social/post-template.html",
+  "out": "09_DIGITAL/social/GBS_HORIZON_SOCIAL_POST-TEMPLATE_1080x1080_v1.0",
+  "type": "screenshot",
+  "width": 1080,
+  "height": 1080
+ },
+ {
+  "src": "09_DIGITAL/social/story-template.html",
+  "out": "09_DIGITAL/social/GBS_HORIZON_SOCIAL_STORY-TEMPLATE_1080x1920_v1.0",
+  "type": "screenshot",
+  "width": 1080,
+  "height": 1920
+ },
+ {
+  "src": "09_DIGITAL/social/og-image.html",
+  "out": "09_DIGITAL/social/GBS_HORIZON_SOCIAL_OG-IMAGE_1200x630_v1.0",
+  "type": "screenshot",
+  "width": 1200,
+  "height": 630
+ }
+]

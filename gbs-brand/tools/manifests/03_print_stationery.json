@@ -1,0 +1,17 @@
+[
+  { "src": "03_PRINT/letterhead/letterhead.html", "out": "03_PRINT/letterhead/GBS_HORIZON_LETTERHEAD_A4_v1.0", "type": "pdf", "trim": [210, 297] },
+
+  { "src": "03_PRINT/business-cards/business-card-A-named.html",    "out": "03_PRINT/business-cards/GBS_HORIZON_BUSINESS-CARD_A-NAMED_85x55_v1.0",    "type": "pdf", "trim": [85, 55] },
+  { "src": "03_PRINT/business-cards/business-card-A-template.html", "out": "03_PRINT/business-cards/GBS_HORIZON_BUSINESS-CARD_A-TEMPLATE_85x55_v1.0", "type": "pdf", "trim": [85, 55] },
+  { "src": "03_PRINT/business-cards/business-card-B-named.html",    "out": "03_PRINT/business-cards/GBS_HORIZON_BUSINESS-CARD_B-NAMED_85x55_v1.0",    "type": "pdf", "trim": [85, 55] },
+  { "src": "03_PRINT/business-cards/business-card-B-template.html", "out": "03_PRINT/business-cards/GBS_HORIZON_BUSINESS-CARD_B-TEMPLATE_85x55_v1.0", "type": "pdf", "trim": [85, 55] },
+
+  { "src": "03_PRINT/compliment-slip/compliment-slip.html", "out": "03_PRINT/compliment-slip/GBS_HORIZON_COMPLIMENT-SLIP_DL_v1.0", "type": "pdf", "trim": [210, 99] },
+
+  { "src": "03_PRINT/envelope/envelope-DL.html", "out": "03_PRINT/envelope/GBS_HORIZON_ENVELOPE_DL_220x110_v1.0", "type": "pdf", "trim": [220, 110], "bleed": 0, "marks": 6 },
+  { "src": "03_PRINT/envelope/envelope-C4.html", "out": "03_PRINT/envelope/GBS_HORIZON_ENVELOPE_C4_324x229_v1.0", "type": "pdf", "trim": [324, 229], "bleed": 0, "marks": 6 },
+
+  { "src": "03_PRINT/documents/quotation.html",  "out": "03_PRINT/documents/GBS_HORIZON_DOCUMENT_QUOTATION_A4_v1.0",  "type": "pdf", "trim": [210, 297] },
+  { "src": "03_PRINT/documents/invoice.html",    "out": "03_PRINT/documents/GBS_HORIZON_DOCUMENT_INVOICE_A4_v1.0",    "type": "pdf", "trim": [210, 297] },
+  { "src": "03_PRINT/documents/job-report.html", "out": "03_PRINT/documents/GBS_HORIZON_DOCUMENT_JOB-REPORT_A4_v1.0", "type": "pdf", "trim": [210, 297] }
+]

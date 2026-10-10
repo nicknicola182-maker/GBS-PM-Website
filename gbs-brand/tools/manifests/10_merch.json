@@ -1,0 +1,19 @@
+[
+  { "src": "10_MERCH_GIFT_PACK/mug/mug-wrap.html", "out": "10_MERCH_GIFT_PACK/mug/GBS_HORIZON_MERCH_MUG-WRAP_200x90_v1.0", "type": "pdf", "trim": [200, 90], "bleed": 3 },
+
+  { "src": "10_MERCH_GIFT_PACK/pen/pen-mono-sage.html",  "out": "10_MERCH_GIFT_PACK/pen/GBS_HORIZON_MERCH_PEN_60x7_MONO-SAGE_300dpi_v1.0",  "type": "png", "widthMM": 60, "heightMM": 7, "dpi": 300, "transparent": true, "selector": ".page" },
+  { "src": "10_MERCH_GIFT_PACK/pen/pen-mono-white.html", "out": "10_MERCH_GIFT_PACK/pen/GBS_HORIZON_MERCH_PEN_60x7_MONO-WHITE_300dpi_v1.0", "type": "png", "widthMM": 60, "heightMM": 7, "dpi": 300, "transparent": true, "selector": ".page" },
+
+  { "src": "10_MERCH_GIFT_PACK/lanyard/lanyard.html", "out": "10_MERCH_GIFT_PACK/lanyard/GBS_HORIZON_MERCH_LANYARD_900x20_v1.0", "type": "pdf", "trim": [900, 20], "bleed": 3 },
+
+  { "src": "10_MERCH_GIFT_PACK/hard-hat/hard-hat-decal.html", "out": "10_MERCH_GIFT_PACK/hard-hat/GBS_HORIZON_MERCH_HARD-HAT-DECAL_60x40_v1.0", "type": "pdf", "trim": [60, 40], "bleed": 2, "marks": 7 },
+
+  { "src": "10_MERCH_GIFT_PACK/notebook/notebook-cover.html", "out": "10_MERCH_GIFT_PACK/notebook/GBS_HORIZON_MERCH_NOTEBOOK-A5_148x210_v1.0", "type": "pdf", "trim": [148, 210], "bleed": 3 },
+
+  { "src": "10_MERCH_GIFT_PACK/key-fob/key-fob.html", "out": "10_MERCH_GIFT_PACK/key-fob/GBS_HORIZON_MERCH_KEY-FOB_50x30_v1.0", "type": "pdf", "trim": [50, 30], "bleed": 3 },
+
+  { "src": "10_MERCH_GIFT_PACK/gift-pack/box-sleeve.html",     "out": "10_MERCH_GIFT_PACK/gift-pack/GBS_HORIZON_GIFT_BOX-SLEEVE_300x200_v1.0",        "type": "pdf", "trim": [300, 200], "bleed": 3 },
+  { "src": "10_MERCH_GIFT_PACK/gift-pack/belly-band.html",     "out": "10_MERCH_GIFT_PACK/gift-pack/GBS_HORIZON_GIFT_BELLY-BAND_400x100_v1.0",        "type": "pdf", "trim": [400, 100], "bleed": 3 },
+  { "src": "10_MERCH_GIFT_PACK/gift-pack/thank-you-card.html", "out": "10_MERCH_GIFT_PACK/gift-pack/GBS_HORIZON_GIFT_THANK-YOU-CARD_A6_105x148_v1.0", "type": "pdf", "trim": [105, 148], "bleed": 3 },
+  { "src": "10_MERCH_GIFT_PACK/gift-pack/contents-card.html",  "out": "10_MERCH_GIFT_PACK/gift-pack/GBS_HORIZON_GIFT_CONTENTS-CARD_A6_105x148_v1.0",  "type": "pdf", "trim": [105, 148], "bleed": 3 }
+]

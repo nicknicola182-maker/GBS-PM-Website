@@ -1,0 +1,56 @@
+/* GBS HORIZON print base v1.0 - shared by every print HTML source. Rendered by tools/render.mjs.
+   Each document sets --trim-w / --trim-h on :root and wraps each page in <section class="page" data-trim="210 x 297 mm">.
+   Screen PDF = trim size. Press PDF = trim + 3 mm bleed + crop marks (render.mjs adds html.press and wraps pages).
+   Anything that must bleed lives in an element with class "bleed" (extends 3 mm beyond trim on all sides). */
+:root { --bleed: 3mm; --marks: 6mm; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #fff; }
+body { font-family: var(--font-body); color: var(--gbs-ink); font-size: 10.5pt; line-height: 1.45;
+       -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { position: relative; width: var(--trim-w); height: var(--trim-h); overflow: hidden; background: #fff;
+        page-break-after: always; break-after: page; }
+.page:last-of-type { page-break-after: auto; break-after: auto; }
+.bleed { position: absolute; inset: calc(-1 * var(--bleed)); }
+.bleed-top { position: absolute; left: calc(-1 * var(--bleed)); right: calc(-1 * var(--bleed)); top: calc(-1 * var(--bleed)); }
+.bleed-bottom { position: absolute; left: calc(-1 * var(--bleed)); right: calc(-1 * var(--bleed)); bottom: calc(-1 * var(--bleed)); }
+.bleed-left { position: absolute; left: calc(-1 * var(--bleed)); top: calc(-1 * var(--bleed)); bottom: calc(-1 * var(--bleed)); }
+.bleed-right { position: absolute; right: calc(-1 * var(--bleed)); top: calc(-1 * var(--bleed)); bottom: calc(-1 * var(--bleed)); }
+
+html.press .page-wrap { position: relative; background: #fff; page-break-after: always; break-after: page;
+  width: calc(var(--trim-w) + 2 * var(--bleed) + 2 * var(--marks));
+  height: calc(var(--trim-h) + 2 * var(--bleed) + 2 * var(--marks)); }
+html.press .page-wrap:last-of-type { page-break-after: auto; break-after: auto; }
+html.press .page { position: absolute; left: calc(var(--marks) + var(--bleed)); top: calc(var(--marks) + var(--bleed));
+  overflow: visible; page-break-after: auto; break-after: auto; }
+
+/* Typography */
+h1, h2, h3, h4 { font-family: var(--font-heading); margin: 0; color: var(--gbs-sage); line-height: 1.15; }
+h1 { font-weight: 700; font-size: 28pt; }
+h2 { font-weight: 600; font-size: 16pt; }
+h3 { font-weight: 600; font-size: 11.5pt; }
+p { margin: 0 0 0.6em; }
+.eyebrow { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
+           color: var(--gbs-red); font-size: 7.5pt; }
+.strap { font-family: var(--font-heading); font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em; font-size: 7.5pt; color: var(--gbs-sage); }
+.strap .pipe { color: var(--gbs-red); padding: 0 0.35em; }
+.small { font-size: 8pt; line-height: 1.4; }
+.legal { font-size: 7.5pt; line-height: 1.4; color: var(--gbs-ink-soft); }
+.num { font-variant-numeric: tabular-nums; }
+.rule { height: 0.5pt; background: var(--gbs-sage); }
+.rule-light { height: 0.5pt; background: var(--gbs-light); }
+a { color: inherit; text-decoration: none; }
+
+/* Horizon bars motif (decorative, derived from icon geometry). Use sparingly. */
+.bars { display: inline-flex; align-items: flex-end; gap: 0.1em; height: 1em; }
+.bars i { display: block; width: 0.2em; background: var(--gbs-sage); }
+.bars i:nth-child(1) { width: 0.06em; height: 0.34em; }
+.bars i:nth-child(2) { height: 0.76em; box-shadow: inset 0 0 0 0.05em var(--gbs-sage); background: transparent; }
+.bars i:nth-child(3) { height: 1em; background: var(--gbs-red); }
+.bars i:nth-child(4) { height: 0.5em; }
+
+/* Screen PDFs: Chromium adds a blank trailing page if a bleed element on the LAST page extends below the page box.
+   Clamp last-page bleeds to the trim in screen mode (press mode wraps pages, so it is unaffected). */
+html:not(.press) .page:last-of-type .bleed,
+html:not(.press) .page:last-of-type .bleed-bottom,
+html:not(.press) .page:last-of-type .bleed-left,
+html:not(.press) .page:last-of-type .bleed-right { bottom: 0; }

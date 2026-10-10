@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_GIFT_THANK-YOU-CARD_A6_105x148</title>
+<link rel="stylesheet" href="../../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../../03_PRINT/_shared/print-base.css">
+<style>
+  :root { --trim-w: 105mm; --trim-h: 148mm; }
+  .ground { background: var(--gbs-offwhite); }
+  /* Front */
+  .front h1 { position: absolute; left: 12mm; top: 46mm; font-size: 30pt; font-weight: 700; letter-spacing: -0.01em; }
+  .front .sub { position: absolute; left: 12mm; top: 64mm; font-family: var(--font-body); font-size: 8.5pt; color: var(--gbs-ink-soft); letter-spacing: 0.04em; }
+  .front .motif { position: absolute; right: 12mm; bottom: 0; width: 34mm; height: 52mm; }
+  .front .motif i { position: absolute; bottom: 0; background: var(--gbs-sage); }
+  .front .motif i:nth-child(1) { left: 0; width: 1.6mm; height: 17mm; }
+  .front .motif i:nth-child(2) { left: 5mm; width: 6mm; height: 36mm; background: transparent; box-shadow: inset 0 0 0 1.4mm var(--gbs-sage); }
+  .front .motif i:nth-child(3) { left: 14mm; width: 6mm; height: 48mm; background: var(--gbs-red); }
+  .front .motif i:nth-child(4) { left: 23mm; width: 6mm; height: 24mm; }
+  .front .baseline { position: absolute; left: 12mm; right: calc(-1 * var(--bleed)); bottom: 12mm; height: 0.5pt; background: var(--gbs-sage); }
+  .front .motif { bottom: 12.5mm; }
+  /* Back */
+  .back .strip { position: absolute; left: 12mm; top: 12mm; width: 46mm; }
+  .back .strip img { width: 100%; display: block; }
+  .back .copy { position: absolute; left: 12mm; right: 12mm; top: 30mm; font-size: 9.5pt; line-height: 1.55; color: var(--gbs-ink); }
+  .back .sign { position: absolute; left: 12mm; right: 12mm; top: 84mm; font-size: 9.5pt; line-height: 1.5; }
+  .back .sign strong { font-family: var(--font-heading); font-weight: 600; color: var(--gbs-sage); }
+  .back .contact { position: absolute; left: 12mm; right: 12mm; bottom: 12mm; font-size: 8pt; line-height: 1.6; color: var(--gbs-ink); }
+  .back .contact .lbl { display: inline-block; width: 6mm; color: var(--gbs-red); font-weight: 600; }
+  .back .contact .web { color: var(--gbs-red); font-weight: 600; }
+  .back .rule { position: absolute; left: 12mm; right: 12mm; bottom: 34mm; }
+</style>
+</head>
+<body>
+
+<section class="page front" data-trim="105 x 148 mm" aria-label="Thank-you card front">
+  <div class="bleed ground"></div>
+  <h1>Thank you</h1>
+  <div class="sub">for working with GBS</div>
+  <div class="motif"><i></i><i></i><i></i><i></i></div>
+  <div class="baseline bleed-rule"></div>
+</section>
+
+<section class="page back" data-trim="105 x 148 mm" aria-label="Thank-you card back">
+  <div class="bleed ground"></div>
+  <div class="strip"><img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_STRIP_SAGE-RED_v1.0.svg" alt="GBS Property Maintenance"></div>
+  <div class="copy">
+    <p>Thank you for working with GBS. We value long-term partnerships built on reliable workmanship and clear communication. If there is anything we can do better, please tell us directly.</p>
+  </div>
+  <div class="sign">
+    <strong>{{company.people.0.name}}</strong><br>{{company.people.0.role}}, {{company.tradingName}}
+  </div>
+  <div class="rule rule-light"></div>
+  <div class="contact">
+    <span class="lbl">M</span><span class="num">{{company.people.0.mobile}}</span><br>
+    <span class="lbl">T</span><span class="num">{{company.phone}}</span><br>
+    <span class="lbl">E</span>{{company.people.0.email}}<br>
+    <span class="lbl">W</span><span class="web">{{company.domain}}</span>
+  </div>
+</section>
+
+</body>
+</html>

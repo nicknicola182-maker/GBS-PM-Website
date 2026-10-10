@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_MERCH_NOTEBOOK-A5_148x210</title>
+<link rel="stylesheet" href="../../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../../03_PRINT/_shared/print-base.css">
+<style>
+  :root { --trim-w: 148mm; --trim-h: 210mm; }
+  .ground { background: var(--gbs-offwhite); }
+  .front .ground { background: var(--gbs-sage); }
+  .inside .ground { background: #fff; }
+
+  /* Front cover */
+  .front .logo { position: absolute; left: 50%; top: 72mm; width: 92mm; transform: translateX(-50%); }
+  .front .logo img { width: 100%; display: block; }
+  .front .web { position: absolute; left: 14mm; right: 14mm; bottom: 16mm; text-align: center; font-family: var(--font-body); font-weight: 500; font-size: 8pt; letter-spacing: 0.06em; color: var(--gbs-offwhite); }
+
+  /* Back cover */
+  .back .bars-motif { position: absolute; right: calc(-1 * var(--bleed)); bottom: calc(-1 * var(--bleed)); width: 10mm; height: 39mm; }
+  .back .bars-motif i { position: absolute; bottom: 0; background: var(--gbs-sage); }
+  .back .bars-motif i:nth-child(1) { right: 8.4mm; width: 0.45mm; height: 15mm; }
+  .back .bars-motif i:nth-child(2) { right: 6.4mm; width: 1.3mm; height: 26mm; background: var(--gbs-red); }
+  .back .bars-motif i:nth-child(3) { right: 4.6mm; width: 1.3mm; height: 39mm; }
+  .back .strip { position: absolute; left: 14mm; top: 16mm; width: 62mm; }
+  .back .strip img { width: 100%; display: block; }
+  .back .contact { position: absolute; left: 14mm; right: 14mm; top: 112mm; font-size: 9pt; line-height: 1.6; color: var(--gbs-ink); }
+  .back .contact strong { font-family: var(--font-heading); font-weight: 600; color: var(--gbs-sage); font-size: 10pt; letter-spacing: 0.02em; }
+  .back .contact .web { color: var(--gbs-red); font-weight: 600; }
+  .back .contact .lbl { display: inline-block; width: 7mm; color: var(--gbs-red); font-weight: 600; }
+  .back .rule { position: absolute; left: 14mm; right: 14mm; top: 104mm; }
+  .back .foot { position: absolute; left: 14mm; right: 22mm; bottom: 14mm; }
+  .back .foot .strap { display: block; margin-bottom: 2.5mm; }
+  .back .foot .legal { font-size: 7pt; }
+
+  /* Inside front page */
+  .inside .head { position: absolute; left: 14mm; right: 14mm; top: 16mm; }
+  .inside .head .mini { width: 36mm; display: block; margin-bottom: 8mm; }
+  .inside .field { font-family: var(--font-heading); font-weight: 600; font-size: 8pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gbs-sage); margin-top: 7mm; }
+  .inside .line { height: 7.5mm; border-bottom: 0.4pt solid var(--gbs-sage); }
+  .inside h3 { position: absolute; left: 14mm; top: 90mm; font-size: 10pt; letter-spacing: 0.04em; }
+  .inside .notes { position: absolute; left: 14mm; right: 14mm; top: 98mm; }
+  .inside .notes div { height: 8mm; border-bottom: 0.3pt dotted var(--gbs-sage); }
+  .inside .foot { position: absolute; left: 14mm; right: 14mm; bottom: 12mm; font-size: 7.5pt; color: var(--gbs-ink-soft); text-align: center; }
+</style>
+</head>
+<body>
+
+<section class="page front" data-trim="148 x 210 mm" aria-label="Notebook front cover">
+  <div class="bleed ground"></div>
+  <div class="logo"><img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_REVERSED_OFFWHITE-RED_v1.0.svg" alt="GBS Property Maintenance - Build, Maintain, Improve"></div>
+  <div class="web">{{company.domain}}</div>
+</section>
+
+<section class="page back" data-trim="148 x 210 mm" aria-label="Notebook back cover">
+  <div class="bleed ground"></div>
+  <div class="strip"><img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_STRIP_SAGE-RED_v1.0.svg" alt="GBS Property Maintenance"></div>
+  <div class="rule rule-light"></div>
+  <div class="contact">
+    <strong>{{company.tradingName}}</strong><br>
+    {{company.positioning}}<br><br>
+    <span class="lbl">T</span><span class="num">{{company.phone}}</span><br>
+    <span class="lbl">E</span>{{company.email}}<br>
+    <span class="lbl">W</span><span class="web">{{company.domain}}</span><br>
+    <span class="lbl">A</span>{{company.addressOneLine}}
+  </div>
+  <div class="foot">
+    <span class="strap">BUILD <span class="pipe">|</span> MAINTAIN <span class="pipe">|</span> IMPROVE</span>
+    <div class="legal">{{company.legalName}} &nbsp;·&nbsp; Registered in {{company.placeOfRegistration}}, company number <span class="num">{{company.companyNumber}}</span> &nbsp;·&nbsp; Registered office: {{company.registeredOffice}} &nbsp;·&nbsp; VAT registration number <span class="num">{{company.vatNumber}}</span></div>
+  </div>
+  <div class="bars-motif bleed-motif"><i></i><i></i><i></i></div>
+</section>
+
+<section class="page inside" data-trim="148 x 210 mm" aria-label="Notebook inside front page">
+  <div class="bleed ground"></div>
+  <div class="head">
+    <img class="mini" src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_WORDMARK_SAGE-RED_v1.0.svg" alt="GBS">
+    <div class="field">This notebook belongs to</div><div class="line"></div>
+    <div class="field">Company / site</div><div class="line"></div>
+    <div class="field">Contact number</div><div class="line"></div>
+  </div>
+  <h3>Site / job notes</h3>
+  <div class="notes">
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  </div>
+  <div class="foot">If found, please return to {{company.tradingName}}, {{company.addressOneLine}} &nbsp;·&nbsp; <span class="num">{{company.phone}}</span></div>
+</section>
+
+</body>
+</html>

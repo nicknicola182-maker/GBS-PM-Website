@@ -1,0 +1,21 @@
+[
+  {
+    "src": "05_VEHICLES/livery-layout.html",
+    "out": "05_VEHICLES/GBS_HORIZON_VAN_LIVERY-LAYOUT_A3L_v1.0",
+    "type": "pdf",
+    "trim": [
+      420,
+      297
+    ]
+  },
+  {
+    "src": "05_VEHICLES/van-side-lockup-preview-1-10-140mm-sage-red.html",
+    "out": "05_VEHICLES/GBS_HORIZON_VAN_SIDE-LOCKUP-PREVIEW-1-10_140MM_SAGE-RED_v1.0",
+    "type": "png",
+    "widthMM": 140,
+    "heightMM": 68.01,
+    "dpi": 300,
+    "transparent": true,
+    "selector": ".page"
+  }
+]

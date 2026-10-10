@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_SIGN_WORKS-NOTICE_A4</title>
+<link rel="stylesheet" href="../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../03_PRINT/_shared/print-base.css">
+<style>
+  :root { --trim-w: 210mm; --trim-h: 297mm; }
+  .logo { position: absolute; left: 20mm; top: 16mm; width: 58mm; }
+  .logo img { width: 100%; display: block; }
+  .contact { position: absolute; right: 20mm; top: 17mm; text-align: right; font-size: 8.5pt; line-height: 1.5; color: var(--gbs-ink); }
+  .contact strong { font-family: var(--font-heading); font-weight: 600; color: var(--gbs-sage); letter-spacing: 0.02em; }
+  .contact .web { color: var(--gbs-red); font-weight: 600; }
+  .header-rule { position: absolute; left: 20mm; right: 20mm; top: 47mm; height: 0.5pt; background: var(--gbs-sage); }
+  .header-rule::after { content: ""; position: absolute; right: 0; top: -1.75pt; width: 18mm; height: 2.25pt; background: var(--gbs-red); }
+  .body { position: absolute; left: 20mm; right: 20mm; top: 58mm; bottom: 44mm; }
+  .body .eyebrow { display: block; margin-bottom: 2mm; }
+  h1 { font-size: 26pt; margin-bottom: 8mm; }
+  .field { display: flex; gap: 6mm; margin-bottom: 6mm; }
+  .field .k { flex: none; width: 42mm; font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; font-size: 7.5pt; color: var(--gbs-sage); padding-top: 1.2mm; }
+  .field .v { flex: 1; font-size: 11pt; line-height: 1.5; color: var(--gbs-ink-soft); border-bottom: 0.5pt solid var(--gbs-light); padding-bottom: 2.5mm; min-height: 9mm; }
+  .field .v.tall { min-height: 24mm; }
+  .intro { font-size: 10.5pt; line-height: 1.5; margin-bottom: 7mm; }
+  .who { margin-top: 9mm; display: flex; gap: 10mm; }
+  .who > div { flex: 1; font-size: 10pt; line-height: 1.5; }
+  .who h3 { font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1.5mm; }
+  .who .ph { color: var(--gbs-ink-soft); }
+  .footer { position: absolute; left: 20mm; right: 20mm; bottom: 14mm; }
+  .footer .strap { display: block; text-align: center; margin-bottom: 3mm; }
+  .footer .legal { text-align: center; }
+  .foot-rule { position: absolute; left: 20mm; right: 20mm; bottom: 27mm; height: 0.5pt; background: var(--gbs-light); }
+  .side-bars { position: absolute; right: 0; bottom: 0; width: 7mm; height: 36mm; }
+  .side-bars i { position: absolute; bottom: 0; background: var(--gbs-sage); }
+  .side-bars i:nth-child(1) { right: 5.4mm; width: 0.45mm; height: 12mm; }
+  .side-bars i:nth-child(2) { right: 3.4mm; width: 1.3mm; height: 23mm; background: var(--gbs-red); }
+  .side-bars i:nth-child(3) { right: 1.6mm; width: 1.3mm; height: 36mm; }
+</style>
+</head>
+<body>
+<section class="page" data-trim="210 x 297 mm" aria-label="Works notice">
+  <div class="logo"><img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg" alt="GBS Property Maintenance"></div>
+  <div class="contact">
+    <strong>{{company.tradingName}}</strong><br>
+    <span class="num">{{company.phone}}</span><br>
+    {{company.email}}<br>
+    <span class="web">{{company.domain}}</span>
+  </div>
+  <div class="header-rule"></div>
+
+  <div class="body">
+    <span class="eyebrow">Notice to residents</span>
+    <h1>Works notice</h1>
+    <p class="intro">{{company.tradingName}} has been instructed to carry out the works described below. We will keep noise, dust and disruption to a minimum and leave common areas clean and safe at the end of each working day.</p>
+    <div class="field"><span class="k">Building</span><span class="v">[Building name]</span></div>
+    <div class="field"><span class="k">Dates</span><span class="v">[Dates]</span></div>
+    <div class="field"><span class="k">Description of works</span><span class="v tall">[Description of works]</span></div>
+    <div class="field"><span class="k">Access arrangements</span><span class="v tall">[Access arrangements]</span></div>
+    <div class="who">
+      <div><h3>Site contact</h3><span class="ph">[Name]</span><br><span class="ph">[Mobile]</span><br>Working hours: <span class="num">{{company.hours}}</span></div>
+      <div><h3>Office</h3>{{company.tradingName}}<br><span class="num">{{company.phone}}</span><br>{{company.email}}</div>
+      <div><h3>Instructed by</h3><span class="ph">[Client / managing agent]</span><br><span class="ph">[Reference]</span></div>
+    </div>
+  </div>
+
+  <div class="foot-rule"></div>
+  <div class="footer">
+    <span class="strap">BUILD <span class="pipe">|</span> MAINTAIN <span class="pipe">|</span> IMPROVE</span>
+    <div class="legal">{{company.legalName}} &nbsp;·&nbsp; Registered in {{company.placeOfRegistration}}, company number <span class="num">{{company.companyNumber}}</span> &nbsp;·&nbsp; Registered office: {{company.registeredOffice}} &nbsp;·&nbsp; VAT registration number <span class="num">{{company.vatNumber}}</span></div>
+  </div>
+  <div class="side-bars"><i></i><i></i><i></i></div>
+</section>
+</body>
+</html>

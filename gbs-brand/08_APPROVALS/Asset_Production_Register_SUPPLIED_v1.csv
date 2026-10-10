@@ -1,0 +1,14 @@
+Asset ID,Asset,Priority,Primary deliverable,Sign-off gate
+A01,Logo master,Critical,Outlined SVG + editable source,GBS Director
+A02,"Logo inverse, mono, icon",Critical,SVG/EPS/PDF,GBS Director
+A03,Colour + typography,Critical,Swatches and usage guide,Designer + Printer
+P01,A4 letterhead,High,PDF/X-4 + source,Director + Printer
+P02,Business cards,High,PDF/X-4 + source,Director + Printer
+P03,Compliment slips/envelopes,Medium,PDF/X-4,Director + Printer
+P04,Company brochure,High,Press PDF + layout,Director
+W01,T-shirts white/sage,High,Artwork + physical print sample,Garment supplier + Director
+W02,Polo embroidery,High,Digitised stitch file + sew-out,Garment supplier + Director
+W03,Jackets / PPE,Medium,Branding zones + sample,H&S + Director
+V01,White van side / rear,High,Measured 1:1 wrap files,Fleet supplier + Director
+S01,Site signage,Medium,Fabrication drawing + approvals,Project manager + Director
+D01,Website desktop + mobile,High,Design system / responsive pages,Web lead + Director

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-80 -57.75 256 256" width="256" height="256" role="img" aria-label="GBS Horizon avatar">
+<title>GBS Horizon avatar</title>
+<!-- GBS HORIZON AVATAR_SQUARE_ON-OFFWHITE v1.0 | outlined vector, no live fonts | unit X (GBS cap height) = 100 | clear space = 1X all sides -->
+<rect fill="#F9F9F7" x="-80" y="-57.75" width="256" height="256"/>
+<rect fill="#6E7F72" x="0" y="83" width="6" height="42"/>
+<path fill="#6E7F72" fill-rule="evenodd" d="M16 30h20v95h-20z M21 35v90h10v-90z"/>
+<rect fill="#E10600" x="46" y="0" width="20" height="125"/>
+<rect fill="#6E7F72" x="76" y="63" width="20" height="62"/>
+<rect fill="#6E7F72" x="-30" y="125" width="156" height="3.5"/>
+</svg>

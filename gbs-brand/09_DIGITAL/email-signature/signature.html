@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="color-scheme" content="light">
+<title>GBS_HORIZON_EMAIL-SIGNATURE</title>
+</head>
+<body style="margin:0;padding:0;">
+<!-- GBS HORIZON email signature v1.0. Table-based, all styles inline, no webfonts, one hosted image. Tokens are resolved by tools/render.mjs or build-signature.mjs. -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="520" style="border-collapse:collapse;width:520px;max-width:520px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#2E3531;">
+  <tr>
+    <td width="150" valign="top" style="padding:0 18px 0 0;vertical-align:top;width:150px;">
+      <a href="{{company.url}}" style="text-decoration:none;border:0;"><img src="{{company.url}}/assets/img/logo-email-600.png" width="150" height="60" alt="{{company.tradingName}}" style="display:block;width:150px;height:60px;border:0;outline:none;text-decoration:none;"></a>
+    </td>
+    <td valign="top" style="padding:0 0 0 18px;vertical-align:top;border-left:1px solid #DADADA;">
+      <div style="font-family:Montserrat,Arial,sans-serif;font-size:15px;line-height:20px;font-weight:bold;color:#6E7F72;">{{company.people.0.name}}</div>
+      <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#5A6560;padding:0 0 6px 0;">{{company.people.0.role}}</div>
+      <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;"><span style="color:#E10600;font-weight:bold;">M:</span>&nbsp;<a href="tel:{{company.people.0.mobileTel}}" style="color:#2E3531;text-decoration:none;">{{company.people.0.mobile}}</a></div>
+      <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;"><span style="color:#E10600;font-weight:bold;">L:</span>&nbsp;<a href="tel:{{company.phoneTel}}" style="color:#2E3531;text-decoration:none;">{{company.phone}}</a></div>
+      <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;"><span style="color:#E10600;font-weight:bold;">E:</span>&nbsp;<a href="mailto:{{company.people.0.email}}" style="color:#2E3531;text-decoration:none;">{{company.people.0.email}}</a></div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding:12px 0 0 0;"><div style="height:1px;line-height:1px;font-size:1px;background:#DADADA;">&nbsp;</div></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding:10px 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#2E3531;">
+      <span style="font-family:Inter,Arial,Helvetica,sans-serif;font-weight:bold;color:#6E7F72;">{{company.tradingName}}</span>
+      &nbsp;&middot;&nbsp; {{company.addressOneLine}}
+      &nbsp;&middot;&nbsp; <a href="{{company.url}}" style="color:#E10600;font-weight:bold;text-decoration:none;">{{company.domain}}</a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding:6px 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;color:#5A6560;">
+      {{company.legalName}} &middot; Registered in {{company.placeOfRegistration}}, company number {{company.companyNumber}} &middot; Registered office: {{company.registeredOffice}} &middot; VAT registration number {{company.vatNumber}}
+    </td>
+  </tr>
+</table>
+</body>
+</html>

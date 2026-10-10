@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_SIGN_HOARDING_2440x1220</title>
+<link rel="stylesheet" href="../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../03_PRINT/_shared/print-base.css">
+<style>
+  /* Hoarding panel, 2440 x 1220 mm (one 8 x 4 ft sheet), 10 mm bleed, 10 mm mark zone. 1 rem = 1 mm. */
+  :root { --trim-w: 2440mm; --trim-h: 1220mm; --bleed: 10mm; --marks: 10mm; }
+  html { font-size: 1mm; }
+  .page { background: var(--gbs-offwhite); }
+  .ground { background: var(--gbs-offwhite); }
+  .logo { position: absolute; left: 120rem; top: 190rem; width: 1100rem; }
+  .logo img { width: 100%; display: block; }
+  .headline { position: absolute; right: 120rem; top: 205rem; width: 1000rem; text-align: right; font-family: var(--font-heading); font-weight: 700; font-size: 128rem; line-height: 1.05; letter-spacing: -0.01em; color: var(--gbs-sage); }
+  .headline .accent { display: inline-block; width: 120rem; height: 10rem; background: var(--gbs-red); margin-top: 38rem; }
+  .band-bleed { position: absolute; left: calc(-1 * var(--bleed)); right: calc(-1 * var(--bleed)); bottom: calc(-1 * var(--bleed)); height: calc(180rem + var(--bleed)); background: var(--gbs-sage); }
+  .band-text { position: absolute; left: 120rem; right: 120rem; bottom: 0; height: 180rem; display: flex; justify-content: space-between; align-items: center; }
+  .band-text .strap { font-size: 52rem; letter-spacing: 0.18em; color: var(--gbs-offwhite); font-weight: 500; }
+  .band-text .strap .pipe { color: var(--gbs-red); padding: 0 0.3em; }
+  .band-text .web { font-family: var(--font-body); font-weight: 600; font-size: 52rem; color: var(--gbs-offwhite); }
+  html:not(.press) .page:last-of-type .band-bleed { bottom: 0; height: 180rem; }
+</style>
+</head>
+<body>
+<section class="page" data-trim="2440 x 1220 mm" aria-label="Hoarding panel">
+  <div class="bleed ground"></div>
+  <div class="logo"><img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY_SAGE-RED_v1.0.svg" alt="GBS Property Maintenance"></div>
+  <div class="headline">Maintaining<br>exceptional<br>spaces<br><span class="accent"></span></div>
+  <div class="band-bleed"></div>
+  <div class="band-text">
+    <span class="strap">BUILD <span class="pipe">|</span> MAINTAIN <span class="pipe">|</span> IMPROVE</span>
+    <span class="web">{{company.domain}}</span>
+  </div>
+</section>
+</body>
+</html>

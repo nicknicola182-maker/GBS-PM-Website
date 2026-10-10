@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_COMPLIMENT-SLIP_DL</title>
+<link rel="stylesheet" href="../../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../_shared/print-base.css">
+<style>
+  /* DL 210 x 99 mm, 3 mm bleed (side bars run into the bottom bleed), live text 9 mm inside trim. */
+  :root { --trim-w: 210mm; --trim-h: 99mm; }
+  .logo { position: absolute; left: 15mm; top: 11mm; width: 45mm; }
+  .logo img { width: 100%; display: block; }
+  .header-strap { position: absolute; right: 15mm; top: 14mm; }
+  .header-rule { position: absolute; left: 15mm; right: 15mm; top: 34mm; height: 0.5pt; background: var(--gbs-sage); }
+  .header-rule::after { content: ""; position: absolute; right: 0; top: -1.75pt; width: 14mm; height: 2.25pt; background: var(--gbs-red); }
+  .compliments { position: absolute; left: 15mm; top: 41mm; font-family: var(--font-heading); font-weight: 600; font-size: 16pt; line-height: 1.2; color: var(--gbs-sage); }
+  .foot-rule { position: absolute; left: 15mm; right: 15mm; bottom: 25mm; height: 0.5pt; background: var(--gbs-light); }
+  .contact-strip { position: absolute; left: 15mm; right: 22mm; bottom: 18mm; font-size: 8pt; line-height: 1.4; color: var(--gbs-ink); white-space: nowrap; }
+  .contact-strip .k { font-family: var(--font-heading); font-weight: 600; font-size: 7pt; letter-spacing: 0.08em; color: var(--gbs-sage); margin-right: 1.2mm; }
+  .contact-strip .sep { color: var(--gbs-light); padding: 0 2.2mm; }
+  .contact-strip .web { color: var(--gbs-red); font-weight: 600; }
+  .legal { position: absolute; left: 15mm; right: 22mm; bottom: 9mm; }
+  /* Horizon side bars (letterhead motif, reduced). Class contains "bleed" so QA ignores the 3 mm run-off below trim. */
+  .side-bars-bleed { position: absolute; right: 0; bottom: calc(-1 * var(--bleed)); width: 7mm; height: calc(24mm + var(--bleed)); }
+  .side-bars-bleed i { position: absolute; bottom: 0; background: var(--gbs-sage); }
+  .side-bars-bleed i:nth-child(1) { right: 5.4mm; width: 0.45mm; height: calc(8mm + var(--bleed)); }
+  .side-bars-bleed i:nth-child(2) { right: 3.4mm; width: 1.3mm; height: calc(15mm + var(--bleed)); background: var(--gbs-red); }
+  .side-bars-bleed i:nth-child(3) { right: 1.6mm; width: 1.3mm; height: calc(24mm + var(--bleed)); }
+</style>
+</head>
+<body>
+
+<section class="page" data-trim="210 x 99 mm" aria-label="Compliment slip">
+  <div class="logo"><img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg" alt="GBS Property Maintenance"></div>
+  <span class="strap header-strap">BUILD <span class="pipe">|</span> MAINTAIN <span class="pipe">|</span> IMPROVE</span>
+  <div class="header-rule"></div>
+
+  <div class="compliments">With compliments</div>
+
+  <div class="foot-rule"></div>
+  <div class="contact-strip">
+    <span class="k">T</span><span class="num">{{company.phone}}</span><span class="sep">·</span>
+    <span class="k">E</span>{{company.email}}<span class="sep">·</span>
+    <span class="k">W</span><span class="web">{{company.domain}}</span><span class="sep">·</span>
+    {{company.addressOneLine}}
+  </div>
+  <div class="legal">{{company.legalName}} &nbsp;·&nbsp; Registered in {{company.placeOfRegistration}}, company number <span class="num">{{company.companyNumber}}</span> &nbsp;·&nbsp; Registered office: {{company.registeredOffice}} &nbsp;·&nbsp; VAT registration number <span class="num">{{company.vatNumber}}</span></div>
+  <div class="side-bars-bleed"><i></i><i></i><i></i></div>
+</section>
+
+</body>
+</html>

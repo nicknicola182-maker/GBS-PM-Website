@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_GIFT_BELLY-BAND_400x100</title>
+<link rel="stylesheet" href="../../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../../03_PRINT/_shared/print-base.css">
+<style>
+  /* 400 mm long x 100 mm high. The central 200 mm panel sits on the box top; the 100 mm ends wrap under and overlap. */
+  :root { --trim-w: 400mm; --trim-h: 100mm; }
+  .ground { background: var(--gbs-offwhite); }
+  .fold { position: absolute; top: 0; bottom: 0; width: 0; border-left: 0.25pt dashed var(--gbs-light); }
+  .fold.l { left: 100mm; } .fold.r { left: 300mm; }
+  .strip { position: absolute; left: 50%; top: 32mm; width: 120mm; transform: translateX(-50%); }
+  .strip img { width: 100%; display: block; }
+  .thanks { position: absolute; left: 110mm; right: 110mm; top: 52mm; text-align: center; font-family: var(--font-heading); font-weight: 600; font-size: 14pt; letter-spacing: 0.02em; color: var(--gbs-sage); }
+  .web { position: absolute; left: 110mm; right: 110mm; top: 66mm; text-align: center; font-family: var(--font-body); font-weight: 500; font-size: 8pt; letter-spacing: 0.06em; color: var(--gbs-red); }
+  .accent { position: absolute; left: 100mm; width: 200mm; height: 1.2mm; background: var(--gbs-sage); }
+  .accent.t { top: 0; } .accent.b { bottom: 0; }
+  .accent i { position: absolute; right: 0; top: 0; width: 24mm; height: 100%; background: var(--gbs-red); }
+</style>
+</head>
+<body>
+<section class="page" data-trim="400 x 100 mm" aria-label="Gift box belly band">
+  <div class="bleed ground"></div>
+  <div class="fold l"></div><div class="fold r"></div>
+  <div class="strip"><img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_STRIP_SAGE-RED_v1.0.svg" alt="GBS Property Maintenance"></div>
+  <div class="thanks">With our thanks</div>
+  <div class="web">{{company.domain}}</div>
+</section>
+</body>
+</html>

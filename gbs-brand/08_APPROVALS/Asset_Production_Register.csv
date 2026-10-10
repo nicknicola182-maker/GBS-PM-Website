@@ -1,0 +1,19 @@
+Asset ID,Asset,Priority,Primary deliverable,Sign-off gate,Pack status v1.0,Pack location
+A01,Logo master,Critical,Outlined SVG + editable source,GBS Director,Delivered: outlined SVG masters generated from font outlines; generator script is the editable source,01_LOGO_MASTER/svg; tools/build-logos.py
+A02,"Logo inverse, mono, icon",Critical,SVG/EPS/PDF,GBS Director,Delivered: SVG + PNG (EPS/PDF to be exported by designer from SVG if a vendor insists),01_LOGO_MASTER
+A03,Colour + typography,Critical,Swatches and usage guide,Designer + Printer,Delivered: tokens.css; palette.gpl; tokens.json; brand quick guide PDF,00_BRAND_CORE; 02_COLOUR_TYPE
+P01,A4 letterhead,High,PDF/X-4 + source,Director + Printer,Delivered: screen + press PDF with continuation sheet; HTML source,03_PRINT/letterhead
+P02,Business cards,High,PDF/X-4 + source,Director + Printer,Delivered: named and template cards in two colourways,03_PRINT/business-cards
+P03,Compliment slips/envelopes,Medium,PDF/X-4,Director + Printer,Delivered: DL compliment slip; DL and C4 envelopes,03_PRINT/compliment-slip; 03_PRINT/envelope
+P04,Company brochure,High,Press PDF + layout,Director,Delivered: 8 pp A4 company profile,03_PRINT/brochure
+P05,Quotation / invoice / job report templates,Medium,Editable template,Director,Delivered: A4 document frames with sample tables,03_PRINT/documents
+W01,T-shirts white/sage,High,Artwork + physical print sample,Garment supplier + Director,Delivered: 300 dpi chest/back artwork + placement sheet; sample pending,04_WORKWEAR
+W02,Polo embroidery,High,Digitised stitch file + sew-out,Garment supplier + Director,Artwork and embroidery brief delivered; digitising and sew-out pending,04_WORKWEAR
+W03,Jackets / PPE,Medium,Branding zones + sample,H&S + Director,Placement sheet delivered; sample pending,04_WORKWEAR
+V01,White van side / rear,High,Measured 1:1 wrap files,Fleet supplier + Director,Delivered: layout sheets (sides 1:15, rear/front 1:10) + full-scale vector panels on a generic van; survey pending,05_VEHICLES
+S01,Site signage,Medium,Fabrication drawing + approvals,Project manager + Director,Delivered: site board; hoarding; entrance sign; works notice,06_SIGNAGE
+D01,Website desktop + mobile,High,Design system / responsive pages,Web lead + Director,Delivered: static site in 07_WEBSITE/public with QA report; deployment pending,07_WEBSITE
+D02,Email signature,High,HTML signature + install guide,Director,Delivered,09_DIGITAL/email-signature
+D03,Social media assets,Medium,Avatar; banner; post templates; OG image,Director,Delivered,09_DIGITAL/social
+M01,Merchandise (mug; pen; lanyard; hard hat decal; notebook; key fob),Medium,Supplier artwork,Director,Delivered,10_MERCH_GIFT_PACK
+M02,Client gift pack,Medium,Box; card; contents; spec and cost plan,Director,Delivered: artwork + indicative cost plan; supplier quotes pending,10_MERCH_GIFT_PACK

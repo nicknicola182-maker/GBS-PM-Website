@@ -1,0 +1,8 @@
+{
+  // Optional: deploy the static site to Cloudflare Workers static assets with `npx wrangler deploy` from this folder.
+  // Cloudflare Pages, Netlify or any web host can serve the public/ folder directly instead.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "gbs-pm-website",
+  "compatibility_date": "2025-05-01",
+  "assets": { "directory": "./public", "not_found_handling": "404-page", "html_handling": "auto-trailing-slash" }
+}

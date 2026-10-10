@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_SIGN_ENTRANCE_400x300</title>
+<link rel="stylesheet" href="../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../03_PRINT/_shared/print-base.css">
+<style>
+  /* Estate entrance / office sign, 400 x 300 mm, sage panel with the reversed logo. Page 2 adds the "Contractor on site" strip. */
+  :root { --trim-w: 400mm; --trim-h: 300mm; }
+  .page { background: var(--gbs-sage); }
+  .panel { background: var(--gbs-sage); }
+  .logo { position: absolute; left: 80mm; width: 240mm; top: 72mm; }
+  .logo img { width: 100%; display: block; }
+  .web { position: absolute; left: 20mm; right: 20mm; bottom: 26mm; text-align: center; font-family: var(--font-body); font-weight: 600; font-size: 34pt; color: var(--gbs-offwhite); }
+  .strip .logo { top: 52mm; }
+  .strip .web { bottom: 78mm; font-size: 30pt; }
+  .strip-bleed { position: absolute; left: calc(-1 * var(--bleed)); right: calc(-1 * var(--bleed)); bottom: calc(-1 * var(--bleed)); height: calc(60mm + var(--bleed)); background: var(--gbs-offwhite); }
+  .strip-text { position: absolute; left: 0; right: 0; bottom: 0; height: 60mm; display: flex; align-items: center; justify-content: center; gap: 10mm; font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; font-size: 44pt; color: var(--gbs-sage); }
+  .strip-text i { display: block; width: 5mm; height: 17mm; background: var(--gbs-red); }
+  html:not(.press) .page:last-of-type .strip-bleed { bottom: 0; height: 60mm; }
+</style>
+</head>
+<body>
+<section class="page" data-trim="400 x 300 mm" aria-label="Estate entrance sign">
+  <div class="bleed panel"></div>
+  <div class="logo"><img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_REVERSED_OFFWHITE-RED_v1.0.svg" alt="GBS Property Maintenance"></div>
+  <div class="web">{{company.domain}}</div>
+</section>
+<section class="page strip" data-trim="400 x 300 mm" aria-label="Estate entrance sign with contractor strip">
+  <div class="bleed panel"></div>
+  <div class="logo"><img src="../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_REVERSED_OFFWHITE-RED_v1.0.svg" alt="GBS Property Maintenance"></div>
+  <div class="web">{{company.domain}}</div>
+  <div class="strip-bleed"></div>
+  <div class="strip-text"><i></i><span>Contractor on site</span></div>
+</section>
+</body>
+</html>

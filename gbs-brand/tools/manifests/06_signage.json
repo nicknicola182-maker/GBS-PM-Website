@@ -1,0 +1,7 @@
+[
+  { "src": "06_SIGNAGE/site-sign-600x400.html",   "out": "06_SIGNAGE/GBS_HORIZON_SIGN_SITE-BOARD_600x400_v1.0",   "type": "pdf", "trim": [600, 400] },
+  { "src": "06_SIGNAGE/site-sign-1200x800.html",  "out": "06_SIGNAGE/GBS_HORIZON_SIGN_SITE-BOARD_1200x800_v1.0",  "type": "pdf", "trim": [1200, 800] },
+  { "src": "06_SIGNAGE/hoarding-2440x1220.html",  "out": "06_SIGNAGE/GBS_HORIZON_SIGN_HOARDING_2440x1220_v1.0",  "type": "pdf", "trim": [2440, 1220], "bleed": 10, "marks": 10 },
+  { "src": "06_SIGNAGE/estate-sign-400x300.html", "out": "06_SIGNAGE/GBS_HORIZON_SIGN_ENTRANCE_400x300_v1.0",    "type": "pdf", "trim": [400, 300] },
+  { "src": "06_SIGNAGE/works-notice-A4.html",     "out": "06_SIGNAGE/GBS_HORIZON_SIGN_WORKS-NOTICE_A4_v1.0",      "type": "pdf", "trim": [210, 297] }
+]
