@@ -1,7 +1,6 @@
 {
   "_README": "SINGLE SOURCE OF TRUTH for company particulars. Website pages, print PDFs, signature and artwork files are generated from these values via tools/build-all.sh. Fields in _CONFIRM should be double-checked before external release.",
   "_CONFIRM": [
-    "registeredOffice (assumed same as trading address)",
     "placeOfRegistration",
     "accreditations (none claimed until evidenced)",
     "serviceArea"
@@ -23,7 +22,7 @@
     "country": "United Kingdom"
   },
   "addressOneLine": "5-6 Tile Kiln Lane, London, N13 6BX",
-  "registeredOffice": "5-6 Tile Kiln Lane, London, N13 6BX",
+  "registeredOffice": "Woodgate House, 2-8 Games Road, Cockfosters, EN4 9HN",
   "placeOfRegistration": "England and Wales",
   "companyNumber": "16560774",
   "vatNumber": "GB 500 0054 76",
