@@ -41,19 +41,26 @@
       fetch(endpoint, { method: "POST", body: data, headers: { "Accept": "application/json" } })
         .then(function (r) { if (!r.ok) throw new Error("Request failed"); window.location.href = "/thank-you"; })
         .catch(function () {
-          setStatus("Sorry, the form could not be sent. Please email us directly or call " + (form.getAttribute("data-phone") || "us") + ".", "error");
+          // Relay unavailable: never lose the enquiry, hand it to the visitor's email client instead.
+          setStatus("Sorry, the form could not be sent automatically. Your email client should open with the enquiry pre-filled; otherwise email " + mailto + " or call " + (form.getAttribute("data-phone") || "us") + ".", "error");
           if (btn) btn.disabled = false;
+          window.location.href = mailtoLink(data);
         });
       return;
     }
     // No form endpoint configured: open the visitor's email client with the enquiry pre-filled.
     e.preventDefault();
+    window.location.href = mailtoLink(data);
+    setStatus("Your email client should open with the enquiry pre-filled. If it does not, please email " + mailto + ".", "");
+  });
+
+  /** Builds a mailto: link to the company inbox with the enquiry fields in the body. */
+  function mailtoLink(data) {
     var lines = [];
     ["name", "company", "role", "email", "phone", "site", "service", "message"].forEach(function (k) {
       var v = data.get(k); if (v) lines.push(k.charAt(0).toUpperCase() + k.slice(1) + ": " + v);
     });
     var subject = "Quote request - " + (data.get("service") || "General enquiry") + (data.get("site") ? " - " + data.get("site") : "");
-    window.location.href = "mailto:" + mailto + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
-    setStatus("Your email client should open with the enquiry pre-filled. If it does not, please email " + mailto + ".", "");
-  });
+    return "mailto:" + mailto + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
+  }
 })();

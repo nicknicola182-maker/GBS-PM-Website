@@ -44,7 +44,7 @@
     "linkedin": ""
   },
   "year": "2026",
-  "formEndpoint": "",
+  "formEndpoint": "/api/enquiry",
   "longName": "Go Building Solutions",
   "clientTypes": "managing agents, property managers, landlords and commercial clients",
   "approvedFor": [

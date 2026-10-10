@@ -33,7 +33,8 @@ Update the privacy notice's "Cookies and website analytics" paragraph if you add
 ## Deploying
 
 - **Cloudflare Pages:** create a project, upload or connect the repo, set the build output directory to `07_WEBSITE/public` (no build command needed). `_headers` and `_redirects` are picked up automatically.
-- **Cloudflare Workers (static assets):** from this folder run `npx wrangler deploy` (uses `wrangler.jsonc`).
+  Note: Pages and other static hosts cannot run `worker/index.js`; set `formEndpoint` in `company.json` to a form-handling service or blank (mailto) in that case.
+- **Cloudflare Workers (live setup):** `wrangler.jsonc` serves `public/` as static assets and runs `worker/index.js`, which handles `POST /api/enquiry` (the contact form relay via Resend). Deployed automatically from GitHub; `npx wrangler deploy` from this folder does the same by hand. Configuration and secrets: `GO-LIVE.md`. Tests: `node --test worker/enquiry.test.mjs`.
 - **Netlify:** publish directory `07_WEBSITE/public`.
 - **Any other host (cPanel, Plesk, S3, nginx):** upload the contents of `public/`. Configure clean URLs (serve `services.html` for `/services`) or keep the `.html` links; both work because every internal link is root-relative.
 

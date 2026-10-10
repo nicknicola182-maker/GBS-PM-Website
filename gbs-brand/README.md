@@ -17,7 +17,7 @@ The folder numbering follows section 10 of `GBS_Horizon_Brand_Production_Manual_
 | `04_WORKWEAR` | 300 dpi transfer artwork (chest, back, sleeve, hi-vis), placement sheets, embroidery brief. |
 | `05_VEHICLES` | Van livery layout sheets (sides at 1:15, rear and bonnet at 1:10, all dimensions in full-scale mm), full-scale vector panels, fabrication notes. |
 | `06_SIGNAGE` | Site board, hoarding panel, entrance sign, resident works notice. |
-| `07_WEBSITE` | Static website. Deploy `07_WEBSITE/public` as-is. See `07_WEBSITE/README.md`. |
+| `07_WEBSITE` | Website, live at https://gbs-pm.co.uk on a Cloudflare Worker (static `public/` plus the enquiry form relay in `worker/`). See `07_WEBSITE/README.md` and `07_WEBSITE/GO-LIVE.md`. |
 | `08_APPROVALS` | Production register (status per asset), release checklist and sign-off sheet, the supplied v1 register. |
 | `09_DIGITAL` | Email signature (HTML, plain text, install guide), social avatars, banners, post templates, Open Graph image. |
 | `10_MERCH_GIFT_PACK` | Mug, pen, lanyard, hard hat decal, notebook, key fob, gift box, thank-you card, contents card, welcome letter, gift pack spec and indicative cost plan. |
@@ -37,7 +37,7 @@ Individual steps: `python3 tools/build-logos.py` (SVG masters), `bash tools/expo
 
 1. Confirm the particulars in `company.json` (registered office, VAT number, service area) and re-run the build.
 2. Review `08_APPROVALS/Release_Checklist.md` and work through the sign-off gates with each supplier: colour drawdowns, hard proofs, stitch-outs, van survey, signage consents.
-3. Deploy the website (`07_WEBSITE/README.md`), configure the contact form endpoint and test it.
+3. Website is live; add the `RESEND_API_KEY` secret in Cloudflare so the contact form delivers to the inbox (`07_WEBSITE/GO-LIVE.md`).
 4. Add accreditations to `company.json` and the website only once the certificates are held.
 
 ## Notes on this issue

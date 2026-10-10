@@ -38,9 +38,29 @@ The site is live at https://gbs-pm.co.uk and https://www.gbs-pm.co.uk. This page
 - Do not delete or proxy (orange cloud) any MX, TXT, DKIM, DMARC or autodiscover record in the Cloudflare DNS zone.
 - Do not move the nameservers back to Fasthosts unless the Fasthosts DNS zone has first been updated to match Cloudflare's records.
 
+## Enquiry form (contact page)
+
+The form posts to `/api/enquiry`, handled by `worker/index.js` in the same Worker that serves the site. The Worker checks the fields, drops bot submissions (hidden honeypot field), then emails the enquiry to `ENQUIRY_TO` through Resend with reply-to set to the visitor. If the relay is unavailable the page falls back to opening the visitor's email client, so enquiries are never lost.
+
+| Setting | Where | Value |
+|---|---|---|
+| `ENQUIRY_TO` | `wrangler.jsonc` vars | `info@gbs-pm.co.uk` |
+| `ENQUIRY_FROM` | `wrangler.jsonc` vars | `GBS Property Maintenance website <onboarding@resend.dev>` until the domain is verified in Resend, then `enquiries@gbs-pm.co.uk` |
+| `RESEND_API_KEY` | Cloudflare, Workers & Pages, gbs-pm-website, Settings, Variables and Secrets (type Secret) | API key from resend.com, API Keys. Never put it in the repository. |
+
+Set-up, once:
+
+1. Create the Resend account with `info@gbs-pm.co.uk` as the login email. While the domain is unverified Resend only delivers to the account's own address, which is exactly the inbox we want.
+2. Resend, API Keys, Create API key (sending access is enough). Copy it.
+3. Cloudflare, Workers & Pages, gbs-pm-website, Settings, Variables and Secrets, Add: type Secret, name `RESEND_API_KEY`, paste the key, Deploy.
+4. Submit the form on https://gbs-pm.co.uk/contact and check the inbox.
+
+Branded sender, optional later: Resend, Domains, Add domain `gbs-pm.co.uk`, add the DNS records it lists in Cloudflare DNS (they are for a sending subdomain and DKIM; they do not touch the existing MX for Fasthosts mail), wait for Verified, then change `ENQUIRY_FROM` in `wrangler.jsonc` and merge.
+
+Tests: `node --test gbs-brand/07_WEBSITE/worker/enquiry.test.mjs`. Failures in production are visible under the Worker's Logs tab (observability is enabled).
+
 ## Optional follow-ups
 
 - HSTS (SSL/TLS, Edge Certificates, HTTP Strict Transport Security): can be enabled with max-age 6 months, "include subdomains" off, preload off. Leave subdomains off because the mail hostnames are not served over HTTPS by Cloudflare.
-- `formEndpoint` in `gbs-brand/company.json`: set to a form-handling service URL if server-side enquiry delivery is wanted; until then the contact form opens the visitor's email client addressed to info@gbs-pm.co.uk.
 - Add the site to a Google Business Profile and LinkedIn.
 - The email signature logo is served at https://gbs-pm.co.uk/assets/img/logo-email-600.png.
