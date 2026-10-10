@@ -19,7 +19,7 @@ Rules applied (production manual, workwear section): chest marks 85-105 mm wide,
 | `GBS_HORIZON_WORKWEAR_HIVIS-CHEST_95MM_BLACK_v1.0.png` | Hi-vis chest mark, mono black no-strap lockup | 95 x 38.24 mm, 300 dpi, transparent |
 | `GBS_HORIZON_WORKWEAR_PLACEMENT-SHEET_A4L_v1.0_SCREEN.pdf` | Placement sheet, A4 landscape, 7 pages: white T-shirt, sage T-shirt, white polo, sage polo, softshell jacket, hi-vis vest, embroidery brief | 297 x 210 mm, no bleed |
 | `workwear-*.html` | Sources for the PNG artwork (one `.page` sized exactly to the artwork, containing the logo SVG) | - |
-| `placement-sheet.html` | Source for the placement sheet | - |
+| `placement-sheet.html` | Source for the placement sheet, written by `build-placement-sheet.py` (edit the script, not the HTML) | - |
 
 Embroidery is digitised from the vector masters, not from these PNGs: `01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg`, `..._REVERSED-NOSTRAP_OFFWHITE-RED_v1.0.svg`, `GBS_HORIZON_ICON_SIMPLIFIED_SAGE-RED_v1.0.svg` and `..._SIMPLIFIED_OFFWHITE-RED_v1.0.svg`.
 
@@ -45,6 +45,7 @@ Embroidery (polos; softshell only if agreed in writing)
 ## Regenerate
 
 ```
+python3 -I 04_WORKWEAR/build-placement-sheet.py      # rewrites placement-sheet.html (garment outlines, positions, notes)
 node tools/render.mjs tools/manifests/04_workwear.json
 node tools/qa-overflow.mjs 04_WORKWEAR/placement-sheet.html 8
 ```
