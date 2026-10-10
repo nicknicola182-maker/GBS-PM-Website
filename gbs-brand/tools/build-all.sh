@@ -9,4 +9,5 @@ echo "== 3. Email signature (compiled)"; [ -f 09_DIGITAL/email-signature/build-s
 echo "== 4. Print, workwear, vehicle, signage, merch and digital renders"
 for m in tools/manifests/*.json; do echo "-- $m"; node tools/render.mjs "$m"; done
 echo "== 5. Website rebuild (picks up the Open Graph image from 09_DIGITAL/social)"; node tools/build-site.mjs >/dev/null
+node tools/build-index.mjs
 echo "== Done. Outputs are committed alongside sources; see README.md."
