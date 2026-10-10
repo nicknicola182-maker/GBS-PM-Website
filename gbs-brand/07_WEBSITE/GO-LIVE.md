@@ -6,7 +6,7 @@ Hosting: Cloudflare Pages (free, automatic HTTPS, redeploys on every merge to `m
 ## Stage 1: review link (about 10 minutes, no DNS changes)
 
 1. Create a free account at cloudflare.com (or sign in).
-2. Workers & Pages, Create, Pages, Connect to Git. Authorise GitHub and choose `workers-ai-streaming`.
+2. Workers & Pages, Create, Pages, Connect to Git. Authorise GitHub and choose `GBS-PM-Website`.
 3. Settings: production branch `main`; framework preset None; build command left blank; build output directory `gbs-brand/07_WEBSITE/public`.
 4. Save and Deploy. Cloudflare gives a link like `https://gbs-pm.pages.dev` within a minute. Share that with colleagues for review. Every later merge to `main` republishes it automatically.
 
