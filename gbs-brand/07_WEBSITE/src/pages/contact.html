@@ -39,12 +39,8 @@
             <div class="field"><label for="f-service">Service required</label>
               <select id="f-service" name="service" required>
                 <option value="">Select a service</option>
-                <option>Planned and preventative maintenance</option>
-                <option>Reactive repair</option>
-                <option>Fire door inspection or survey</option>
-                <option>Fire door remedial works or installation</option>
-                <option>Refurbishment or redecoration</option>
-                <option>Insurance reinstatement works</option>
+                {{company.serviceOptions}}
+                <option>Larger project works or refurbishment</option>
                 <option>Other</option>
               </select>
             </div>
