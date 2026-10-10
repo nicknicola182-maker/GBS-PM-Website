@@ -32,18 +32,33 @@
    */
   form.addEventListener("submit", function (e) {
     if (form.querySelector("[name='website']").value) { e.preventDefault(); return; } // honeypot
-    if (!form.checkValidity()) { return; } // browser shows validation messages
+    if (!form.checkValidity()) {
+      // The form carries novalidate so the browser does not block the mailto fallback;
+      // ask it to show its own messages here and stop the submission.
+      e.preventDefault();
+      form.reportValidity();
+      setStatus("Please complete the highlighted fields.", "error");
+      return;
+    }
     var data = new FormData(form);
     if (endpoint) {
       e.preventDefault();
       setStatus("Sending your enquiry...", "");
       var btn = form.querySelector("button[type='submit']"); if (btn) btn.disabled = true;
       fetch(endpoint, { method: "POST", body: data, headers: { "Accept": "application/json" } })
-        .then(function (r) { if (!r.ok) throw new Error("Request failed"); window.location.href = "/thank-you"; })
-        .catch(function () {
+        .then(function (r) {
+          if (r.ok) { showSent(); return; }
+          if (r.status === 400) {
+            // The relay found a problem with the details: say so and let the visitor correct it.
+            return r.json().then(function (j) { throw { handled: true, message: (j && j.error) || "Please check the details and try again." }; });
+          }
+          throw new Error("Request failed");
+        })
+        .catch(function (err) {
+          if (btn) btn.disabled = false;
+          if (err && err.handled) { setStatus(err.message, "error"); return; }
           // Relay unavailable: never lose the enquiry, hand it to the visitor's email client instead.
           setStatus("Sorry, the form could not be sent automatically. Your email client should open with the enquiry pre-filled; otherwise email " + mailto + " or call " + (form.getAttribute("data-phone") || "us") + ".", "error");
-          if (btn) btn.disabled = false;
           window.location.href = mailtoLink(data);
         });
       return;
@@ -53,6 +68,38 @@
     window.location.href = mailtoLink(data);
     setStatus("Your email client should open with the enquiry pre-filled. If it does not, please email " + mailto + ".", "");
   });
+
+  /** Clears the form and replaces it with a confirmation so the visitor knows the enquiry has gone. */
+  function showSent() {
+    form.reset();
+    setStatus("", "");
+    var submit = form.querySelector("button[type='submit']"); if (submit) submit.disabled = false;
+    var phone = form.getAttribute("data-phone") || "";
+    var tel = form.getAttribute("data-phone-tel") || "";
+    var hours = form.getAttribute("data-hours") || "working hours";
+    var box = document.createElement("div");
+    box.className = "form-sent";
+    box.setAttribute("role", "status");
+    box.tabIndex = -1;
+    box.innerHTML =
+      '<h3>Enquiry sent</h3>' +
+      '<p>Thank you. Your enquiry has been received and we will come back to you during working hours (' + escapeText(hours) + ').' +
+      (phone ? ' If the matter is urgent, call <a href="tel:' + escapeText(tel) + '" class="num">' + escapeText(phone) + '</a>.' : '') + '</p>' +
+      '<p><button type="button" class="btn btn-outline">Send another enquiry</button></p>';
+    form.parentNode.insertBefore(box, form);
+    form.hidden = true;
+    box.querySelector("button").addEventListener("click", function () {
+      box.parentNode.removeChild(box);
+      form.hidden = false;
+      var first = form.querySelector("input, select, textarea"); if (first) first.focus();
+    });
+    box.focus();
+    if (box.scrollIntoView) box.scrollIntoView({ block: "center", behavior: "smooth" });
+  }
+
+  function escapeText(s) {
+    return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; });
+  }
 
   /** Builds a mailto: link to the company inbox with the enquiry fields in the body. */
   function mailtoLink(data) {
