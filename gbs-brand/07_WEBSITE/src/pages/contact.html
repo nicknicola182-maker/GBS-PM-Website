@@ -1,0 +1,69 @@
+<!--META {"slug":"contact","nav":"contact","title":"Contact and request a quote","description":"Contact GBS Property Maintenance in London for maintenance, repairs, refurbishment and fire door quotations. Call, email or send property details through the quote request form."}-->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Contact</span>
+      <h1>Contact us or request a quote</h1>
+      <p class="lead">Send the property address, the works required and any access arrangements. We will confirm the scope, attend to survey where needed and send a clear quotation.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <ul class="contact-list">
+          <li><b>Telephone</b><span><a href="tel:{{company.phoneTel}}" class="num">{{company.phone}}</a></span></li>
+          <li><b>Email</b><span><a href="mailto:{{company.email}}">{{company.email}}</a></span></li>
+          <li><b>Address</b><span>{{company.address.line1}}<br>{{company.address.town}} {{company.address.postcode}}<br><a href="https://maps.google.com/?q={{company.address.line1}},+{{company.address.town}},+{{company.address.postcode}}" rel="noopener" target="_blank">Open in Google Maps</a></span></li>
+          <li><b>Hours</b><span>{{company.hours}}<br><span class="muted">Out-of-hours emergency attendance by arrangement for contracted clients.</span></span></li>
+          <li><b>Director</b><span>{{company.people.0.name}}, {{company.people.0.role}}<br><a href="mailto:{{company.people.0.email}}">{{company.people.0.email}}</a><br><a href="tel:{{company.people.0.mobileTel}}" class="num">{{company.people.0.mobile}}</a></span></li>
+        </ul>
+        <h3>What to include</h3>
+        <ul>
+          <li>Property address and the client or managing agent</li>
+          <li>Nature of the works or the defect, with photographs if you have them</li>
+          <li>Access arrangements, key holders and any site rules</li>
+          <li>Any deadline, insurance claim reference or Section 20 timetable</li>
+        </ul>
+      </div>
+      <div id="quote">
+        <h2>Request a quote</h2>
+        <form id="quote-form" method="post" action="{{company.formAction}}" enctype="{{company.formEnctype}}" data-endpoint="{{company.formEndpoint}}" data-mailto="{{company.email}}" data-phone="{{company.phone}}" novalidate="">
+          <div class="field-row">
+            <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="f-company">Company or organisation</label><input id="f-company" name="company" type="text" autocomplete="organization" required></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="f-phone">Telephone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="f-role">Your role <span class="opt">(optional)</span></label><input id="f-role" name="role" type="text" placeholder="e.g. Property manager"></div>
+            <div class="field"><label for="f-service">Service required</label>
+              <select id="f-service" name="service" required>
+                <option value="">Select a service</option>
+                <option>Planned and preventative maintenance</option>
+                <option>Reactive repair</option>
+                <option>Fire door inspection or survey</option>
+                <option>Fire door remedial works or installation</option>
+                <option>Refurbishment or redecoration</option>
+                <option>Insurance reinstatement works</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="f-site">Property address</label><input id="f-site" name="site" type="text" placeholder="Building name or number, street, postcode" required></div>
+          <div class="field"><label for="f-message">Details of the works</label><textarea id="f-message" name="message" required></textarea></div>
+          <div class="hp" aria-hidden="true"><label for="f-website">Leave this field empty</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <div class="check"><input id="f-consent" name="consent" type="checkbox" value="yes" required><label for="f-consent">I agree to {{company.tradingName}} using these details to respond to my enquiry, as described in the <a href="/privacy">privacy notice</a>.</label></div>
+          <div><button class="btn btn-red" type="submit">Send enquiry</button></div>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+          <p class="form-note">Prefer email? Write to <a href="mailto:{{company.email}}">{{company.email}}</a> with the same details.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight section-tint">
+  <div class="container">
+    <p class="mb-0 muted">{{company.legalName}} · Registered in {{company.placeOfRegistration}}, company number <span class="num">{{company.companyNumber}}</span> · Registered office: {{company.registeredOffice}} · VAT registration number <span class="num">{{company.vatNumber}}</span></p>
+  </div>
+</section>

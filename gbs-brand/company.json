@@ -1,0 +1,35 @@
+{
+  "_README": "SINGLE SOURCE OF TRUTH for company particulars. Website pages, print PDFs, signature and artwork files are generated from these values via tools/build-all.sh. Fields in _CONFIRM should be double-checked before external release.",
+  "_CONFIRM": ["registeredOffice (assumed same as trading address)", "placeOfRegistration", "accreditations (none claimed until evidenced)", "serviceArea"],
+  "tradingName": "GBS Property Maintenance",
+  "legalName": "GBS Property Maintenance Ltd",
+  "shortName": "GBS",
+  "strapline": "BUILD | MAINTAIN | IMPROVE",
+  "positioning": "Specialist maintenance, repair, refurbishment and fire door services for residential blocks and managed property portfolios across London.",
+  "domain": "gbs-pm.co.uk",
+  "url": "https://gbs-pm.co.uk",
+  "phone": "020 8051 9333",
+  "phoneTel": "+442080519333",
+  "email": "info@gbs-pm.co.uk",
+  "address": {
+    "line1": "5-6 Tile Kiln Lane",
+    "town": "London",
+    "postcode": "N13 6BX",
+    "country": "United Kingdom"
+  },
+  "addressOneLine": "5-6 Tile Kiln Lane, London, N13 6BX",
+  "registeredOffice": "5-6 Tile Kiln Lane, London, N13 6BX",
+  "placeOfRegistration": "England and Wales",
+  "companyNumber": "16560774",
+  "vatNumber": "GB 500 0054 76",
+  "serviceArea": "London and the surrounding Home Counties",
+  "hours": "Monday to Friday, 08:00 to 17:30",
+  "people": [
+    { "name": "Nicholas Nicola", "role": "Managing Director", "email": "nick@gbs-pm.co.uk", "mobile": "07985 114 622", "mobileTel": "+447985114622" }
+  ],
+  "accreditations": [],
+  "insurance": "Public liability and employer's liability insurance held. Certificates available on request.",
+  "social": { "linkedin": "" },
+  "year": "2026",
+  "formEndpoint": ""
+}

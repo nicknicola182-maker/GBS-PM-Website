@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gbs-pm.co.uk/sitemap.xml

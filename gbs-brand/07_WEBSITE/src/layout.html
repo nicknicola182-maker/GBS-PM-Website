@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{page.title}} | {{company.tradingName}}</title>
+<meta name="description" content="{{page.description}}">
+<meta name="robots" content="{{page.robots}}">
+<link rel="canonical" href="{{page.canonical}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{company.tradingName}}">
+<meta property="og:title" content="{{page.title}} | {{company.tradingName}}">
+<meta property="og:description" content="{{page.description}}">
+<meta property="og:url" content="{{page.canonical}}">
+<meta property="og:image" content="{{company.url}}/assets/img/og-image.png">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#6E7F72">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/Montserrat-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Inter-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "{{company.url}}/#business",
+  "name": "{{company.tradingName}}",
+  "legalName": "{{company.legalName}}",
+  "url": "{{company.url}}/",
+  "logo": "{{company.url}}/assets/img/logo-email-600.png",
+  "image": "{{company.url}}/assets/img/og-image.png",
+  "telephone": "{{company.phoneTel}}",
+  "email": "{{company.email}}",
+  "description": "{{company.positioning}}",
+  "address": { "@type": "PostalAddress", "streetAddress": "{{company.address.line1}}", "addressLocality": "{{company.address.town}}", "postalCode": "{{company.address.postcode}}", "addressCountry": "GB" },
+  "areaServed": "{{company.serviceArea}}",
+  "openingHours": "Mo-Fr 08:00-17:30",
+  "vatID": "{{company.vatNumber}}",
+  "founder": { "@type": "Person", "name": "{{company.people.0.name}}", "jobTitle": "{{company.people.0.role}}" }
+}
+</script>
+</head>
+<body class="{{page.bodyClass}}">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="{{company.tradingName}} home">
+      <img src="/assets/img/logo-primary-nostrap.svg" alt="{{company.tradingName}}" width="444" height="179">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i><i></i></span><span>Menu</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/"{{page.navClass.home}}>Home</a></li>
+        <li><a href="/services"{{page.navClass.services}}>Services</a></li>
+        <li><a href="/about"{{page.navClass.about}}>About</a></li>
+        <li><a href="/contact"{{page.navClass.contact}}>Contact</a></li>
+        <li class="nav-phone"><a href="tel:{{company.phoneTel}}">{{company.phone}}</a></li>
+        <li class="nav-cta"><a class="btn btn-red" href="/contact#quote">Request a quote</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{{page.content}}
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="/assets/img/logo-reversed-soft.svg" alt="" width="444" height="179">
+      <p class="footer-strap">BUILD <span>|</span> MAINTAIN <span>|</span> IMPROVE</p>
+    </div>
+    <div>
+      <h2 class="footer-h">Contact</h2>
+      <p><a href="tel:{{company.phoneTel}}">{{company.phone}}</a><br><a href="mailto:{{company.email}}">{{company.email}}</a></p>
+      <p>{{company.address.line1}}<br>{{company.address.town}} {{company.address.postcode}}</p>
+      <p>{{company.hours}}</p>
+    </div>
+    <div>
+      <h2 class="footer-h">Site</h2>
+      <ul class="footer-links">
+        <li><a href="/services">Services</a></li>
+        <li><a href="/services#fire-doors">Fire door services</a></li>
+        <li><a href="/about">About GBS</a></li>
+        <li><a href="/contact">Contact and quotes</a></li>
+        <li><a href="/privacy">Privacy notice</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-legal">
+    <p>{{company.legalName}} · Registered in {{company.placeOfRegistration}}, company number {{company.companyNumber}} · Registered office: {{company.registeredOffice}} · VAT registration number {{company.vatNumber}}</p>
+    <p>© {{company.year}} {{company.legalName}}. All rights reserved.</p>
+  </div>
+</footer>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>

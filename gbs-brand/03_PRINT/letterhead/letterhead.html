@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>GBS_HORIZON_LETTERHEAD_A4</title>
+<link rel="stylesheet" href="../../00_BRAND_CORE/tokens.css">
+<link rel="stylesheet" href="../../00_BRAND_CORE/fonts.css">
+<link rel="stylesheet" href="../_shared/print-base.css">
+<style>
+  :root { --trim-w: 210mm; --trim-h: 297mm; }
+  .page { padding: 0; }
+  .logo { position: absolute; left: 20mm; top: 16mm; width: 58mm; }
+  .logo img { width: 100%; display: block; }
+  .contact { position: absolute; right: 20mm; top: 17mm; text-align: right; font-size: 8.5pt; line-height: 1.5; color: var(--gbs-ink); }
+  .contact strong { font-family: var(--font-heading); font-weight: 600; color: var(--gbs-sage); letter-spacing: 0.02em; }
+  .contact .web { color: var(--gbs-red); font-weight: 600; }
+  .header-rule { position: absolute; left: 20mm; right: 20mm; top: 47mm; height: 0.5pt; background: var(--gbs-sage); }
+  .header-rule::after { content: ""; position: absolute; right: 0; top: -1.75pt; width: 18mm; height: 2.25pt; background: var(--gbs-red); }
+  .body { position: absolute; left: 20mm; right: 20mm; top: 60mm; bottom: 40mm; font-size: 10.5pt; line-height: 1.5; }
+  .body.sample { color: var(--gbs-ink-soft); }
+  .address-block { margin-bottom: 8mm; }
+  .footer { position: absolute; left: 20mm; right: 20mm; bottom: 14mm; }
+  .footer .strap { display: block; text-align: center; margin-bottom: 3mm; }
+  .footer .legal { text-align: center; }
+  .foot-rule { position: absolute; left: 20mm; right: 20mm; bottom: 27mm; height: 0.5pt; background: var(--gbs-light); }
+  .side-bars { position: absolute; right: 0; bottom: 0; width: 7mm; height: 36mm; }
+  .side-bars i { position: absolute; bottom: 0; background: var(--gbs-sage); }
+  .side-bars i:nth-child(1) { right: 5.4mm; width: 0.45mm; height: 12mm; }
+  .side-bars i:nth-child(2) { right: 3.4mm; width: 1.3mm; height: 23mm; background: var(--gbs-red); }
+  .side-bars i:nth-child(3) { right: 1.6mm; width: 1.3mm; height: 36mm; }
+  .cont .logo { width: 44mm; top: 14mm; }
+  .cont .header-rule { top: 38mm; }
+  .cont .body { top: 48mm; }
+  .cont .contact { top: 15mm; }
+</style>
+</head>
+<body>
+
+<section class="page" data-trim="210 x 297 mm" aria-label="Letterhead page 1">
+  <div class="logo"><img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg" alt="GBS Property Maintenance"></div>
+  <div class="contact">
+    <strong>{{company.tradingName}}</strong><br>
+    {{company.address.line1}}<br>{{company.address.town}} {{company.address.postcode}}<br>
+    <span class="num">{{company.phone}}</span><br>
+    {{company.email}}<br>
+    <span class="web">{{company.domain}}</span>
+  </div>
+  <div class="header-rule"></div>
+
+  <div class="body sample">
+    <div class="address-block">
+      [Recipient name]<br>[Company]<br>[Address line 1]<br>[Town] [Postcode]
+    </div>
+    <p>[Date]</p>
+    <p><strong>Our ref:</strong> [Job / quote reference] &nbsp;&nbsp; <strong>Your ref:</strong> [Client reference]</p>
+    <p>Dear [Name],</p>
+    <p><strong>[Subject line: property address and nature of works]</strong></p>
+    <p>[Body text: 10.5 pt Inter, 1.5 line spacing, 20 mm margins. Keep paragraphs short. Use headings sparingly and in Montserrat SemiBold sage. Reference numbers, dates and prices use tabular numerals.]</p>
+    <p>Yours sincerely,</p>
+    <p style="margin-top:14mm">{{company.people.0.name}}<br><span style="color:var(--gbs-sage)">{{company.people.0.role}}</span><br>{{company.tradingName}}</p>
+  </div>
+
+  <div class="foot-rule"></div>
+  <div class="footer">
+    <span class="strap">BUILD <span class="pipe">|</span> MAINTAIN <span class="pipe">|</span> IMPROVE</span>
+    <div class="legal">{{company.legalName}} &nbsp;·&nbsp; Registered in {{company.placeOfRegistration}}, company number <span class="num">{{company.companyNumber}}</span> &nbsp;·&nbsp; Registered office: {{company.registeredOffice}} &nbsp;·&nbsp; VAT registration number <span class="num">{{company.vatNumber}}</span></div>
+  </div>
+  <div class="side-bars"><i></i><i></i><i></i></div>
+</section>
+
+<section class="page cont" data-trim="210 x 297 mm" aria-label="Continuation sheet">
+  <div class="logo"><img src="../../01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg" alt="GBS Property Maintenance"></div>
+  <div class="contact"><span class="web">{{company.domain}}</span></div>
+  <div class="header-rule"></div>
+  <div class="body sample"><p>[Continuation sheet: body text continues here. Page numbers may be added by the word processor in the footer margin.]</p></div>
+  <div class="foot-rule"></div>
+  <div class="footer">
+    <div class="legal">{{company.legalName}} &nbsp;·&nbsp; Registered in {{company.placeOfRegistration}}, company number <span class="num">{{company.companyNumber}}</span> &nbsp;·&nbsp; Registered office: {{company.registeredOffice}} &nbsp;·&nbsp; VAT registration number <span class="num">{{company.vatNumber}}</span></div>
+  </div>
+  <div class="side-bars"><i></i><i></i><i></i></div>
+</section>
+
+</body>
+</html>

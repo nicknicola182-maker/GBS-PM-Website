@@ -1,0 +1,13 @@
+{
+  "name": "gbs-horizon-tools",
+  "private": true,
+  "type": "module",
+  "description": "Build scripts for the GBS HORIZON brand pack (logo exports, site assembly, print rendering).",
+  "scripts": {
+    "logos": "python3 build-logos.py && bash export-logos.sh",
+    "site": "node build-site.mjs",
+    "render": "node render.mjs",
+    "all": "bash build-all.sh"
+  },
+  "devDependencies": { "playwright": "^1.56.1" }
+}
