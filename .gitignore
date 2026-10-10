@@ -1,3 +1,6 @@
 node_modules/
 .wrangler/
 .dev.vars
+
+# Plugin-generated local config (contains credential fields); never commit
+.claude/odoo-timesheet/
