@@ -10,7 +10,7 @@ Mirrors section 11 of the production manual. Nothing goes to external manufactur
 | Positive / reversed / mono / icon artwork | Done: 25 variants plus PNG exports and favicons | Reconcile against physical proofs |
 | Colour match | Digital values only | Printer ICC conversion and drawdown signed under D50 light for paper, garment and vinyl |
 | Typography licence | Montserrat and Inter under SIL OFL 1.1, files bundled | None (keep licence text with supplier files) |
-| Legal name, company number, office, disclosures | Done from `company.json` (16560774, 5-6 Tile Kiln Lane N13 6BX, VAT GB 500 0054 76) | Confirm registered office is the trading address; confirm "England and Wales" |
+| Legal name, company number, office, disclosures | Done from `company.json` (16560774, registered office Woodgate House, 2-8 Games Road, Cockfosters EN4 9HN; trading address 5-6 Tile Kiln Lane N13 6BX; VAT GB 500 0054 76) | Registered office confirmed 10 Oct 2026, differs from the trading address; confirm "England and Wales" |
 | Dummy contact information replaced | Done: all templates driven by `company.json` | Independent check of every rendered PDF before print |
 | Business stationery PDF/X proof | Press PDFs with bleed and crop marks supplied | Printer to impose and convert to PDF/X-4; approve one hard proof |
 | Embroidered stitch-out and wash test | Artwork and placement sheets supplied; chest descriptor is 3.9 mm cap height at 95 mm, below the 5 mm test | Digitise, sew-out at 5 mm, 6 mm and actual size; fall back to the 105 mm mark or wordmark-only if the descriptor does not hold; 5-cycle wash test |

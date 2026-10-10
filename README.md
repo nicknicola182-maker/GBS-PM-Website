@@ -1,6 +1,6 @@
 # GBS-PM-Website
 
-Repository for **GBS Property Maintenance** (Go Building Solutions): the public website for gbs-pm.co.uk and the Horizon brand production pack.
+Repository for **GBS Property Maintenance**: the public website for gbs-pm.co.uk and the Horizon brand production pack.
 
 | Folder | What it is |
 |---|---|
