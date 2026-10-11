@@ -168,9 +168,9 @@ def front_page(n):
            '<rect class="grille" x="330" y="1480" width="1260" height="140" rx="20"/>'
            '<circle class="sensor" cx="300" cy="1270" r="14"/><circle class="sensor" cx="760" cy="1270" r="14"/><circle class="sensor" cx="1160" cy="1270" r="14"/><circle class="sensor" cx="1620" cy="1270" r="14"/>'
            '<rect class="sensor" x="920" y="220" width="80" height="60"/>')
-    livery = art(ICON, 835, 835, 250, 187.07)
+    livery = art(ICON, 835, 835, 250, 235.04)   # icon aspect 1127.75 : 1060.25
     t = 32
-    dims = (hdim(835, 1085, 790, "250 icon, centred", t=t) + vdim(1260, 835, 1022.07, "187", left=False, t=t) + ext(1085, 835, 1260, 835) + ext(1085, 1022.07, 1260, 1022.07)
+    dims = (hdim(835, 1085, 790, "250 icon, centred", t=t) + vdim(1260, 835, 1070.04, "235", left=False, t=t) + ext(1085, 835, 1260, 835) + ext(1085, 1070.04, 1260, 1070.04)
             + vdim(-120, 65, 835, "770 from roof (this elevation)", t=t) + ext(500, 65, -120, 65) + ext(200, 835, -120, 835)
             + hdim(0, 1920, -100, "1920 overall width", t=t) + ext(0, -40, 0, -140) + ext(1920, -40, 1920, -140)
             + lab(960, 1045, "bonnet shut line and grille: keep clear 50 (nothing on the grille or badge)", 30, "middle", "keeplab")
@@ -184,7 +184,7 @@ def front_page(n):
   <div class="drawing rear-wrap">{svg}</div>
   <aside class="side-notes">
     <h3>Element</h3>
-    <ul><li>Bonnet emblem: icon only (sage/red), 250 x 187 mm, centred on the bonnet, 150 mm back from the leading edge measured along the panel; this elevation foreshortens the bonnet, so set out on the panel, not from the drawing. File GBS_HORIZON_VAN_BONNET-ICON_250MM_SAGE-RED_v1.0.svg.</li>
+    <ul><li>Bonnet emblem: icon only (sage/red), 250 x 235 mm, centred on the bonnet, 150 mm back from the leading edge measured along the panel; this elevation foreshortens the bonnet, so set out on the panel, not from the drawing. File GBS_HORIZON_VAN_BONNET-ICON_250MM_SAGE-RED_v1.0.svg.</li>
     <li>This is the most that goes on the bonnet. No lockup, descriptor, strapline or contact details on the front.</li></ul>
     <h3>Keep clear</h3>
     <p>Manufacturer badge (100 mm), bonnet shut line, grille, headlamps, washer jets, windscreen and wiper park, the camera and sensor pod behind the mirror, front parking sensors, the number plate and the whole bumper.</p>
@@ -231,7 +231,7 @@ def notes_page(n):
         <tr><td>Rear-quarter bars (x2)</td><td class="num">201 x 460</td><td>Bottom on sill line, 155 from rear corner</td><td>GBS_HORIZON_VAN_REAR-QUARTER-BARS_460MM_SAGE-RED_v1.0.svg</td></tr>
         <tr><td>Rear lockup</td><td class="num">1200 x 475</td><td>Centred across both doors, 350 below roof line</td><td>GBS_HORIZON_VAN_REAR-LOCKUP_1200MM_SAGE-RED_v1.0.svg</td></tr>
         <tr><td>Rear contact block</td><td class="num">700 x 136</td><td>Centred, 270 below strapline, between handle and plate</td><td>GBS_HORIZON_VAN_REAR-CONTACT_700MM_SAGE_v1.0.svg</td></tr>
-        <tr><td>Bonnet emblem</td><td class="num">250 x 187</td><td>Centred on bonnet, 150 from leading edge</td><td>GBS_HORIZON_VAN_BONNET-ICON_250MM_SAGE-RED_v1.0.svg</td></tr>
+        <tr><td>Bonnet emblem</td><td class="num">250 x 235</td><td>Centred on bonnet, 150 from leading edge</td><td>GBS_HORIZON_VAN_BONNET-ICON_250MM_SAGE-RED_v1.0.svg</td></tr>
       </table>
       <p class="small">Preview: GBS_HORIZON_VAN_SIDE-LOCKUP-PREVIEW-1-10_140MM_SAGE-RED_v1.0.png (300 dpi, 1:10). Contact details on every element come from company.json; the phone number shown is the one verified line.</p>
     </div>

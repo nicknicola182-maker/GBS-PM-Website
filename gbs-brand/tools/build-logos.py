@@ -11,7 +11,10 @@ Lockups:
   nostrap    the same without the strapline (stationery headers, chest prints)
   wordmark   letters, bars and horizon line only (small spaces)
   strip      wordmark with the descriptor on the same line, for narrow bands
-  icon       the bars icon on its own; square avatars add a background
+  icon       the four bars and horizon line on their own; square avatars add a background
+
+Bar colours (owner instruction 11 Oct 2026, as in the supplied artwork): first and fourth bars
+and the horizon line in light sage, second bar in the letter colour, third bar red.
 """
 import json, os
 
@@ -21,24 +24,27 @@ OUT = os.path.join(ROOT, "01_LOGO_MASTER", "svg")
 os.makedirs(OUT, exist_ok=True)
 
 SAGE, SAGE_SURFACE, RED, OFFWHITE, WHITE, BLACK = "#6E7F72", "#627365", "#E10600", "#F9F9F7", "#FFFFFF", "#000000"
-PAD = 40          # padding around the artwork, in layer units (4 units = 1 source pixel)
+SAGE_LIGHT = "#ACBCAC"   # light sage of the outer bars and horizon line in the supplied artwork (--gbs-sage-light)
+PAD = 40          # padding around the artwork, in layer units (4 units = 1 source pixel; 16 for the icon)
 UNIT = 0.25       # layer units to CSS px, so the stacked lockup is 970 px wide like the supplied file
 
-PRIMARY = dict(word=SAGE, red=RED)
-REVERSED = dict(word=OFFWHITE, red=RED)
-REVERSED_SOFT = dict(word=OFFWHITE, red=OFFWHITE)
-def mono(c): return dict(word=c, red=c)
+PRIMARY = dict(word=SAGE, tint=SAGE_LIGHT, red=RED)
+REVERSED = dict(word=OFFWHITE, tint=SAGE_LIGHT, red=RED)
+REVERSED_SOFT = dict(word=OFFWHITE, tint=SAGE_LIGHT, red=OFFWHITE)
+def mono(c): return dict(word=c, tint=c, red=c)   # single-colour: every bar solid in that colour
 
 LOCKUPS = {
-    "stacked": dict(layers=["word", "redbar", "descriptor", "strap", "pipes"]),
-    "nostrap": dict(layers=["word", "redbar", "descriptor"]),
-    "wordmark": dict(layers=["word", "redbar"]),
+    "stacked": dict(layers=["tint", "word", "redbar", "descriptor", "strap", "pipes"]),
+    "nostrap": dict(layers=["tint", "word", "redbar", "descriptor"]),
+    "wordmark": dict(layers=["tint", "word", "redbar"]),
     # strip: the wordmark with the descriptor set on the same line to its right, for narrow bands
     # (pens, lanyards, belly bands). Assembled from the supplied artwork without redrawing it.
-    "strip": dict(layers=["word", "redbar"], inline_descriptor=True),
+    "strip": dict(layers=["tint", "word", "redbar"], inline_descriptor=True),
 }
-STRIP_GAP = 150   # units between the short bar and the descriptor in the strip lockup
-LAYER_COLOUR = {"word": "word", "strap": "word", "redbar": "red", "descriptor": "red", "pipes": "red"}
+ICON_LAYERS = ["icon_tint", "icon_word", "icon_red"]
+STRIP_GAP = 150   # units between the fourth bar and the descriptor in the strip lockup
+LAYER_COLOUR = {"tint": "tint", "word": "word", "strap": "word", "redbar": "red", "descriptor": "red", "pipes": "red",
+                "icon_tint": "tint", "icon_word": "word", "icon_red": "red"}
 
 VARIANTS = [
     dict(name="LOGO_PRIMARY_SAGE-RED", title="GBS Property Maintenance", lockup="stacked", colours=PRIMARY),
@@ -57,15 +63,15 @@ VARIANTS = [
     dict(name="LOGO_MONO-NOSTRAP_WHITE", title="GBS Property Maintenance", lockup="nostrap", colours=mono(WHITE)),
     dict(name="LOGO_MONO_BLACK", title="GBS Property Maintenance", lockup="stacked", colours=mono(BLACK)),
     dict(name="LOGO_MONO-NOSTRAP_BLACK", title="GBS Property Maintenance", lockup="nostrap", colours=mono(BLACK)),
-    dict(name="ICON_SAGE-RED", title="GBS Horizon icon", lockup="icon", colours=mono(SAGE)),
-    dict(name="ICON_OFFWHITE-RED", title="GBS Horizon icon", lockup="icon", colours=mono(OFFWHITE)),
+    dict(name="ICON_SAGE-RED", title="GBS Horizon icon", lockup="icon", colours=PRIMARY),
+    dict(name="ICON_OFFWHITE-RED", title="GBS Horizon icon", lockup="icon", colours=REVERSED),
     dict(name="ICON_MONO_SAGE", title="GBS Horizon icon", lockup="icon", colours=mono(SAGE)),
     dict(name="ICON_MONO_WHITE", title="GBS Horizon icon", lockup="icon", colours=mono(WHITE)),
     dict(name="ICON_MONO_BLACK", title="GBS Horizon icon", lockup="icon", colours=mono(BLACK)),
-    dict(name="ICON_SIMPLIFIED_SAGE-RED", title="GBS Horizon icon (embroidery)", lockup="icon", colours=mono(SAGE)),
-    dict(name="ICON_SIMPLIFIED_OFFWHITE-RED", title="GBS Horizon icon (embroidery)", lockup="icon", colours=mono(OFFWHITE)),
-    dict(name="AVATAR_SQUARE_ON-SAGE", title="GBS Horizon avatar", lockup="icon", colours=mono(OFFWHITE), background=SAGE_SURFACE, square=True),
-    dict(name="AVATAR_SQUARE_ON-OFFWHITE", title="GBS Horizon avatar", lockup="icon", colours=mono(SAGE), background=OFFWHITE, square=True),
+    dict(name="ICON_SIMPLIFIED_SAGE-RED", title="GBS Horizon icon (embroidery)", lockup="icon", colours=PRIMARY),
+    dict(name="ICON_SIMPLIFIED_OFFWHITE-RED", title="GBS Horizon icon (embroidery)", lockup="icon", colours=REVERSED),
+    dict(name="AVATAR_SQUARE_ON-SAGE", title="GBS Horizon avatar", lockup="icon", colours=REVERSED, background=SAGE_SURFACE, square=True),
+    dict(name="AVATAR_SQUARE_ON-OFFWHITE", title="GBS Horizon avatar", lockup="icon", colours=PRIMARY, background=OFFWHITE, square=True),
 ]
 
 
@@ -86,15 +92,17 @@ def build(data, v):
     layers, bboxes = data["layers"], data["bboxes"]
     body, note = [], []
     if v["lockup"] == "icon":
-        x0, y0, x1, y1 = bboxes["icon"]
+        x0 = min(bboxes[l][0] for l in ICON_LAYERS); x1 = max(bboxes[l][2] for l in ICON_LAYERS)
+        y0 = min(bboxes[l][1] for l in ICON_LAYERS); y1 = max(bboxes[l][3] for l in ICON_LAYERS)
         if v.get("square"):
             side = max(x1 - x0, y1 - y0) * 1.5
             cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
             vb = (cx - side / 2, cy - side / 2, side, side)
         else:
             vb = (x0 - PAD, y0 - PAD, x1 - x0 + 2 * PAD, y1 - y0 + 2 * PAD)
-        body.append(group(layers["icon"], v["colours"]["word"]))
-        note.append("icon from horizon-icon.png")
+        for l in ICON_LAYERS:
+            body.append(group(layers[l], v["colours"][LAYER_COLOUR[l]]))
+        note.append("icon: bars and horizon line cut from horizon-logo.png")
     else:
         spec = LOCKUPS[v["lockup"]]
         xs0 = min(bboxes[l][0] for l in spec["layers"]); xs1 = max(bboxes[l][2] for l in spec["layers"])

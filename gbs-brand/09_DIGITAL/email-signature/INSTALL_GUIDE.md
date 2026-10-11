@@ -1,23 +1,30 @@
-# GBS email signature - installation guide (v1.0)
+# GBS email signature - installation guide (v1.1)
 
 Files in this folder:
 
 | File | Use |
 |---|---|
-| `signature.compiled.html` | Personal signature with the details from `company.json` resolved. Install this one. |
+| `signature-<first>-<last>.compiled.html` | One personal signature per person listed in `company.json` under `people` (currently `signature-nicholas-nicola.compiled.html`). Install your own. |
 | `signature-generic.compiled.html` | Shared-mailbox version (info@, no named person). |
-| `signature.compiled.txt` | Plain-text version for text-only mail and ticketing systems. |
-| `signature.html`, `signature-generic.html`, `signature.txt` | Token sources. Do not install these; they still contain `{{company.*}}` placeholders. |
+| `signature-<first>-<last>.compiled.txt` | Plain-text version of each personal signature for text-only mail and ticketing systems. |
+| `signature-staff-template.compiled.html`, `.txt` | Signature with FIRST LAST, JOB TITLE, 07xxx xxxxxx and first.last@ placeholders for staff not yet listed in `company.json`. Edit the placeholders before installing, or add the person to `company.json` and rebuild (preferred). |
+| `signature.html`, `signature-generic.html`, `signature.txt` | Token sources. Do not install these; they still contain `{{company.*}}` and `{{person.*}}` placeholders. |
 | `build-signature.mjs` | Rebuilds the compiled files from `company.json` (`node 09_DIGITAL/email-signature/build-signature.mjs`). |
-| `logo-email-600.png` | The logo the signature loads. The website serves it at `https://gbs-pm.co.uk/assets/img/logo-email-600.png`. |
+| `logo-email-600.png` | The logo the signature loads: the primary lockup with strapline, 600 x 238 px, shown at 200 x 79 px. The website serves it at `https://gbs-pm.co.uk/assets/img/logo-email-600.png`. |
 | `signature.preview.html` | Review copy with the logo loaded from this folder instead of the website. Do not install it. |
 | `preview.png` / `preview-local.png` | Review renders only. `preview.png` shows the alt text where the hosted logo could not be fetched at render time; `preview-local.png` shows the layout with the logo. |
 
-For a second person, copy `signature.html` details or add them to `company.json` under `people` and rebuild.
+## Adding a member of staff
+
+1. Open `gbs-brand/company.json` and add the person to the `people` list, copying the existing entry: `name`, `role`, `email`, `mobile` (as it should read) and `mobileTel` (international form, digits only after the +).
+2. Run `node gbs-brand/09_DIGITAL/email-signature/build-signature.mjs`. It writes `signature-<first>-<last>.compiled.html` and `.txt` for every person listed.
+3. Send the person their two files and this guide. Only the first person listed is used elsewhere in the pack (letterhead, named business cards, quotation and invoice), so adding staff after the Managing Director changes nothing else.
+
+If a signature is needed before the person is added to `company.json`, open `signature-staff-template.compiled.html` in a text editor and replace FIRST LAST, JOB TITLE, the two mobile placeholders (`07xxx xxxxxx` and `+447xxxxxxxxx`) and `first.last@gbs-pm.co.uk`, then install it in the same way.
 
 ## Before you start: the hosted logo
 
-The signature does not embed the logo. It loads `https://gbs-pm.co.uk/assets/img/logo-email-600.png` from the website so every message stays small and the image never arrives as an attachment. Upload `logo-email-600.png` to that exact path on the web server before anyone installs the signature. If the path changes, rebuild the signature; do not re-insert the logo as a pasted picture.
+The signature does not embed the logo. It loads `https://gbs-pm.co.uk/assets/img/logo-email-600.png` from the website so every message stays small and the image never arrives as an attachment. The website build copies the logo to that path, so it goes live when the change is merged to `main` and Cloudflare redeploys; install signatures after that, otherwise the old logo shows until the deploy completes. If the path changes, rebuild the signature; do not re-insert the logo as a pasted picture.
 
 Some recipients will see a blank box or "download pictures" prompt until they allow images. This is normal for hosted images and is the trade-off for a clean, lightweight signature.
 
@@ -25,11 +32,11 @@ Some recipients will see a blank box or "download pictures" prompt until they al
 
 Mail clients want the rendered signature, not the source code.
 
-1. Open `signature.compiled.html` in a web browser (double-click it, or drag it into Chrome or Edge).
+1. Open your `signature-<first>-<last>.compiled.html` in a web browser (double-click it, or drag it into Chrome or Edge).
 2. Press Ctrl+A (Windows) or Cmd+A (Mac) to select everything, then Ctrl+C or Cmd+C to copy.
 3. Paste into the signature editor of your mail client as described below.
 
-If a client offers an "insert HTML" or "source" mode, you can instead open `signature.compiled.html` in a text editor, copy the text between `<body ...>` and `</body>`, and paste it there.
+If a client offers an "insert HTML" or "source" mode, you can instead open your `signature-<first>-<last>.compiled.html` in a text editor, copy the text between `<body ...>` and `</body>`, and paste it there.
 
 ## Outlook (classic desktop, Windows)
 
@@ -39,7 +46,7 @@ If a client offers an "insert HTML" or "source" mode, you can instead open `sign
 4. Under "Choose default signature", set it for New messages. For Replies/forwards you may also set it, or use the plain-text version to keep threads short.
 5. OK to save. Send a test message to yourself and to a Gmail address.
 
-If the pasted layout loses the vertical rule or spacing, Outlook has converted it to its own format. Close Outlook, open `%APPDATA%\Microsoft\Signatures\`, and replace the contents of `GBS.htm` with the contents of `signature.compiled.html`.
+If the pasted layout loses the vertical rule or spacing, Outlook has converted it to its own format. Close Outlook, open `%APPDATA%\Microsoft\Signatures\`, and replace the contents of `GBS.htm` with the contents of your `signature-<first>-<last>.compiled.html`.
 
 ## New Outlook (Windows), Outlook on the web and Outlook for Mac
 
@@ -68,7 +75,7 @@ Gmail trims signatures over about 10,000 characters. This one is about 3,300, so
 4. Paste the rendered signature from the browser into the right-hand box. The logo appears as a linked image.
 5. Close the window to save. In the Choose Signature menu, select `GBS` for the account.
 
-If pasting drops the layout, use the file method: create a dummy signature, quit Mail, find it in `~/Library/Mail/V10/MailData/Signatures/` (the version folder varies), open the newest `.mailsignature` file in a text editor, replace everything after the header lines with the contents of `signature.compiled.html`, lock the file (Get Info > Locked), and reopen Mail.
+If pasting drops the layout, use the file method: create a dummy signature, quit Mail, find it in `~/Library/Mail/V10/MailData/Signatures/` (the version folder varies), open the newest `.mailsignature` file in a text editor, replace everything after the header lines with the contents of your `signature-<first>-<last>.compiled.html`, lock the file (Get Info > Locked), and reopen Mail.
 
 ## iPhone and iPad
 
