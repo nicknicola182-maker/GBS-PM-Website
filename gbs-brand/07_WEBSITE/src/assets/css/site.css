@@ -138,7 +138,6 @@ strong{font-weight:600}
 .project-section{max-width:var(--container);margin:0 auto 75px;display:grid;grid-template-columns:1fr 1fr;background:var(--tint);scroll-margin-top:24px}
 .project-picture{position:relative;min-height:440px;overflow:hidden}
 .project-picture img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center 75%}
-.project-picture>span{position:absolute;bottom:16px;left:16px;font-size:11px;background:var(--offwhite);padding:6px 10px}
 .project-copy{padding:54px 48px;display:flex;flex-direction:column;align-items:flex-start}
 .project-copy>p:not(.eyebrow){font-size:14px;line-height:1.9;margin-top:22px;max-width:380px}
 .coming-soon{display:flex;gap:13px;align-items:baseline;padding:21px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:25px 0}
