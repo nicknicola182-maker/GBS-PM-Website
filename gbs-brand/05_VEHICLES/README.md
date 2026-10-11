@@ -42,7 +42,7 @@ Every vehicle dimension in this folder is a placeholder taken from a generic 530
 | Rear door widths, door gap | 855 mm each, 20 mm | |
 | Rear lamps, plate, sensors, camera | see sheets 3 and 4 | |
 
-Layout as drawn: side lockup 1400 x 554 mm centred 4250 mm from the front, top edge 300 mm below the roof line; contact row 1300 mm wide 60 mm below the strapline; bars 155 mm from the rear corner with the bottom edge on the sill; rear lockup 700 x 277 mm centred across both doors 350 mm below the roof line, contact block 70 mm below it; bonnet icon 250 mm centred, 150 mm back from the leading edge. If the real rear load panel is shorter than 1900 mm, scale the lockup down (not below 1200 mm) so that at least 150 mm of clear panel remains above and below.
+Layout as drawn: side lockup 1400 x 554 mm centred 4290 mm from the front, top edge 250 mm below the roof line and above the body crease; contact row 1300 mm wide 60 mm below the crease; bars 155 mm from the rear corner with the bottom edge on the sill; rear lockup 700 x 277 mm centred across both doors 350 mm below the roof line, contact block 70 mm below it; bonnet icon 250 mm centred, 150 mm back from the leading edge. If the real rear load panel is shorter than 1900 mm, scale the lockup down (not below 1200 mm) so that at least 150 mm of clear panel remains above and below.
 
 ## Supplier checklist
 
