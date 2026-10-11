@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Writes 04_WORKWEAR/placement-sheet.html: A4 landscape placement sheet, one page per garment + embroidery brief."""
-import sys, os
+import sys, os, re
 ROOT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "04_WORKWEAR", "placement-sheet.html")
 L = "../01_LOGO_MASTER/svg/"
@@ -47,8 +47,13 @@ def vest_bands(front):
     if front: b += '<path class="seam" d="M320,160 L320,760"/>'
     return b
 
-def drawing(title, body_path, detail, art, scale_note=""):
-    return (f'<figure class="draw"><figcaption>{title}</figcaption>'
+HALO_LINE = re.compile(r'<line (x1="[^>]*?)/>')   # dimension lines only (guides carry a class and are skipped)
+def drawing(title, body_path, detail, art, shade=""):
+    """shade: "" for white garments, "sage" for sage garments (sage fill, off-white seams, haloed dimensions)."""
+    if shade:
+        art = HALO_LINE.sub(lambda m: f'<line class="halo" {m.group(1)}/><line {m.group(1)}/>', art)
+    cls = f"draw {shade}" if shade else "draw"
+    return (f'<figure class="{cls}"><figcaption>{title}</figcaption>'
             f'<svg viewBox="-100 0 {CW} {CH}" xmlns="http://www.w3.org/2000/svg">'
             f'<path class="garment" d="{body_path}"/>{detail}{art}</svg></figure>')
 
@@ -76,7 +81,7 @@ GARMENTS = [
       files=["GBS_HORIZON_WORKWEAR_CHEST_95MM_SAGE-RED_v1.0.png", "GBS_HORIZON_WORKWEAR_BACK_260MM_SAGE-RED_v1.0.png", "GBS_HORIZON_WORKWEAR_SLEEVE_40MM_SAGE-RED_v1.0.png"],
       extra="Garment white should read as clean white or off-white; avoid optic-bright blue-whites next to the sage."),
  dict(name="Sage T-shirt", placement="Chest mark: wearer's left, centre 105 mm from centre front, top edge 90 mm below the shoulder seam at the neck point, 95 mm wide. Sleeve emblem: wearer's left sleeve, centred on the outer sleeve, top edge 100 mm below the shoulder seam, 40 mm high. Back: centred on centre back, top edge 110 mm below the back neck seam, 260 mm wide.", code="W01-B", colour="Sage garment (dye matched to the brand sage, supplier swatch to be approved)", technique="Screen print (off-white + red, with a white underbase under the red only if the supplier needs it for opacity) or DTF transfer.",
-      front=TEE_FRONT, back=TEE_BACK, fdet=TEE_DETAIL_F, bdet=TEE_DETAIL_B,
+      front=TEE_FRONT, back=TEE_BACK, fdet=TEE_DETAIL_F, bdet=TEE_DETAIL_B, shade="sage",
       chest="GBS_HORIZON_LOGO_REVERSED-NOSTRAP_OFFWHITE-RED_v1.0.svg", backlogo="GBS_HORIZON_LOGO_REVERSED_OFFWHITE-RED_v1.0.svg", sleeve="GBS_HORIZON_ICON_OFFWHITE-RED_v1.0.svg",
       files=["GBS_HORIZON_WORKWEAR_CHEST_95MM_OFFWHITE-RED_v1.0.png", "GBS_HORIZON_WORKWEAR_BACK_260MM_OFFWHITE-RED_v1.0.png", "GBS_HORIZON_WORKWEAR_SLEEVE_40MM_OFFWHITE-RED_v1.0.png"],
       extra="The reversed lockup is the only approved use of red on sage. Do not add a keyline or drop shadow."),
@@ -86,12 +91,12 @@ GARMENTS = [
       files=["01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg (digitise from vector)", "01_LOGO_MASTER/svg/GBS_HORIZON_ICON_SIMPLIFIED_SAGE-RED_v1.0.svg", "See page 7, embroidery brief"],
       extra="Descriptor cap height at 95 mm is 3.9 mm: below the 5 mm letter test. See the embroidery brief for the sew-out decision and wordmark fallback."),
  dict(name="Sage polo", placement="Chest mark: wearer's left, centre 105 mm from centre front, top edge 90 mm below the shoulder seam at the neck point, 95 mm wide, clear of the placket. Sleeve emblem: wearer's left sleeve, centred, top edge 100 mm below the shoulder seam, 40 mm high (simplified icon). Back (optional): centred, top edge 115 mm below the back neck seam, 230 mm wide no-strap lockup.", code="W02-B", colour="Sage garment (dye matched to the brand sage)", technique="Embroidery, as the white polo. Off-white and red threads on sage. Stitch sample required.",
-      front=TEE_FRONT, back=TEE_BACK, fdet=POLO_DETAIL_F, bdet=POLO_DETAIL_B, polo=True,
+      front=TEE_FRONT, back=TEE_BACK, fdet=POLO_DETAIL_F, bdet=POLO_DETAIL_B, polo=True, shade="sage",
       chest="GBS_HORIZON_LOGO_REVERSED-NOSTRAP_OFFWHITE-RED_v1.0.svg", backlogo="GBS_HORIZON_LOGO_REVERSED-NOSTRAP_OFFWHITE-RED_v1.0.svg", sleeve="GBS_HORIZON_ICON_SIMPLIFIED_OFFWHITE-RED_v1.0.svg",
       files=["01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_REVERSED-NOSTRAP_OFFWHITE-RED_v1.0.svg (digitise from vector)", "01_LOGO_MASTER/svg/GBS_HORIZON_ICON_SIMPLIFIED_OFFWHITE-RED_v1.0.svg", "See page 7, embroidery brief"],
       extra="Sew the second (hollow) bar of the icon as a solid bar, as in the simplified icon: the 1 mm outline will not sew at this size."),
  dict(name="Softshell jacket", placement="Chest mark: wearer's left, centre 105 mm from centre front, top edge 90 mm below the shoulder seam at the neck point, 95 mm wide. Sleeve emblem: wearer's left sleeve, centred on the outer sleeve, top edge 90 mm below the shoulder seam, 40 mm high. Back: centred on centre back, top edge 110 mm below the back neck seam, 260 mm wide.", code="W03-A", colour="Sage garment (reversed artwork). If a white or off-white shell is ever ordered, use the primary files from the T-shirt page.", technique="Heat transfer (DTF or cut flex) applied at the temperature and dwell the shell membrane allows: supplier to confirm. Keep transfers clear of seams, zips and pockets.",
-      front=JKT_FRONT, back=JKT_BACK, fdet=JKT_DETAIL_F, bdet=JKT_DETAIL_B, jacket=True,
+      front=JKT_FRONT, back=JKT_BACK, fdet=JKT_DETAIL_F, bdet=JKT_DETAIL_B, jacket=True, shade="sage",
       chest="GBS_HORIZON_LOGO_REVERSED-NOSTRAP_OFFWHITE-RED_v1.0.svg", backlogo="GBS_HORIZON_LOGO_REVERSED_OFFWHITE-RED_v1.0.svg", sleeve="GBS_HORIZON_ICON_OFFWHITE-RED_v1.0.svg",
       files=["GBS_HORIZON_WORKWEAR_CHEST_95MM_OFFWHITE-RED_v1.0.png", "GBS_HORIZON_WORKWEAR_BACK_260MM_OFFWHITE-RED_v1.0.png", "GBS_HORIZON_WORKWEAR_SLEEVE_40MM_OFFWHITE-RED_v1.0.png"],
       extra="Chest mark sits on the wearer's left, clear of the zip by at least 40 mm. If the jacket has a left chest pocket, move the mark 20 mm above the pocket zip or agree an alternative position."),
@@ -133,8 +138,8 @@ def page(g, n, total):
   </header>
   <div class="head-rule"></div>
   <div class="drawings">
-    {drawing("Front (as worn: wearer's left is on the right of the drawing)", g['front'], g['fdet'], front_art)}
-    {drawing("Back", g['back'], g['bdet'], back_art_)}
+    {drawing("Front (as worn: wearer's left is on the right of the drawing)", g['front'], g['fdet'], front_art, g.get("shade", ""))}
+    {drawing("Back", g['back'], g['bdet'], back_art_, g.get("shade", ""))}
   </div>
   <aside class="notes">
     <h3>Garment</h3><p>{g['colour']}</p>
@@ -210,6 +215,10 @@ CSS = '''
   .draw svg { width: 100mm; height: 100mm; display: block; }
   .garment { fill: #fff; stroke: var(--gbs-ink); stroke-width: 3; stroke-linejoin: round; }
   .seam { fill: none; stroke: var(--gbs-ink-soft); stroke-width: 1.5; }
+  .sage .garment { fill: var(--gbs-sage); }
+  .sage .seam { stroke: var(--gbs-offwhite); stroke-opacity: 0.6; }
+  .sage line.halo { stroke: #fff; stroke-width: 5; }
+  .sage .dim text, .sage .lab { paint-order: stroke; stroke: #fff; stroke-width: 4px; stroke-linejoin: round; }
   .tape { fill: #DADADA; stroke: none; }
   .zone { fill: none; stroke: var(--gbs-red); stroke-width: 1; stroke-dasharray: 6 4; }
   .guide { stroke: var(--gbs-light); stroke-width: 1.5; stroke-dasharray: 8 6; }
