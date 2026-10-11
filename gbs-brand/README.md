@@ -11,7 +11,7 @@ The folder numbering follows section 10 of `GBS_Horizon_Brand_Production_Manual_
 | `company.json` | **Single source of truth** for trading name, legal name, phone, email, address, company number, VAT number and people. Edit here, then run `tools/build-all.sh`. |
 | `BRAND_RULES.md` | Condensed working rules: colour, type, logo usage, copy tone, print conventions. |
 | `00_BRAND_CORE` | Design tokens (`tokens.css`), self-hosted fonts (Montserrat, Inter; OFL licence). |
-| `01_LOGO_MASTER` | 25 outlined SVG logo variants, PNG exports (400-4000 px, transparent), favicon set. Generator: `tools/build-logos.py`. |
+| `01_LOGO_MASTER` | Supplied Horizon artwork (`source`), 25 outlined SVG logo variants, PNG exports (400-4000 px, transparent), favicon set. Generators: `tools/trace-logo.py`, `tools/build-logos.py`. |
 | `02_COLOUR_TYPE` | Brand quick guide PDF (colour, type, logo variants, clear space, misuse), palette files. |
 | `03_PRINT` | Letterhead, business cards, compliment slip, envelopes, quotation / invoice / job report templates, 8 pp brochure. HTML sources plus `_SCREEN` (trim) and `_PRESS` (bleed + crop marks) PDFs. |
 | `04_WORKWEAR` | 300 dpi transfer artwork (chest, back, sleeve, hi-vis), placement sheets, embroidery brief. |
@@ -42,6 +42,6 @@ Individual steps: `python3 tools/build-logos.py` (SVG masters), `bash tools/expo
 
 ## Notes on this issue
 
-- The logo masters were rebuilt as clean geometry from the brand manual's description and the approved mood board, because the supplied PNG logos are AI-rendered rasters that the manual itself says must not be released. Geometry is documented in the brand quick guide so a designer can refine optical spacing in Illustrator or Affinity if required.
+- The logo masters are the Horizon artwork supplied in the October 2026 handover (`01_LOGO_MASTER/source/horizon-logo.png`, `horizon-icon.png`), traced to vector once by `tools/trace-logo.py` (needs `pip install vtracer`) and composed into 25 colourways and lockups by `tools/build-logos.py`. The trace reproduces the supplied raster to within anti-aliasing (shape overlap 0.96); replace `layers.json` with a trace of the original vector file if the artwork's author can supply one before large-format vinyl or embroidery is manufactured. The strip lockup is assembled from the artwork (wordmark plus descriptor on one line) for narrow bands only.
 - No photography was supplied, so the website and brochure are typographic by design, with a "horizon" bar motif derived from the icon. Slots for audited project photography are described in `07_WEBSITE/README.md`.
 - Colour values remain provisional working digital values until physical proofs are approved.

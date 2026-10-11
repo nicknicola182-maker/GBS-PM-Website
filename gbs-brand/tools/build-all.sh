@@ -4,6 +4,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 echo "== 1. Logo masters (SVG) and exports (PNG, favicon)"; python3 -I tools/build-logos.py >/dev/null && bash tools/export-logos.sh
+echo "== 1b. Derived artwork (vehicle panels and layout, workwear placement sheet)"; python3 -I 05_VEHICLES/build-livery-panels.py >/dev/null && python3 -I 05_VEHICLES/build-livery-layout.py >/dev/null && python3 -I 04_WORKWEAR/build-placement-sheet.py >/dev/null
 echo "== 2. Website"; node tools/build-site.mjs
 echo "== 3. Email signature (compiled)"; [ -f 09_DIGITAL/email-signature/build-signature.mjs ] && node 09_DIGITAL/email-signature/build-signature.mjs || true
 echo "== 4. Print, workwear, vehicle, signage, merch and digital renders"

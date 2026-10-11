@@ -21,11 +21,11 @@ def ext(x1, y1, x2, y2): return f'<line class="ext" x1="{x1}" y1="{y1}" x2="{x2}
 def lab(x, y, txt, t=42, anchor="start", cls="lab"): return f'<text class="{cls}" x="{x}" y="{y}" font-size="{t}" text-anchor="{anchor}">{txt}</text>'
 def art(href, x, y, w, h): return f'<rect class="zone" x="{x}" y="{y}" width="{w}" height="{h}"/><image href="{href}" x="{x}" y="{y}" width="{w}" height="{h}"/>'
 def bars(x, y_bottom):
-    b = [(15, 170, "sage"), (40, 310, "red"), (40, 460, "sage")]; out = ""; cx = x
-    for w, h, c in b: out += f'<rect class="bar-{c}" x="{cx}" y="{y_bottom-h}" width="{w}" height="{h}"/>'; cx += w + 25
+    b = [(41, 460, "sage", 30), (40, 373, "red", 46), (44, 270, "sage", 0)]; out = ""; cx = x
+    for w, h, c, g in b: out += f'<rect class="bar-{c}" x="{cx}" y="{y_bottom-h}" width="{w}" height="{h}"/>'; cx += w + g
     return out
 def scalebar(x, y, t=45):
-    return (f'<g class="dim"><rect x="{x}" y="{y}" width="500" height="{t*0.5}" fill="#2E3531"/><rect x="{x+500}" y="{y}" width="500" height="{t*0.5}" fill="#fff" stroke="#2E3531" stroke-width="{t*0.08}"/>'
+    return (f'<g class="dim"><rect x="{x}" y="{y}" width="500" height="{t*0.5}" fill="#4C5D50"/><rect x="{x+500}" y="{y}" width="500" height="{t*0.5}" fill="#fff" stroke="#4C5D50" stroke-width="{t*0.08}"/>'
             f'<text x="{x}" y="{y+t*1.4}" text-anchor="middle" font-size="{t*0.8}">0</text><text x="{x+500}" y="{y+t*1.4}" text-anchor="middle" font-size="{t*0.8}">500</text><text x="{x+1000}" y="{y+t*1.4}" text-anchor="middle" font-size="{t*0.8}">1000 mm</text></g>')
 
 # ---------------- side elevation geometry (full-scale mm, y down, ground = 2000) ----------------
@@ -51,17 +51,17 @@ def side_page(nearside, n):
                 + ext(3300, 1660, 3300, 1760) + ext(lx, 1660, lx, 1760) + hdim(3300, lx, 1740, "250 from sliding-door edge", above=False)
                 + ext(rx, 1660, rx, 1760) + ext(5300, 1660, 5300, 1760) + hdim(rx, 5300, 1740, "350 to rear corner", above=False)
                 + vdim(5450, 0, 300, "300", left=False) + ext(5270, 300, 5450, 300) + ext(5270, 0, 5450, 0)
-                + vdim(3450, 300, 980, "680 (lockup height)") + vdim(3450, 1040, 1115, "75 contact row")
-                + ext(3600, 1040, 3450, 1040) + ext(3600, 1115, 3450, 1115)
+                + vdim(3450, 300, 854, "554 (lockup height)") + vdim(3450, 914, 989, "75 contact row")
+                + ext(3600, 914, 3450, 914) + ext(3600, 989, 3450, 989)
                 + lab(4050, 155, "sliding-door upper track rail: keep clear 100", 38, "middle", "keeplab")
                 + lab(4250, 1340, "all dimensions full-scale mm; placeholder geometry until the vehicle survey", 38, "middle")
                 + hdim(0, 5300, -120, "5300 overall length (placeholder)") + vdim(-150, 0, 2000, "2000 overall height")
                 + ext(0, -40, 0, -160) + ext(5300, -40, 5300, -160) + ext(-60, 0, -200, 0) + ext(-60, 2000, -200, 2000)
                 + hdim(1000, 4300, 1900, "3300 wheelbase (placeholder)", above=False, t=42)
                 + vdim(5450, 1120, 1580, "460 bars", left=False) + ext(5145, 1120, 5450, 1120) + ext(5145, 1580, 5450, 1580))
-        livery = (art(LOCK, lx, 300, 1400, 680.14)
-                  + f'<text class="contact" x="3600" y="1100" font-size="82.5">{{{{company.domain}}}}</text><text class="contact" x="4900" y="1100" font-size="82.5" text-anchor="end">{{{{company.phone}}}}</text>'
-                  + f'<rect class="zone" x="3600" y="1040" width="1300" height="75"/>'
+        livery = (art(LOCK, lx, 300, 1400, 554.34)
+                  + f'<text class="contact" x="3600" y="974" font-size="82.5">{{{{company.domain}}}}</text><text class="contact" x="4900" y="974" font-size="82.5" text-anchor="end">{{{{company.phone}}}}</text>'
+                  + f'<rect class="zone" x="3600" y="914" width="1300" height="75"/>'
                   + bars(5000, 1580))
     else:
         van = f'<g id="van" transform="translate(5300,0) scale(-1,1)">{COMMON}</g>' + OFFSIDE_EXTRA
@@ -70,16 +70,16 @@ def side_page(nearside, n):
                 + ext(0, 1660, 0, 1760) + ext(lx, 1660, lx, 1760) + hdim(0, lx, 1740, "350 to rear corner", above=False)
                 + ext(rx, 1660, rx, 1760) + ext(3300, 1660, 3300, 1760) + hdim(rx, 3300, 1740, "1550 to B-pillar", above=False)
                 + vdim(-150, 0, 300, "300") + ext(30, 300, -150, 300) + ext(30, 0, -150, 0)
-                + vdim(1850, 300, 980, "680 (lockup height)", left=False) + vdim(1850, 1040, 1115, "75 contact row", left=False)
-                + ext(1700, 1040, 1850, 1040) + ext(1700, 1115, 1850, 1115)
+                + vdim(1850, 300, 854, "554 (lockup height)", left=False) + vdim(1850, 914, 989, "75 contact row", left=False)
+                + ext(1700, 914, 1850, 914) + ext(1700, 989, 1850, 989)
                 + lab(3060, 850, "fuel flap: keep clear 100", 38, "middle", "keeplab")
                 + lab(2650, 1340, "all dimensions full-scale mm; placeholder geometry until the vehicle survey", 38, "middle")
                 + hdim(0, 5300, -120, "5300 overall length (placeholder)") + vdim(5450, 0, 2000, "2000 overall height", left=False)
                 + ext(0, -40, 0, -160) + ext(5300, -40, 5300, -160) + ext(5340, 0, 5450, 0) + ext(5340, 2000, 5450, 2000)
                 + vdim(-150, 1120, 1580, "460 bars") + ext(155, 1120, -150, 1120) + ext(155, 1580, -150, 1580))
-        livery = (art(LOCK, lx, 300, 1400, 680.14)
-                  + f'<text class="contact" x="400" y="1100" font-size="82.5">{{{{company.domain}}}}</text><text class="contact" x="1700" y="1100" font-size="82.5" text-anchor="end">{{{{company.phone}}}}</text>'
-                  + f'<rect class="zone" x="400" y="1040" width="1300" height="75"/>'
+        livery = (art(LOCK, lx, 300, 1400, 554.34)
+                  + f'<text class="contact" x="400" y="974" font-size="82.5">{{{{company.domain}}}}</text><text class="contact" x="1700" y="974" font-size="82.5" text-anchor="end">{{{{company.phone}}}}</text>'
+                  + f'<rect class="zone" x="400" y="914" width="1300" height="75"/>'
                   + bars(155, 1580))
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="-420 -260 6140 2420" class="side">'
            f'<line class="ground" x1="-300" y1="2000" x2="5600" y2="2000"/>{van}{livery}{dims}{scalebar(-300, 2120)}</svg>')
@@ -89,9 +89,9 @@ def side_page(nearside, n):
   <div class="drawing side-wrap">{svg}</div>
   <div class="notes-row">
     <div><h3>Elements on this side</h3>
-      <ul><li>Side lockup: primary logo with strapline, 1400 x 680 mm, centred on the rear load panel at 4250 mm from the front (250 mm behind the {'sliding-door rear edge' if nearside else 'equivalent line'}, 350 mm from the rear corner), top edge 300 mm below the roof line. File GBS_HORIZON_VAN_SIDE-LOCKUP_1400MM_SAGE-RED_v1.0.svg.</li>
+      <ul><li>Side lockup: primary logo with strapline, 1400 x 554 mm, centred on the rear load panel at 4250 mm from the front (250 mm behind the {'sliding-door rear edge' if nearside else 'equivalent line'}, 350 mm from the rear corner), top edge 300 mm below the roof line. File GBS_HORIZON_VAN_SIDE-LOCKUP_1400MM_SAGE-RED_v1.0.svg.</li>
       <li>Contact row: web address left, phone right, Inter SemiBold, 60 mm cap height, 1300 mm between outer edges, 60 mm below the strapline. File GBS_HORIZON_VAN_SIDE-CONTACT_1300MM_SAGE_v1.0.svg (outlined).</li>
-      <li>Rear-quarter bars: 145 x 460 mm, bottom edge on the sill line, 155 mm from the rear corner. File GBS_HORIZON_VAN_REAR-QUARTER-BARS_460MM_SAGE-RED_v1.0.svg.</li></ul></div>
+      <li>Rear-quarter bars: 201 x 460 mm, bottom edge on the sill line, 155 mm from the rear corner. File GBS_HORIZON_VAN_REAR-QUARTER-BARS_460MM_SAGE-RED_v1.0.svg.</li></ul></div>
     <div><h3>Keep clear</h3>
       <ul><li>Door gaps, handles, the {'sliding-door upper track rail (100 mm band below the gutter)' if nearside else 'fuel flap (100 mm all round)'} and the sliding-door travel: no graphic may bridge a gap or sit on a rail.</li>
       <li>Rear lamp wrap-around, side repeater, side sensors and any camera. 50 mm minimum to any panel edge, swage line or rubbing strip.</li>
@@ -116,15 +116,15 @@ def rear_page(n):
            '<rect class="plate" x="330" y="1300" width="440" height="110"/><text class="lab" x="550" y="1370" font-size="40" text-anchor="middle">number plate</text>'
            '<circle class="sensor" cx="300" cy="1550" r="14"/><circle class="sensor" cx="800" cy="1550" r="14"/><circle class="sensor" cx="1200" cy="1550" r="14"/><circle class="sensor" cx="1700" cy="1550" r="14"/>'
            '<rect class="sensor" x="985" y="1430" width="30" height="30"/>')
-    livery = (art(LOCK, 650, 350, 700, 340.07)
-              + f'<text class="contact" x="1000" y="815" font-size="75.6" text-anchor="middle">{{{{company.phone}}}}</text>'
-              + f'<text class="contact" x="1000" y="885" font-size="57.7" text-anchor="middle">{{{{company.domain}}}}</text>'
-              + '<rect class="zone" x="650" y="760" width="700" height="135.5"/>')
+    livery = (art(LOCK, 650, 350, 700, 277.17)
+              + f'<text class="contact" x="1000" y="752" font-size="75.6" text-anchor="middle">{{{{company.phone}}}}</text>'
+              + f'<text class="contact" x="1000" y="822" font-size="57.7" text-anchor="middle">{{{{company.domain}}}}</text>'
+              + '<rect class="zone" x="650" y="697" width="700" height="135.5"/>')
     t = 32
     dims = (hdim(650, 1350, 320, "700 (lockup, split at the door gap)", t=t) + vdim(-120, 0, 350, "350 from roof", t=t) + ext(0, 350, -120, 350) + ext(0, 0, -120, 0)
-            + vdim(1480, 350, 690, "340", left=False, t=t) + ext(1350, 690, 1480, 690) + ext(1350, 350, 1480, 350)
-            + vdim(1480, 760, 895.5, "136 contact block", left=False, t=t) + ext(1350, 760, 1480, 760) + ext(1350, 895.5, 1480, 895.5)
-            + vdim(560, 690, 760, "70", t=t) + ext(650, 690, 560, 690) + ext(650, 760, 560, 760)
+            + vdim(1480, 350, 627, "277", left=False, t=t) + ext(1350, 627, 1480, 627) + ext(1350, 350, 1480, 350)
+            + vdim(1480, 697, 832.5, "136 contact block", left=False, t=t) + ext(1350, 697, 1480, 697) + ext(1350, 832.5, 1480, 832.5)
+            + vdim(560, 627, 697, "70", t=t) + ext(650, 627, 560, 627) + ext(650, 697, 560, 697)
             + hdim(0, 2000, -100, "2000 overall width (placeholder)", t=t) + ext(0, -40, 0, -140) + ext(2000, -40, 2000, -140)
             + hdim(130, 985, 1460, "855 door", above=False, t=t) + hdim(1015, 1870, 1460, "855 door", above=False, t=t)
             + lab(1000, 1000, "door gap 20: cut artwork on the gap, wrap 10 mm into the shut line only with a proof", 30, "middle")
@@ -137,7 +137,7 @@ def rear_page(n):
   <div class="drawing rear-wrap">{svg}</div>
   <aside class="side-notes">
     <h3>Elements</h3>
-    <ul><li>Rear lockup: primary logo with strapline, 700 x 340 mm, centred on the vehicle centre line across both doors, top edge 350 mm below the roof line. File GBS_HORIZON_VAN_REAR-LOCKUP_700MM_SAGE-RED_v1.0.svg.</li>
+    <ul><li>Rear lockup: primary logo with strapline, 700 x 277 mm, centred on the vehicle centre line across both doors, top edge 350 mm below the roof line. File GBS_HORIZON_VAN_REAR-LOCKUP_700MM_SAGE-RED_v1.0.svg.</li>
     <li>Contact block: phone (55 mm cap height) over web address (42 mm cap height), Inter SemiBold, centred, 70 mm below the strapline. File GBS_HORIZON_VAN_REAR-CONTACT_700MM_SAGE_v1.0.svg (outlined).</li>
     <li>No bars graphic and no descriptor repeat on the rear: the lockup already carries them.</li></ul>
     <h3>Door split</h3>
@@ -163,9 +163,9 @@ def front_page(n):
            '<circle class="sensor" cx="300" cy="1250" r="14"/><circle class="sensor" cx="800" cy="1250" r="14"/><circle class="sensor" cx="1200" cy="1250" r="14"/><circle class="sensor" cx="1700" cy="1250" r="14"/>'
            '<rect class="sensor" x="960" y="200" width="80" height="60"/>'
            '<rect class="handle" x="1000" y="1080" width="0" height="0"/>')
-    livery = art(ICON, 875, 760, 250, 207.03)
+    livery = art(ICON, 875, 760, 250, 187.07)
     t = 32
-    dims = (hdim(875, 1125, 730, "250 icon, centred", t=t) + vdim(1300, 760, 967, "207", left=False, t=t) + ext(1125, 760, 1300, 760) + ext(1125, 967, 1300, 967)
+    dims = (hdim(875, 1125, 730, "250 icon, centred", t=t) + vdim(1300, 760, 947.07, "187", left=False, t=t) + ext(1125, 760, 1300, 760) + ext(1125, 947.07, 1300, 947.07)
             + vdim(-120, 0, 760, "760 from roof (this elevation)", t=t) + ext(400, 120, -120, 120) + ext(200, 760, -120, 760)
             + hdim(0, 2000, -100, "2000 overall width (placeholder)", t=t) + ext(0, -40, 0, -140) + ext(2000, -40, 2000, -140)
             + lab(1000, 1070, "bonnet shut line and grille: keep clear 50 (nothing on the grille or badge)", 30, "middle", "keeplab")
@@ -179,7 +179,7 @@ def front_page(n):
   <div class="drawing rear-wrap">{svg}</div>
   <aside class="side-notes">
     <h3>Element</h3>
-    <ul><li>Bonnet emblem: icon only (sage/red), 250 x 207 mm, centred on the bonnet, 150 mm back from the leading edge measured along the panel; this elevation foreshortens the bonnet, so set out on the panel, not from the drawing. File GBS_HORIZON_VAN_BONNET-ICON_250MM_SAGE-RED_v1.0.svg.</li>
+    <ul><li>Bonnet emblem: icon only (sage/red), 250 x 187 mm, centred on the bonnet, 150 mm back from the leading edge measured along the panel; this elevation foreshortens the bonnet, so set out on the panel, not from the drawing. File GBS_HORIZON_VAN_BONNET-ICON_250MM_SAGE-RED_v1.0.svg.</li>
     <li>This is the most that goes on the bonnet. No lockup, descriptor, strapline or contact details on the front.</li></ul>
     <h3>Keep clear</h3>
     <p>Manufacturer badge (100 mm), bonnet shut line, grille, headlamps, washer jets, windscreen and wiper park, the camera and sensor pod behind the mirror, front parking sensors, the number plate and the whole bumper.</p>
@@ -221,12 +221,12 @@ def notes_page(n):
       <h3>Schedule of elements</h3>
       <table>
         <tr><th>Element</th><th>Size (mm)</th><th>Position</th><th>File</th></tr>
-        <tr><td>Side lockup (x2)</td><td class="num">1400 x 680</td><td>Rear load panel, 300 below roof line, 350 from rear corner</td><td>GBS_HORIZON_VAN_SIDE-LOCKUP_1400MM_SAGE-RED_v1.0.svg</td></tr>
+        <tr><td>Side lockup (x2)</td><td class="num">1400 x 554</td><td>Rear load panel, 300 below roof line, 350 from rear corner</td><td>GBS_HORIZON_VAN_SIDE-LOCKUP_1400MM_SAGE-RED_v1.0.svg</td></tr>
         <tr><td>Side contact row (x2)</td><td class="num">1300 x 75</td><td>60 below strapline, aligned to lockup</td><td>GBS_HORIZON_VAN_SIDE-CONTACT_1300MM_SAGE_v1.0.svg</td></tr>
-        <tr><td>Rear-quarter bars (x2)</td><td class="num">145 x 460</td><td>Bottom on sill line, 155 from rear corner</td><td>GBS_HORIZON_VAN_REAR-QUARTER-BARS_460MM_SAGE-RED_v1.0.svg</td></tr>
-        <tr><td>Rear lockup</td><td class="num">700 x 340</td><td>Centred across both doors, 350 below roof line</td><td>GBS_HORIZON_VAN_REAR-LOCKUP_700MM_SAGE-RED_v1.0.svg</td></tr>
+        <tr><td>Rear-quarter bars (x2)</td><td class="num">201 x 460</td><td>Bottom on sill line, 155 from rear corner</td><td>GBS_HORIZON_VAN_REAR-QUARTER-BARS_460MM_SAGE-RED_v1.0.svg</td></tr>
+        <tr><td>Rear lockup</td><td class="num">700 x 277</td><td>Centred across both doors, 350 below roof line</td><td>GBS_HORIZON_VAN_REAR-LOCKUP_700MM_SAGE-RED_v1.0.svg</td></tr>
         <tr><td>Rear contact block</td><td class="num">700 x 136</td><td>Centred, 70 below strapline</td><td>GBS_HORIZON_VAN_REAR-CONTACT_700MM_SAGE_v1.0.svg</td></tr>
-        <tr><td>Bonnet emblem</td><td class="num">250 x 207</td><td>Centred on bonnet, 150 from leading edge</td><td>GBS_HORIZON_VAN_BONNET-ICON_250MM_SAGE-RED_v1.0.svg</td></tr>
+        <tr><td>Bonnet emblem</td><td class="num">250 x 187</td><td>Centred on bonnet, 150 from leading edge</td><td>GBS_HORIZON_VAN_BONNET-ICON_250MM_SAGE-RED_v1.0.svg</td></tr>
       </table>
       <p class="small">Preview: GBS_HORIZON_VAN_SIDE-LOCKUP-PREVIEW-1-10_140MM_SAGE-RED_v1.0.png (300 dpi, 1:10). Contact details on every element come from company.json; the phone number shown is the one verified line.</p>
     </div>
@@ -259,11 +259,11 @@ CSS = '''
   .rear-wrap svg { width: 225mm; height: 232mm; display: block; }       /* 2250 x 2320 mm at 1:10 */
   .body { fill: #fff; stroke: var(--gbs-ink); stroke-width: 6; stroke-linejoin: round; }
   .tyre { fill: #3a3f3c; stroke: none; } .rim { fill: #DADADA; stroke: #fff; stroke-width: 6; }
-  .glass { fill: #E8ECE9; stroke: var(--gbs-ink); stroke-width: 4; }
+  .glass { fill: #EEF0EB; stroke: var(--gbs-ink); stroke-width: 4; }
   .gap { fill: none; stroke: var(--gbs-ink-soft); stroke-width: 4; }
   .handle { fill: #fff; stroke: var(--gbs-ink-soft); stroke-width: 4; }
   .lamp { fill: #F2F2F0; stroke: var(--gbs-ink-soft); stroke-width: 4; }
-  .bumper { fill: #EDEDEB; stroke: var(--gbs-ink); stroke-width: 6; } .grille { fill: #D3DAD5; stroke: var(--gbs-ink-soft); stroke-width: 4; }
+  .bumper { fill: #EDEDEB; stroke: var(--gbs-ink); stroke-width: 6; } .grille { fill: #CDD5CC; stroke: var(--gbs-ink-soft); stroke-width: 4; }
   .plate { fill: #F9F9F7; stroke: var(--gbs-ink-soft); stroke-width: 4; } .sensor { fill: #fff; stroke: var(--gbs-red); stroke-width: 4; }
   .flap { fill: #fff; stroke: var(--gbs-ink-soft); stroke-width: 4; stroke-dasharray: 20 14; }
   .keep { fill: none; stroke: var(--gbs-red); stroke-width: 4; stroke-dasharray: 30 18; }

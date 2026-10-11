@@ -1,127 +1,152 @@
 [
  {
   "file": "GBS_HORIZON_LOGO_PRIMARY_SAGE-RED_v1.0.svg",
-  "w": 444.43,
-  "h": 215.91
+  "w": 976.75,
+  "h": 386.75,
+  "lockup": "stacked"
  },
  {
   "file": "GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_v1.0.svg",
-  "w": 444.43,
-  "h": 178.88
+  "w": 976.75,
+  "h": 337.0,
+  "lockup": "nostrap"
  },
  {
   "file": "GBS_HORIZON_LOGO_WORDMARK_SAGE-RED_v1.0.svg",
-  "w": 444.43,
-  "h": 132.5
+  "w": 976.75,
+  "h": 280.0,
+  "lockup": "wordmark"
  },
  {
   "file": "GBS_HORIZON_LOGO_STRIP_SAGE-RED_v1.0.svg",
-  "w": 1489.93,
-  "h": 132.5
+  "w": 1844.25,
+  "h": 280.0,
+  "lockup": "strip"
  },
  {
   "file": "GBS_HORIZON_LOGO_REVERSED_OFFWHITE-RED_v1.0.svg",
-  "w": 444.43,
-  "h": 215.91
+  "w": 976.75,
+  "h": 386.75,
+  "lockup": "stacked"
  },
  {
   "file": "GBS_HORIZON_LOGO_REVERSED-NOSTRAP_OFFWHITE-RED_v1.0.svg",
-  "w": 444.43,
-  "h": 178.88
+  "w": 976.75,
+  "h": 337.0,
+  "lockup": "nostrap"
  },
  {
   "file": "GBS_HORIZON_LOGO_REVERSED-SOFT_OFFWHITE_v1.0.svg",
-  "w": 444.43,
-  "h": 178.88
+  "w": 976.75,
+  "h": 337.0,
+  "lockup": "nostrap"
  },
  {
   "file": "GBS_HORIZON_LOGO_REVERSED_ON-SAGE-PANEL_v1.0.svg",
-  "w": 444.43,
-  "h": 215.91
+  "w": 976.75,
+  "h": 386.75,
+  "lockup": "stacked"
  },
  {
   "file": "GBS_HORIZON_LOGO_WORDMARK_OFFWHITE-RED_v1.0.svg",
-  "w": 444.43,
-  "h": 132.5
+  "w": 976.75,
+  "h": 280.0,
+  "lockup": "wordmark"
  },
  {
   "file": "GBS_HORIZON_LOGO_STRIP_OFFWHITE-RED_v1.0.svg",
-  "w": 1489.93,
-  "h": 132.5
+  "w": 1844.25,
+  "h": 280.0,
+  "lockup": "strip"
  },
  {
   "file": "GBS_HORIZON_LOGO_MONO_SAGE_v1.0.svg",
-  "w": 444.43,
-  "h": 215.91
+  "w": 976.75,
+  "h": 386.75,
+  "lockup": "stacked"
  },
  {
   "file": "GBS_HORIZON_LOGO_MONO-NOSTRAP_SAGE_v1.0.svg",
-  "w": 444.43,
-  "h": 178.88
+  "w": 976.75,
+  "h": 337.0,
+  "lockup": "nostrap"
  },
  {
   "file": "GBS_HORIZON_LOGO_MONO_WHITE_v1.0.svg",
-  "w": 444.43,
-  "h": 215.91
+  "w": 976.75,
+  "h": 386.75,
+  "lockup": "stacked"
  },
  {
   "file": "GBS_HORIZON_LOGO_MONO-NOSTRAP_WHITE_v1.0.svg",
-  "w": 444.43,
-  "h": 178.88
+  "w": 976.75,
+  "h": 337.0,
+  "lockup": "nostrap"
  },
  {
   "file": "GBS_HORIZON_LOGO_MONO_BLACK_v1.0.svg",
-  "w": 444.43,
-  "h": 215.91
+  "w": 976.75,
+  "h": 386.75,
+  "lockup": "stacked"
  },
  {
   "file": "GBS_HORIZON_LOGO_MONO-NOSTRAP_BLACK_v1.0.svg",
-  "w": 444.43,
-  "h": 178.88
+  "w": 976.75,
+  "h": 337.0,
+  "lockup": "nostrap"
  },
  {
   "file": "GBS_HORIZON_ICON_SAGE-RED_v1.0.svg",
-  "w": 160.0,
-  "h": 132.5
+  "w": 543.25,
+  "h": 406.5,
+  "lockup": "icon"
  },
  {
   "file": "GBS_HORIZON_ICON_OFFWHITE-RED_v1.0.svg",
-  "w": 160.0,
-  "h": 132.5
+  "w": 543.25,
+  "h": 406.5,
+  "lockup": "icon"
  },
  {
   "file": "GBS_HORIZON_ICON_MONO_SAGE_v1.0.svg",
-  "w": 160.0,
-  "h": 132.5
+  "w": 543.25,
+  "h": 406.5,
+  "lockup": "icon"
  },
  {
   "file": "GBS_HORIZON_ICON_MONO_WHITE_v1.0.svg",
-  "w": 160.0,
-  "h": 132.5
+  "w": 543.25,
+  "h": 406.5,
+  "lockup": "icon"
  },
  {
   "file": "GBS_HORIZON_ICON_MONO_BLACK_v1.0.svg",
-  "w": 160.0,
-  "h": 132.5
+  "w": 543.25,
+  "h": 406.5,
+  "lockup": "icon"
  },
  {
   "file": "GBS_HORIZON_ICON_SIMPLIFIED_SAGE-RED_v1.0.svg",
-  "w": 160.0,
-  "h": 132.5
+  "w": 543.25,
+  "h": 406.5,
+  "lockup": "icon"
  },
  {
   "file": "GBS_HORIZON_ICON_SIMPLIFIED_OFFWHITE-RED_v1.0.svg",
-  "w": 160.0,
-  "h": 132.5
+  "w": 543.25,
+  "h": 406.5,
+  "lockup": "icon"
  },
  {
   "file": "GBS_HORIZON_AVATAR_SQUARE_ON-SAGE_v1.0.svg",
-  "w": 256.0,
-  "h": 256.0
+  "w": 784.88,
+  "h": 784.88,
+  "lockup": "icon"
  },
  {
   "file": "GBS_HORIZON_AVATAR_SQUARE_ON-OFFWHITE_v1.0.svg",
-  "w": 256.0,
-  "h": 256.0
+  "w": 784.88,
+  "h": 784.88,
+  "lockup": "icon"
  }
 ]

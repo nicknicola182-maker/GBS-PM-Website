@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="145mm" height="460mm" viewBox="0 0 145 460" role="img" aria-label="Rear-quarter decorative bars">
-<title>Rear-quarter decorative bars, 145 x 460 mm (bottom edge sits on the sill line)</title>
-<!-- GBS HORIZON vehicle livery panel v1.0 | user unit = 1 mm | decorative motif derived from the icon bar proportions; sage and red cut vinyl, no rule -->
-<rect fill="#6E7F72" x="0" y="290" width="15" height="170"/>
-<rect fill="#E10600" x="40" y="150" width="40" height="310"/>
-<rect fill="#6E7F72" x="105" y="0" width="40" height="460"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="201mm" height="460mm" viewBox="0 0 201 460" role="img" aria-label="Rear-quarter decorative bars">
+<title>Rear-quarter decorative bars, 201 x 460 mm (bottom edge sits on the sill line)</title>
+<!-- GBS HORIZON vehicle livery panel v1.0 | user unit = 1 mm | decorative motif: the lockup bars at their supplied proportions; sage and red cut vinyl, no rule -->
+<rect fill="#6E7F72" x="0" y="0" width="41" height="460"/>
+<rect fill="#E10600" x="71" y="87" width="40" height="373"/>
+<rect fill="#6E7F72" x="157" y="190" width="44" height="270"/>
 </svg>
