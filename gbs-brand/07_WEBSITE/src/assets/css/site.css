@@ -182,7 +182,6 @@ strong{font-weight:600}
 .trade-card ul{padding-left:16px;margin:4px 0;line-height:1.7}
 .trade-card li{margin-top:8px}
 .directory-note{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;margin-top:35px;border-top:1px solid var(--border);padding-top:25px}
-.directory-note p{font-size:13px;line-height:1.9;max-width:655px}
 .directory-note .text-link{flex-shrink:0}
 .reporting-panel{margin-top:60px;border:1px solid var(--border);border-top:2px solid var(--sage);background:#fff;padding:36px 40px;scroll-margin-top:24px}
 .reporting-panel h2{font-size:30px;margin-bottom:14px}
