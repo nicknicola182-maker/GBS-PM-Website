@@ -54,9 +54,9 @@ def text_block(text, cap_mm, x, baseline, align="left", colour=SAGE):
     d = " ".join(parts)
     return f'<path fill="{colour}" transform="translate({fmt(dx)} {fmt(baseline)})" d="{d}"/>', w
 
-# 1. Side lockup 1400 mm, 2. rear lockup 700 mm, 3. bonnet icon 250 mm
+# 1. Side lockup 1400 mm, 2. rear lockup 1200 mm (across both doors), 3. bonnet icon 250 mm
 logo_panel("GBS_HORIZON_LOGO_PRIMARY_SAGE-RED_v1.0.svg", "GBS_HORIZON_VAN_SIDE-LOCKUP_1400MM_SAGE-RED_v1.0.svg", 1400, "GBS Property Maintenance van side lockup, 1400 mm", "side body panel, primary lockup with strapline")
-logo_panel("GBS_HORIZON_LOGO_PRIMARY_SAGE-RED_v1.0.svg", "GBS_HORIZON_VAN_REAR-LOCKUP_700MM_SAGE-RED_v1.0.svg", 700, "GBS Property Maintenance van rear lockup, 700 mm", "rear doors, primary lockup with strapline, split across the door gap")
+logo_panel("GBS_HORIZON_LOGO_PRIMARY_SAGE-RED_v1.0.svg", "GBS_HORIZON_VAN_REAR-LOCKUP_1200MM_SAGE-RED_v1.0.svg", 1200, "GBS Property Maintenance van rear lockup, 1200 mm", "rear doors, primary lockup with strapline, split across the door gap")
 logo_panel("GBS_HORIZON_ICON_SAGE-RED_v1.0.svg", "GBS_HORIZON_VAN_BONNET-ICON_250MM_SAGE-RED_v1.0.svg", 250, "GBS Horizon icon, bonnet emblem 250 mm", "bonnet emblem")
 
 # 4. Side contact row 1400 mm: domain left, phone right, cap height 60 mm
@@ -83,15 +83,15 @@ svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}mm" height="{fmt(H)}m
 open(os.path.join(OUT, "GBS_HORIZON_VAN_REAR-CONTACT_700MM_SAGE_v1.0.svg"), "w").write(svg)
 print("rear contact: phone ink", round(wp), "domain ink", round(wd), "height", H)
 
-# 6. Rear-quarter decorative bars (derived from the icon bar geometry, no rule): widths 15/40/40, heights 170/310/460, gap 25
-bars = [(15, 170, SAGE), (40, 310, RED), (40, 460, SAGE)]; gapb = 25
-W = sum(b[0] for b in bars) + gapb * (len(bars) - 1); H = max(b[1] for b in bars)
+# 6. Rear-quarter decorative bars: the three bars of the supplied lockup (tall sage, red, short sage) scaled so the tall bar is 460 mm, no horizon line: widths 41/40/44, heights 460/373/270, gaps 30/46
+bars = [(41, 460, SAGE, 30), (40, 373, RED, 46), (44, 270, SAGE, 0)]
+W = sum(b[0] + b[3] for b in bars); H = max(b[1] for b in bars)
 x = 0; els = []
-for w, h, col in bars:
-    els.append(f'<rect fill="{col}" x="{x}" y="{H - h}" width="{w}" height="{h}"/>'); x += w + gapb
+for w, h, col, g in bars:
+    els.append(f'<rect fill="{col}" x="{x}" y="{H - h}" width="{w}" height="{h}"/>'); x += w + g
 svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}mm" height="{H}mm" viewBox="0 0 {W} {H}" role="img" aria-label="Rear-quarter decorative bars">\n'
        f'<title>Rear-quarter decorative bars, {W} x {H} mm (bottom edge sits on the sill line)</title>\n'
-       f'<!-- GBS HORIZON vehicle livery panel v1.0 | user unit = 1 mm | decorative motif derived from the icon bar proportions; sage and red cut vinyl, no rule -->\n'
+       f'<!-- GBS HORIZON vehicle livery panel v1.0 | user unit = 1 mm | decorative motif: the lockup bars at their supplied proportions; sage and red cut vinyl, no rule -->\n'
        + "\n".join(els) + "\n</svg>\n")
 open(os.path.join(OUT, "GBS_HORIZON_VAN_REAR-QUARTER-BARS_460MM_SAGE-RED_v1.0.svg"), "w").write(svg)
 print("bars", W, H)

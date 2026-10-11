@@ -10,11 +10,11 @@ Rules applied (production manual, workwear section): chest marks 85-105 mm wide,
 |---|---|---|
 | `GBS_HORIZON_WORKWEAR_CHEST_95MM_SAGE-RED_v1.0.png` | Chest mark, primary no-strap lockup, white garments | 95 x 38.24 mm, 300 dpi (1125 x 453 px), transparent |
 | `GBS_HORIZON_WORKWEAR_CHEST_95MM_OFFWHITE-RED_v1.0.png` | Chest mark, reversed no-strap lockup, sage garments | 95 x 38.24 mm, 300 dpi, transparent |
-| `GBS_HORIZON_WORKWEAR_BACK_260MM_SAGE-RED_v1.0.png` | Back print, primary lockup with strapline, white garments | 260 x 126.31 mm, 300 dpi (3072 x 1494 px), transparent |
-| `GBS_HORIZON_WORKWEAR_BACK_260MM_OFFWHITE-RED_v1.0.png` | Back print, reversed lockup with strapline, sage garments | 260 x 126.31 mm, 300 dpi, transparent |
+| `GBS_HORIZON_WORKWEAR_BACK_260MM_SAGE-RED_v1.0.png` | Back print, primary lockup with strapline, white garments | 260 x 102.95 mm, 300 dpi (3072 x 1494 px), transparent |
+| `GBS_HORIZON_WORKWEAR_BACK_260MM_OFFWHITE-RED_v1.0.png` | Back print, reversed lockup with strapline, sage garments | 260 x 102.95 mm, 300 dpi, transparent |
 | `GBS_HORIZON_WORKWEAR_SLEEVE_40MM_SAGE-RED_v1.0.png` | Sleeve emblem, icon sage/red, white garments | 48.3 x 40 mm, 300 dpi (572 x 475 px), transparent |
 | `GBS_HORIZON_WORKWEAR_SLEEVE_40MM_OFFWHITE-RED_v1.0.png` | Sleeve emblem, icon off-white/red, sage garments | 48.3 x 40 mm, 300 dpi, transparent |
-| `GBS_HORIZON_WORKWEAR_HIVIS-BACK_260MM_BLACK_v1.0.png` | Hi-vis back print, mono black lockup with strapline (print zones 150 mm or deeper) | 260 x 126.31 mm, 300 dpi, transparent |
+| `GBS_HORIZON_WORKWEAR_HIVIS-BACK_260MM_BLACK_v1.0.png` | Hi-vis back print, mono black lockup with strapline (print zones 150 mm or deeper) | 260 x 102.95 mm, 300 dpi, transparent |
 | `GBS_HORIZON_WORKWEAR_HIVIS-BACK-NOSTRAP_260MM_BLACK_v1.0.png` | Hi-vis back print, mono black no-strap lockup (shallower zones between the bands) | 260 x 104.64 mm, 300 dpi, transparent |
 | `GBS_HORIZON_WORKWEAR_HIVIS-CHEST_95MM_BLACK_v1.0.png` | Hi-vis chest mark, mono black no-strap lockup | 95 x 38.24 mm, 300 dpi, transparent |
 | `GBS_HORIZON_WORKWEAR_PLACEMENT-SHEET_A4L_v1.0_SCREEN.pdf` | Placement sheet, A4 landscape, 7 pages: white T-shirt, sage T-shirt, white polo, sage polo, softshell jacket, hi-vis vest, embroidery brief | 297 x 210 mm, no bleed |
@@ -37,7 +37,7 @@ Print and transfer (T-shirts, softshell, hi-vis)
 Embroidery (polos; softshell only if agreed in writing)
 
 1. Follow page 7 of the placement sheet. Digitise from the SVG masters without redrawing; keep proportions, colour split and clear space (one GBS cap height on every side).
-2. Chest lockup 95 mm wide (38 mm high), sleeve emblem 40 mm high using the simplified icon, optional back lockup 230 mm wide. In the lockup, sew the second (hollow) bar as a solid bar: its 1 mm outline will not sew at chest size.
+2. Chest lockup 95 mm wide (33 mm high), sleeve emblem 40 mm high using the simplified icon, optional back lockup 230 mm wide. In the lockup, sew the second (hollow) bar as a solid bar: its 1 mm outline will not sew at chest size.
 3. Letter height: at 95 mm wide the descriptor PROPERTY MAINTENANCE has a cap height of 3.9 mm (4.3 mm at 105 mm), below the 5-6 mm letter test. Sew out the descriptor at 5 mm, 6 mm and the actual size on the production fabric. If it does not resolve, GBS will approve either a 105 mm chest mark or the wordmark (`GBS_HORIZON_LOGO_WORDMARK_*`) for embroidered chest marks. The descriptor is never re-set in a larger size or another font.
 4. Thread: propose the two nearest 40 wt polyester shades to each colour target and submit thread cards; final shades are approved against physical samples. No metallic or high-sheen threads.
 5. Supply a sew-out of every mark on the actual garment colour for Director approval before production (register item W02); keep the stitch files and report stitch counts with the quote.

@@ -18,7 +18,7 @@ Condensed from `GBS_Horizon_Brand_Production_Manual_v1` so every file in this pa
 | `--gbs-light` | #DADADA | 218 218 218 | Dividers, supporting graphics |
 | `--gbs-offwhite` | #F9F9F7 | 249 249 247 | Paper, page background |
 
-No charcoal. Body text uses `--gbs-ink` (#2E3531, a dark sage-neutral) defined in `00_BRAND_CORE/tokens.css`. Red is an accent, never a background for body text and never used on sage except in the approved reversed logo. Values are provisional digital values; printers convert via ICC profile and proof.
+No charcoal. Body text uses `--gbs-ink` (#4C5D50, the deep sage used for website text) defined in `00_BRAND_CORE/tokens.css`. Red is an accent, never a background for body text and never used on sage except in the approved reversed logo. Values are provisional digital values; printers convert via ICC profile and proof.
 
 ## 3. Typography
 
@@ -28,6 +28,8 @@ No charcoal. Body text uses `--gbs-ink` (#2E3531, a dark sage-neutral) defined i
 - Fonts are self-hosted in `00_BRAND_CORE/fonts/` (OFL licence). Link `00_BRAND_CORE/tokens.css` and `00_BRAND_CORE/fonts.css` from every HTML source.
 
 ## 4. Logo files (`01_LOGO_MASTER/svg`)
+
+The masters are the Horizon artwork supplied in the October 2026 handover (`01_LOGO_MASTER/source/horizon-logo.png` and `horizon-icon.png`), traced to vector by `tools/trace-logo.py` and composed into colourways and lockups by `tools/build-logos.py`. The strip lockup sets the descriptor beside the wordmark for narrow bands only. Solid sage surfaces use `--gbs-sage-surface` (#627365) and body text `--gbs-ink` (#4C5D50), matching the website.
 
 All SVGs are outlined vectors (no live fonts). Unit X = GBS cap height. Keep clear space of at least 1X on every side. Never stretch, recolour outside the approved set, rotate, add effects, or redraw the bars.
 

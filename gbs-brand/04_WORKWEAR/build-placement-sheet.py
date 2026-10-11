@@ -52,10 +52,10 @@ def drawing(title, body_path, detail, art, scale_note=""):
             f'<svg viewBox="-100 0 {CW} {CH}" xmlns="http://www.w3.org/2000/svg">'
             f'<path class="garment" d="{body_path}"/>{detail}{art}</svg></figure>')
 
-CHEST_X, CHEST_Y, CHEST_W, CHEST_H = 377.5, 150, 95, 38.24   # wearer's left = viewer's right
-BACK_X, BACK_Y, BACK_W, BACK_H = 190, 170, 260, 126.31
-BNS_X, BNS_Y, BNS_W, BNS_H = 205, 175, 230, 92.57            # no-strap back 230 (polo optional)
-SLV_X, SLV_Y, SLV_W, SLV_H = 590, 200, 48.3, 40
+CHEST_X, CHEST_Y, CHEST_W, CHEST_H = 377.5, 150, 95, 32.78   # wearer's left = viewer's right
+BACK_X, BACK_Y, BACK_W, BACK_H = 190, 170, 260, 102.95
+BNS_X, BNS_Y, BNS_W, BNS_H = 205, 175, 230, 79.36            # no-strap back 230 (polo optional)
+SLV_X, SLV_Y, SLV_W, SLV_H = 590, 200, 53.46, 40
 
 def chest_art(file, w=CHEST_W, h=CHEST_H, x=CHEST_X, y=CHEST_Y, hps=60):
     cx = x + w/2
@@ -105,12 +105,12 @@ GARMENTS = [
 def page(g, n, total):
     if g.get("vest"):
         # chest zone between brace band (inner edge x=430) and front opening (x=320): centre 375
-        cx = 380; w = 95; h = 38.24; x = cx - w/2; y = 230
+        cx = 380; w = 95; h = 32.78; x = cx - w/2; y = 230
         front_art = (guide(320, 60, 320, 760) + logo(g["chest"], x, y, w, h) + hdim(320, cx, 200, f"{cx-320:.0f}") + vdim(x+w+18, 60, y, f"{y-60:.0f}", left=False)
                      + hdim(x, x+w, y+h+16, f"{w:g} wide", above=False) + note(320, 800, "centre front", "middle")
                      + note(320, 345, "retroreflective tape: keep clear", "middle") + note(320, 545, "retroreflective tape: keep clear", "middle"))
-        by = 370 + (150 - 126.31)/2
-        back_art_ = (guide(320, 60, 320, 760) + logo(g["backlogo"], 190, by, 260, 126.31) + vdim(190+260+22, 370, 520, "150 clear zone between bands", left=False)
+        by = 370 + (150 - 102.95)/2
+        back_art_ = (guide(320, 60, 320, 760) + logo(g["backlogo"], 190, by, 260, 102.95) + vdim(190+260+22, 370, 520, "150 clear zone between bands", left=False)
                      + hdim(190, 450, 525+16, "260 wide, centred", above=False) + note(320, 800, "centre back", "middle")
                      + note(320, 345, "retroreflective tape: keep clear", "middle") + note(320, 545, "retroreflective tape: keep clear", "middle"))
     elif g.get("polo"):
