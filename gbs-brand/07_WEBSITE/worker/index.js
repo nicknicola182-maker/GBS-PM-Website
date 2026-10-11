@@ -20,15 +20,17 @@ const THANK_YOU = "/thank-you";
 /** Form fields, their labels in the email and maximum accepted length. */
 const FIELDS = [
   ["name", "Name", 120],
+  ["role", "Enquiring as", 120],
   ["company", "Company or organisation", 160],
-  ["role", "Role", 120],
   ["email", "Email", 254],
   ["phone", "Telephone", 40],
-  ["service", "Service required", 160],
+  ["service", "Type of work", 160],
+  ["trade", "Specific service", 160],
   ["site", "Property address", 300],
   ["message", "Details of the works", 5000],
 ];
-const REQUIRED = ["name", "company", "email", "phone", "service", "site", "message"];
+// Company is optional so homeowners and individual clients can enquire; role and trade are optional too.
+const REQUIRED = ["name", "email", "phone", "service", "site", "message"];
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default {
@@ -117,7 +119,7 @@ export function composeEmail(fields, request, env) {
     from,
     to: [to],
     reply_to: fields.email,
-    subject: `Website enquiry: ${fields.service} - ${fields.company}`,
+    subject: `Website enquiry: ${fields.service}${fields.trade ? ` (${fields.trade})` : ""} - ${fields.company || fields.name}`,
     text,
     html,
   };

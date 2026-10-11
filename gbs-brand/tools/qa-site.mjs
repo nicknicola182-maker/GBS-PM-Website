@@ -8,7 +8,7 @@ const MIME = { html: "text/html", css: "text/css", js: "text/javascript", svg: "
 const resolve = (p) => { p = decodeURIComponent(p.split("?")[0]); if (p === "/") return "index.html"; let f = p.replace(/^\//, ""); if (!path.extname(f)) f += ".html"; return f; };
 const pages = fs.readdirSync(PUB).filter(f => f.endsWith(".html")).map(f => "/" + f.replace(/\.html$/, "")).map(p => p === "/index" ? "/" : p);
 const browser = await chromium.launch(); let problems = 0;
-for (const vp of [{ w: 1440, h: 900, name: "desktop" }, { w: 390, h: 844, name: "mobile" }]) {
+for (const vp of [{ w: 1920, h: 1080, name: "xl" }, { w: 1440, h: 900, name: "desktop" }, { w: 1024, h: 768, name: "laptop" }, { w: 768, h: 1024, name: "tablet" }, { w: 390, h: 844, name: "mobile" }, { w: 320, h: 640, name: "narrow" }]) {
   const ctx = await browser.newContext({ viewport: { width: vp.w, height: vp.h }, deviceScaleFactor: 1 });
   await ctx.route("**/*", async route => {
     const u = new URL(route.request().url()); if (u.hostname !== "gbs-pm.local") return route.continue();
@@ -31,7 +31,7 @@ for (const vp of [{ w: 1440, h: 900, name: "desktop" }, { w: 390, h: 844, name: 
     const badAnchors = [];
     for (const h of info.anchors) { const [pth, hash] = h.split("#"); if (!hash) continue; const f = path.join(PUB, resolve(pth || p)); if (fs.existsSync(f) && !fs.readFileSync(f, "utf8").includes(`id="${hash}"`)) badAnchors.push(h); }
     let navOk = "n/a";
-    if (vp.name === "mobile") { await page.click(".nav-toggle"); navOk = await page.evaluate(() => document.getElementById("site-nav").classList.contains("open") && document.querySelector(".nav-toggle").getAttribute("aria-expanded") === "true"); await page.click(".nav-toggle"); }
+    if (vp.w <= 860) { await page.click(".nav-toggle"); navOk = await page.evaluate(() => document.getElementById("site-nav").classList.contains("open") && document.querySelector(".nav-toggle").getAttribute("aria-expanded") === "true"); await page.click(".nav-toggle"); }
     const flag = missing.length || errors.length || info.overflow > 0 || info.tokens.length || broken.length || badAnchors.length || info.h1 !== 1 || navOk === false;
     if (flag) problems++;
     console.log(`${flag ? "FAIL" : "ok  "} ${vp.name.padEnd(7)} ${p.padEnd(12)} h1=${info.h1} overflow=${info.overflow}px fonts=${info.fonts.length} nav=${navOk}` +

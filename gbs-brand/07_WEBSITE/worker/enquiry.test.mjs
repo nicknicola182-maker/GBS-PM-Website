@@ -9,10 +9,11 @@ const env = { RESEND_API_KEY: "re_test", ENQUIRY_TO: "info@gbs-pm.co.uk", ENQUIR
 const valid = {
   name: "Jane Smith",
   company: "Example Managing Agents",
-  role: "Property manager",
+  role: "A managing agent / property manager",
   email: "jane@example.com",
   phone: "020 7946 0000",
-  service: "Fire doors and firestopping",
+  service: "Planned maintenance",
+  trade: "Fire doors and firestopping",
   site: "1 Example Road, London N13 6BX",
   message: "Twelve flat entrance doors need inspection and remedials.",
   consent: "yes",
@@ -88,9 +89,21 @@ test("valid multipart post sends the email and returns JSON for fetch callers", 
   assert.deepEqual(sent.to, ["info@gbs-pm.co.uk"]);
   assert.equal(sent.from, "GBS <onboarding@resend.dev>");
   assert.equal(sent.reply_to, "jane@example.com");
-  assert.equal(sent.subject, "Website enquiry: Fire doors and firestopping - Example Managing Agents");
+  assert.equal(sent.subject, "Website enquiry: Planned maintenance (Fire doors and firestopping) - Example Managing Agents");
+  assert.match(sent.text, /Enquiring as: A managing agent \/ property manager/);
+  assert.match(sent.text, /Specific service: Fire doors and firestopping/);
   assert.match(sent.text, /Property address: 1 Example Road, London N13 6BX/);
   assert.match(sent.html, /<th[^>]*>Details of the works<\/th>/);
+});
+
+test("a homeowner can enquire without a company name", async () => {
+  const res = await handleEnquiry(formRequest({ ...valid, company: "", role: "A homeowner / individual client", service: "Reactive repairs", trade: "" }), env);
+  assert.equal(res.status, 200);
+  assert.equal(calls.length, 1);
+  const sent = calls[0].body;
+  assert.equal(sent.subject, "Website enquiry: Reactive repairs - Jane Smith");
+  assert.doesNotMatch(sent.text, /Company or organisation:/);
+  assert.doesNotMatch(sent.text, /Specific service:/);
 });
 
 test("urlencoded post without a JSON accept header redirects to the thank-you page", async () => {

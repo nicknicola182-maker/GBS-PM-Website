@@ -1,64 +1,71 @@
-<!--META {"slug":"contact","nav":"contact","title":"Contact and request a quote","description":"Contact GBS Property Maintenance in London for maintenance, repairs, refurbishment and fire door quotations. Call, email or send property details through the quote request form."}-->
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Contact</span>
-      <h1>Contact us or request a quote</h1>
-      <p class="lead">Send the property address, the works required and any access arrangements. We will confirm the scope, attend to survey where needed and send a clear quotation.</p>
+<!--META {"slug":"contact","nav":"contact","bodyClass":"page-contact","title":"Contact & quotes","description":"Discuss maintenance, repairs or improvements for your home, building or portfolio with GBS Property Maintenance."}-->
+<section class="section contact-section">
+  <div class="contact-copy">
+    <p class="eyebrow"><span></span> Let's talk</p>
+    <h1>What does your<br>property need?</h1>
+    <p>A repair, planned maintenance or an improvement project: tell us a little about the property and the work you have in mind.</p>
+    <div class="contact-details">
+      <div><span>Telephone</span><a href="tel:{{company.phoneTel}}" class="num">{{company.phone}}</a></div>
+      <div><span>Email</span><a href="mailto:{{company.email}}">{{company.email}}</a></div>
+      <div><span>Service area</span><strong>{{company.serviceArea}}</strong></div>
+      <div><span>Address</span><address>{{company.address.line1}}, {{company.address.town}} {{company.address.postcode}}</address><a class="map-link" href="https://maps.google.com/?q={{company.address.line1}},+{{company.address.town}},+{{company.address.postcode}}" rel="noopener" target="_blank">Open in Google Maps</a></div>
+      <div><span>Hours</span><strong>{{company.hours}}</strong><small>Out-of-hours emergency attendance by arrangement for contracted clients.</small></div>
     </div>
-    <div class="contact-grid">
-      <div>
-        <ul class="contact-list">
-          <li><b>Telephone</b><span><a href="tel:{{company.phoneTel}}" class="num">{{company.phone}}</a></span></li>
-          <li><b>Email</b><span><a href="mailto:{{company.email}}">{{company.email}}</a></span></li>
-          <li><b>Address</b><span>{{company.address.line1}}<br>{{company.address.town}} {{company.address.postcode}}<br><a href="https://maps.google.com/?q={{company.address.line1}},+{{company.address.town}},+{{company.address.postcode}}" rel="noopener" target="_blank">Open in Google Maps</a></span></li>
-          <li><b>Hours</b><span>{{company.hours}}<br><span class="muted">Out-of-hours emergency attendance by arrangement for contracted clients.</span></span></li>
-        </ul>
-        <h3>What to include</h3>
-        <ul>
-          <li>Property address and the client or managing agent</li>
-          <li>Nature of the works or the defect, with photographs if you have them</li>
-          <li>Access arrangements, key holders and any site rules</li>
-          <li>Any deadline, insurance claim reference or Section 20 timetable</li>
-        </ul>
-      </div>
-      <div id="quote">
-        <h2>Request a quote</h2>
-        <form id="quote-form" method="post" action="{{company.formAction}}" enctype="{{company.formEnctype}}" data-endpoint="{{company.formEndpoint}}" data-mailto="{{company.email}}" data-phone="{{company.phone}}" data-phone-tel="{{company.phoneTel}}" data-hours="{{company.hours}}" novalidate="">
-          <div class="field-row">
-            <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
-            <div class="field"><label for="f-company">Company or organisation</label><input id="f-company" name="company" type="text" autocomplete="organization" required></div>
-          </div>
-          <div class="field-row">
-            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-            <div class="field"><label for="f-phone">Telephone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
-          </div>
-          <div class="field-row">
-            <div class="field"><label for="f-role">Your role <span class="opt">(optional)</span></label><input id="f-role" name="role" type="text" placeholder="e.g. Property manager"></div>
-            <div class="field"><label for="f-service">Service required</label>
-              <select id="f-service" name="service" required>
-                <option value="">Select a service</option>
-                {{company.serviceOptions}}
-                <option>Larger project works or refurbishment</option>
-                <option>Other</option>
-              </select>
-            </div>
-          </div>
-          <div class="field"><label for="f-site">Property address</label><input id="f-site" name="site" type="text" placeholder="Building name or number, street, postcode" required></div>
-          <div class="field"><label for="f-message">Details of the works</label><textarea id="f-message" name="message" required></textarea></div>
-          <div class="hp" aria-hidden="true"><label for="f-website">Leave this field empty</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-          <div class="check"><input id="f-consent" name="consent" type="checkbox" value="yes" required><label for="f-consent">I agree to {{company.tradingName}} using these details to respond to my enquiry, as described in the <a href="/privacy">privacy notice</a>.</label></div>
-          <div><button class="btn btn-red" type="submit">Send enquiry</button></div>
-          <p class="form-status" id="form-status" aria-live="polite"></p>
-          <p class="form-note">Prefer email? Write to <a href="mailto:{{company.email}}">{{company.email}}</a> with the same details.</p>
-        </form>
-      </div>
-    </div>
+    <h2 class="include-h">What to include</h2>
+    <ul class="include-list">
+      <li>The property address and whether it is your own home, a rental property or a managed building</li>
+      <li>The works or the defect, with photographs if you have them</li>
+      <li>Access arrangements, key holders and any site rules</li>
+      <li>Any deadline, insurance claim reference or Section 20 timetable</li>
+    </ul>
   </div>
-</section>
 
-<section class="section-tight section-tint">
-  <div class="container">
-    <p class="mb-0 muted">{{company.legalName}} · Registered in {{company.placeOfRegistration}}, company number <span class="num">{{company.companyNumber}}</span> · Registered office: {{company.registeredOffice}} · VAT registration number <span class="num">{{company.vatNumber}}</span></p>
-  </div>
+  <form id="quote-form" method="post" action="{{company.formAction}}" enctype="{{company.formEnctype}}" data-endpoint="{{company.formEndpoint}}" data-mailto="{{company.email}}" data-phone="{{company.phone}}" data-phone-tel="{{company.phoneTel}}" data-hours="{{company.hours}}" novalidate="">
+    <div class="form-heading" id="quote"><h2>Start a conversation</h2><span>Enquiry form</span></div>
+    <div class="form-row">
+      <label for="f-name">Your name <span class="req" aria-hidden="true">*</span><input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120" placeholder="Full name"></label>
+      <label for="f-email">Email address <span class="req" aria-hidden="true">*</span><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200" placeholder="you@example.com"></label>
+    </div>
+    <div class="form-row">
+      <label for="f-role">I am enquiring as <span class="req" aria-hidden="true">*</span>
+        <select id="f-role" name="role" required>
+          <option value="">Please select</option>
+          <option>A homeowner / individual client</option>
+          <option>A landlord / freeholder</option>
+          <option>A managing agent / property manager</option>
+          <option>A commercial client</option>
+          <option>Another type of client</option>
+        </select>
+      </label>
+      <label for="f-phone">Contact number <span class="req" aria-hidden="true">*</span><input id="f-phone" name="phone" type="tel" autocomplete="tel" required maxlength="40" placeholder="Telephone or mobile"></label>
+    </div>
+    <div class="form-row">
+      <label for="f-company">Company or organisation <span class="opt">(optional)</span><input id="f-company" name="company" type="text" autocomplete="organization" maxlength="160" placeholder="Leave blank if this is for your own home"></label>
+      <label for="f-service">Type of work <span class="req" aria-hidden="true">*</span>
+        <select id="f-service" name="service" required>
+          <option value="">Select the type of work</option>
+          <option>Planned maintenance</option>
+          <option>Reactive repairs</option>
+          <option>Refurbishments &amp; improvements</option>
+          <option>Not sure yet</option>
+        </select>
+      </label>
+    </div>
+    <label for="f-trade">Specific service <span class="opt">(if known)</span>
+      <select id="f-trade" name="trade">
+        <option value="">Choose a service, or leave blank</option>
+        {{company.serviceOptions}}
+        <option>Larger project works or refurbishment</option>
+        <option>Other</option>
+      </select>
+    </label>
+    <label for="f-site">Property address <span class="req" aria-hidden="true">*</span><input id="f-site" name="site" type="text" required maxlength="300" placeholder="House or flat number, street and postcode"></label>
+    <label for="f-message">Tell us about your property and the work <span class="req" aria-hidden="true">*</span><textarea id="f-message" name="message" required rows="4" maxlength="5000" placeholder="House, flat, building or portfolio; what you need and any timing or access details"></textarea></label>
+    <div class="hp" aria-hidden="true"><label for="f-website">Leave this field empty<input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+    <label class="checkbox" for="f-consent"><input id="f-consent" name="consent" type="checkbox" value="yes" required><span>I agree to {{company.tradingName}} using these details to respond to my enquiry, as described in the <a href="/privacy">privacy notice</a>. <span class="req" aria-hidden="true">*</span></span></label>
+    <button class="button" type="submit">Send enquiry <svg class="ui-icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    <p class="form-status" id="form-status" aria-live="polite"></p>
+    <p class="required-note">* Required fields</p>
+    <p class="form-note">Prefer email? Write to <a href="mailto:{{company.email}}">{{company.email}}</a> with the same details.</p>
+  </form>
 </section>

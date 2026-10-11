@@ -1,80 +1,79 @@
-<!--META {"slug":"about","nav":"about","title":"About GBS Property Maintenance","description":"GBS Property Maintenance provides comprehensive building maintenance and repair services to managing agents, property managers, landlords and commercial clients, and is an approved contractor for leading managing agents."}-->
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">About GBS</span>
-      <h1>A maintenance contractor built around the people who manage buildings</h1>
-      <p class="lead">{{company.tradingName}} provides comprehensive building maintenance and repair services to {{company.clientTypes}} across {{company.serviceArea}}.</p>
-    </div>
-    <div class="split">
-      <div>
-        <h2>What we do</h2>
-        <p>Managed buildings need a contractor who turns up, does the job properly and documents it. That is the whole of our offer. We deliver dependable planned maintenance, reactive repairs and larger project works across residential and commercial portfolios, covering general building maintenance, electrical and plumbing, roofing and leak investigation, decorating, windows, drainage and groundworks, access works, metalwork, waste removal and insurance-related works, with fire doors and firestopping as our specialism.</p>
-        <p>We are approved contractors for a number of leading managing agents and property management companies, including {{company.approvedForText}}, and work closely with their property management teams. Our clients answer to leaseholders, boards, auditors and insurers, so everything we issue is written to stand up to that scrutiny.</p>
-        <p>As a company we are committed to high standards of workmanship, health and safety, compliance, responsiveness and professional service, from initial investigation through to completion.</p>
-        <h2>How we work</h2>
-        <ul class="checks">
-          <li>A short-form scope and a detailed breakdown on every quotation, with labour and materials separated.</li>
-          <li>Day rates, unit rates and materials mark-up stated up front; provisional sums only where the scope cannot be fixed.</li>
-          <li>Options presented where there is a genuine choice, so you can brief your client on cost and outcome.</li>
-          <li>RAMS before works start, a job report with photographs on completion and variations agreed before they are carried out.</li>
-          <li>Respectful working in occupied buildings: notices, tidy sites and considerate hours.</li>
-        </ul>
-      </div>
-      <div>
-        <div class="bars-motif" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-        <h2>Our values</h2>
-        <div class="rows">
-          <div class="row"><h3>Trusted expertise</h3><p>Trade-led delivery with a specialist understanding of fire door compliance and communal building fabric.</p></div>
-          <div class="row"><h3>Exceptional standards</h3><p>Measured, evidenced work. We report what we found, what we did and what remains outstanding.</p></div>
-          <div class="row"><h3>Long-term partnerships</h3><p>Consistent pricing, one point of contact and programmes that reduce reactive spend over time.</p></div>
-          <div class="row"><h3>Sustainable communities</h3><p>Repair before replacement, materials chosen for service life and sites left as we found them.</p></div>
-        </div>
-      </div>
-    </div>
+<!--META {"slug":"about","nav":"about","bodyClass":"page-about","title":"About","fullTitle":"About GBS Property Maintenance","description":"Learn how GBS approaches maintenance, repairs and improvements for homeowners, landlords, managing agents and businesses."}-->
+<section class="section page-intro">
+  <p class="eyebrow"><span></span> About GBS</p>
+  <h1>Built around your property.<br><span>And the people behind it.</span></h1>
+  <p>{{company.tradingName}} provides maintenance, repairs and project works for {{company.clientTypes}} across {{company.serviceArea}}.</p>
+</section>
+
+<section class="section about-layout">
+  <div class="about-main">
+    <article>
+      <h2>What we do</h2>
+      <p>Every property needs practical care, whether it is your own home, a shared residential building or a portfolio you manage. We deliver planned maintenance, reactive repairs and larger improvement works, bringing a broad range of trades together.</p>
+      <p>Our work covers general building maintenance, electrical and plumbing, kitchens and bathrooms, joinery, decorating, roofing, windows, drainage, groundworks, fire doors, firestopping and more.</p>
+      <p>We work closely with managing agents and property managers, and are an approved contractor for a number of property management companies. We equally welcome individuals who need work in their own house or flat. The same clear approach applies: understand the requirement, agree the scope and communicate throughout.</p>
+      <a class="text-link" href="/services">Explore all services <svg class="ui-icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </article>
+    <article>
+      <h2>How we work</h2>
+      <ul class="tick-list">
+        <li>A clear scope and quotation for the works before anything starts.</li>
+        <li>Any allowances explained up front, with options where there is a choice.</li>
+        <li>Work, access and timing agreed around the property and the people using it.</li>
+        <li>Variations discussed before additional work is carried out.</li>
+        <li>Reports and photographs on completion, with respectful working in occupied homes and buildings.</li>
+      </ul>
+    </article>
+  </div>
+  <aside class="about-values">
+    <svg class="about-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-building"/></svg>
+    <h2>Our values</h2>
+    <article><h3>Trusted expertise</h3><p>Trade-led delivery across everyday repairs, building maintenance and improvement works.</p></article>
+    <article><h3>Exceptional standards</h3><p>Clear workmanship and reporting: what we found, what we did and what remains outstanding.</p></article>
+    <article><h3>Long-term partnerships</h3><p>One point of contact and a considered approach, whether for one job or ongoing maintenance.</p></article>
+    <article><h3>Sustainable communities</h3><p>Repair where appropriate, choose for service life, and leave homes and sites tidy.</p></article>
+  </aside>
+</section>
+
+<section class="about-photo">
+  <img src="/assets/img/home-interior.webp" width="1400" height="933" alt="Illustrative home interior; not a GBS project" loading="lazy">
+  <div>
+    <p class="eyebrow"><span></span> From homes to portfolios</p>
+    <h2>Practical care.<br>Personal attention.</h2>
+    <p>For the home you live in and the buildings you look after.</p>
+    <span class="small-note">Illustrative image · Not a GBS project</span>
   </div>
 </section>
 
-<section class="section section-tint">
-  <div class="container split">
-    <div>
-      <span class="eyebrow">Leadership</span>
-      <h2>{{company.people.0.name}}, {{company.people.0.role}}</h2>
-      <p>{{company.people.0.name}} leads {{company.tradingName}} and is the single point of contact for client accounts. Every scope, cost plan and programme is reviewed personally before it is issued, and clients deal with a decision-maker rather than a call centre.</p>
-      <p>Enquiries and client accounts are handled through the office: <a href="tel:{{company.phoneTel}}" class="num">{{company.phone}}</a> and <a href="mailto:{{company.email}}">{{company.email}}</a>.</p>
-    </div>
-    <div>
-      <span class="eyebrow">Health, safety and insurance</span>
-      <h2>Safe systems of work as standard</h2>
-      <p>Risk assessments and method statements are issued before every job. Operatives work to site rules, permit systems and the building's fire strategy, and statutory certification is provided by certified partners where the works require it.</p>
-      <p>{{company.insurance}}</p>
-    </div>
+<section class="section info-grid">
+  <div>
+    <p class="eyebrow"><span></span> The company</p>
+    <h2>Directly managed, accountable and easy to deal with</h2>
+    <p>{{company.tradingName}} is an independent contractor run by its own management team. Every scope, quotation and programme is reviewed by management before it is issued, and clients deal with decision-makers rather than a call centre.</p>
+    <p>Enquiries are handled through the office: <a href="tel:{{company.phoneTel}}" class="num">{{company.phone}}</a> and <a href="mailto:{{company.email}}">{{company.email}}</a>.</p>
+  </div>
+  <div>
+    <p class="eyebrow"><span></span> Health, safety and insurance</p>
+    <h2>Safe systems of work as standard</h2>
+    <p>Risk assessments and method statements are issued before every job. Operatives work to site rules, permit systems and the building's fire strategy, and statutory certification is provided by certified partners where the works require it.</p>
+    <p>{{company.insurance}}</p>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <span class="eyebrow">Company details</span>
-    <h2>Registered particulars</h2>
-    <div class="rows">
-      <div class="row"><h3>Legal name</h3><p>{{company.legalName}}, trading as {{company.tradingName}}</p></div>
-      <div class="row"><h3>Registration</h3><p>Registered in {{company.placeOfRegistration}}, company number <span class="num">{{company.companyNumber}}</span></p></div>
-      <div class="row"><h3>Registered office</h3><p>{{company.registeredOffice}}</p></div>
-      <div class="row"><h3>VAT number</h3><p class="num">{{company.vatNumber}}</p></div>
-      <div class="row"><h3>Service area</h3><p>{{company.serviceArea}}</p></div>
-    </div>
+<section class="section" id="company-details">
+  <p class="eyebrow"><span></span> Company details</p>
+  <h2>Registered particulars</h2>
+  <div class="rows">
+    <div class="row"><h3>Legal name</h3><p>{{company.legalName}}, trading as {{company.tradingName}}</p></div>
+    <div class="row"><h3>Registration</h3><p>Registered in {{company.placeOfRegistration}}, company number <span class="num">{{company.companyNumber}}</span></p></div>
+    <div class="row"><h3>Registered office</h3><p>{{company.registeredOffice}}</p></div>
+    <div class="row"><h3>Contact address</h3><p>{{company.addressOneLine}}</p></div>
+    <div class="row"><h3>VAT number</h3><p class="num">{{company.vatNumber}}</p></div>
+    <div class="row"><h3>Service area</h3><p>{{company.serviceArea}}</p></div>
   </div>
 </section>
 
-<section class="cta-band">
-  <div class="container cta-inner">
-    <div>
-      <h2>Discuss your portfolio with us</h2>
-      <p>Call, email or send the details of the works you need priced.</p>
-    </div>
-    <div class="btn-row mt-0">
-      <a class="phone" href="tel:{{company.phoneTel}}">{{company.phone}}</a>
-      <a class="btn btn-light" href="/contact#quote">Request a quote</a>
-    </div>
-  </div>
+<section class="closing">
+  <h2>Let's talk about<br>your property.</h2>
+  <a href="/contact" class="button">Get in touch <svg class="ui-icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
 </section>

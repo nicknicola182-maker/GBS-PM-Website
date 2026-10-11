@@ -6,7 +6,7 @@ Static HTML, CSS and a few lines of JavaScript. No framework, no database, no bu
 
 | URL | Source | Purpose |
 |---|---|---|
-| `/` | `src/pages/index.html` | Home: positioning, services, fire door specialism, process, values, sectors |
+| `/` | `src/pages/index.html` | Home: hero, three work-category cards, who we work with (`#sectors`), four-step process, values, projects (`#projects`, coming soon), closing call to action |
 | `/services` | `src/pages/services.html` | All six services with anchors (`#planned`, `#reactive`, `#fire-doors`, `#refurbishment`, `#insurance`, `#reporting`) |
 | `/about` | `src/pages/about.html` | Company, approach, values, leadership, H&S, registered particulars |
 | `/contact` | `src/pages/contact.html` | Contact details and quote request form (`#quote`) |
