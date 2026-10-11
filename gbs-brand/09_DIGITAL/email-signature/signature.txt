@@ -1,9 +1,9 @@
-{{company.people.0.name}}
-{{company.people.0.role}}, {{company.tradingName}}
+{{person.name}}
+{{person.role}}, {{company.tradingName}}
 
-M: {{company.people.0.mobile}}
+M: {{person.mobile}}
 L: {{company.phone}}
-E: {{company.people.0.email}}
+E: {{person.email}}
 W: {{company.url}}
 
 {{company.tradingName}} · {{company.addressOneLine}}

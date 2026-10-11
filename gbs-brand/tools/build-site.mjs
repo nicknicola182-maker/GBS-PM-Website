@@ -26,7 +26,7 @@ const logos = { "logo-primary.svg": "GBS_HORIZON_LOGO_PRIMARY_SAGE-RED_v1.0.svg"
   "logo-reversed.svg": "GBS_HORIZON_LOGO_REVERSED_OFFWHITE-RED_v1.0.svg", "logo-reversed-soft.svg": "GBS_HORIZON_LOGO_REVERSED-SOFT_OFFWHITE_v1.0.svg",
   "logo-strip.svg": "GBS_HORIZON_LOGO_STRIP_SAGE-RED_v1.0.svg", "icon.svg": "GBS_HORIZON_ICON_SAGE-RED_v1.0.svg", "icon-reversed.svg": "GBS_HORIZON_ICON_OFFWHITE-RED_v1.0.svg" };
 for (const [dst, src] of Object.entries(logos)) fs.copyFileSync(path.join(ROOT, "01_LOGO_MASTER", "svg", src), path.join(PUB, "assets", "img", dst));
-fs.copyFileSync(path.join(ROOT, "01_LOGO_MASTER", "png", "GBS_HORIZON_LOGO_PRIMARY-NOSTRAP_SAGE-RED_600px_v1.0.png"), path.join(PUB, "assets", "img", "logo-email-600.png"));
+fs.copyFileSync(path.join(ROOT, "01_LOGO_MASTER", "png", "GBS_HORIZON_LOGO_PRIMARY_SAGE-RED_600px_v1.0.png"), path.join(PUB, "assets", "img", "logo-email-600.png"));
 for (const f of ["favicon.ico", "favicon.svg", "apple-touch-icon.png", "icon-192.png", "icon-512.png"])
   fs.copyFileSync(path.join(ROOT, "01_LOGO_MASTER", "favicon", f), path.join(PUB, f));
 const og = path.join(ROOT, "09_DIGITAL", "social", "GBS_HORIZON_SOCIAL_OG-IMAGE_1200x630_v1.0.png");
