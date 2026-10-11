@@ -82,12 +82,9 @@ strong{font-weight:600}
 .hero-description{font-size:18px;max-width:490px;line-height:1.6;margin-bottom:12px}
 .hero-detail{font-size:15px;max-width:435px;line-height:1.75}
 .hero-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin:28px 0 35px}
-.hero-foot{margin-top:auto;display:flex;align-items:center;gap:14px;font-size:12px;line-height:1.6}
-.hero-foot .line{width:30px;height:1px;background:var(--sage);flex-shrink:0}
 .hero-visual{position:relative;overflow:hidden;min-height:100%;background:var(--tint)}
 .hero-image{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;object-position:42% center}
 .hero-visual::after{content:"";position:absolute;inset:65% 0 0;background:linear-gradient(transparent,rgba(83,98,87,.73));pointer-events:none}
-.image-label{position:absolute;top:24px;left:24px;z-index:1;background:var(--offwhite);padding:12px 17px;font-size:11px;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
 .horizon-bars{position:absolute;bottom:0;right:35px;height:160px;display:flex;gap:8px;align-items:flex-end;z-index:2}
 .horizon-bars i{width:13px;background:var(--offwhite);height:80px;clip-path:polygon(0 15px,100% 0,100% 100%,0 100%)}
 .horizon-bars i:nth-child(2){height:160px;clip-path:none}
@@ -352,8 +349,6 @@ form>.button{width:100%}
   .hero h1{font-size:38px}
   .hero{min-height:610px;grid-template-columns:1.1fr 1fr}
   .hero-actions{margin:25px 0}
-  .hero-foot{margin-top:10px;font-size:11px}
-  .image-label{top:15px;left:15px;right:15px;font-size:10px;padding:9px 10px;line-height:1.6}
   .horizon-bars{right:20px;transform:scale(.7);transform-origin:bottom right}
   .focus-strip{gap:18px;flex-wrap:wrap;padding:25px var(--gutter)}
   .focus-strip>p{width:100%}
@@ -400,9 +395,7 @@ form>.button{width:100%}
   .hero-actions{flex-direction:row;align-items:center;gap:20px;margin:27px 0 23px}
   .hero-actions .button{padding:13px 17px;font-size:12px;gap:12px}
   .hero-actions .text-link{font-size:12px;gap:8px}
-  .hero-foot{font-size:11px;margin-top:2px;line-height:1.7}
   .hero-visual{min-height:340px}
-  .image-label{right:auto;font-size:10px}
   .hero-credit{bottom:13px;font-size:10px}
   .focus-strip{gap:16px}
   .focus-strip>span{font-size:12px;gap:6px}
