@@ -14,7 +14,7 @@ Every vehicle dimension in this folder is a placeholder taken from a generic 530
 | `GBS_HORIZON_VAN_REAR-QUARTER-BARS_460MM_SAGE-RED_v1.0.svg` | Decorative bars for the lower rear quarter (sage, red, sage) | 201 x 460 mm |
 | `GBS_HORIZON_VAN_REAR-LOCKUP_1200MM_SAGE-RED_v1.0.svg` | Rear-door lockup: primary logo with strapline, split at the door gap | 700 x 277.07 mm |
 | `GBS_HORIZON_VAN_REAR-CONTACT_700MM_SAGE_v1.0.svg` | Rear contact block: phone (55 mm cap) over web address (42 mm cap), centred, outlined | 700 x 135.5 mm |
-| `GBS_HORIZON_VAN_BONNET-ICON_250MM_SAGE-RED_v1.0.svg` | Bonnet emblem, icon only | 250 x 187.07 mm |
+| `GBS_HORIZON_VAN_BONNET-ICON_250MM_SAGE-RED_v1.0.svg` | Bonnet emblem, icon only | 250 x 235.04 mm |
 | `GBS_HORIZON_VAN_SIDE-LOCKUP-PREVIEW-1-10_140MM_SAGE-RED_v1.0.png` | Side lockup preview at 1:10, 300 dpi, transparent | 140 x 68.01 mm (1656 x 806 px) |
 | `livery-layout.html`, `van-side-lockup-preview-1-10-140mm-sage-red.html` | Sources (`livery-layout.html` is written by `build-livery-layout.py`; edit the script, not the HTML) | - |
 | `build-livery-layout.py`, `build-livery-panels.py` | Generators for the layout sheet and for the SVG panels (logo masters + `company.json`, contact text outlined with fontTools) | - |

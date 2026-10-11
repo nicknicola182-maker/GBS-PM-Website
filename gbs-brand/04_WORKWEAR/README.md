@@ -12,8 +12,8 @@ Rules applied (production manual, workwear section): chest marks 85-105 mm wide,
 | `GBS_HORIZON_WORKWEAR_CHEST_95MM_OFFWHITE-RED_v1.0.png` | Chest mark, reversed no-strap lockup, sage garments | 95 x 32.78 mm, 300 dpi, transparent |
 | `GBS_HORIZON_WORKWEAR_BACK_260MM_SAGE-RED_v1.0.png` | Back print, primary lockup with strapline, white garments | 260 x 102.95 mm, 300 dpi (3072 x 1219 px), transparent |
 | `GBS_HORIZON_WORKWEAR_BACK_260MM_OFFWHITE-RED_v1.0.png` | Back print, reversed lockup with strapline, sage garments | 260 x 102.95 mm, 300 dpi, transparent |
-| `GBS_HORIZON_WORKWEAR_SLEEVE_40MM_SAGE-RED_v1.0.png` | Sleeve emblem, icon sage/red, white garments | 53.46 x 40 mm, 300 dpi (634 x 475 px), transparent |
-| `GBS_HORIZON_WORKWEAR_SLEEVE_40MM_OFFWHITE-RED_v1.0.png` | Sleeve emblem, icon off-white/red, sage garments | 53.46 x 40 mm, 300 dpi, transparent |
+| `GBS_HORIZON_WORKWEAR_SLEEVE_40MM_SAGE-RED_v1.0.png` | Sleeve emblem, icon sage/red, white garments | 42.55 x 40 mm, 300 dpi (503 x 475 px), transparent |
+| `GBS_HORIZON_WORKWEAR_SLEEVE_40MM_OFFWHITE-RED_v1.0.png` | Sleeve emblem, icon off-white/red, sage garments | 42.55 x 40 mm, 300 dpi, transparent |
 | `GBS_HORIZON_WORKWEAR_HIVIS-BACK_260MM_BLACK_v1.0.png` | Hi-vis back print, mono black lockup with strapline (print zones 150 mm or deeper) | 260 x 102.95 mm, 300 dpi, transparent |
 | `GBS_HORIZON_WORKWEAR_HIVIS-BACK-NOSTRAP_260MM_BLACK_v1.0.png` | Hi-vis back print, mono black no-strap lockup (shallower zones between the bands) | 260 x 89.71 mm, 300 dpi, transparent |
 | `GBS_HORIZON_WORKWEAR_HIVIS-CHEST_95MM_BLACK_v1.0.png` | Hi-vis chest mark, mono black no-strap lockup | 95 x 32.78 mm, 300 dpi, transparent |

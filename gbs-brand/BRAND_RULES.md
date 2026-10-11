@@ -31,6 +31,8 @@ No charcoal. Body text uses `--gbs-ink` (#4C5D50, the deep sage used for website
 
 The masters are the Horizon artwork supplied in the October 2026 handover (`01_LOGO_MASTER/source/horizon-logo.png` and `horizon-icon.png`), traced to vector by `tools/trace-logo.py` and composed into colourways and lockups by `tools/build-logos.py`. The strip lockup sets the descriptor beside the wordmark for narrow bands only. Solid sage surfaces use `--gbs-sage-surface` (#627365) and body text `--gbs-ink` (#4C5D50), matching the website.
 
+The four bars keep the colours of the supplied artwork in every colourway except mono: first and fourth bars and the horizon line in light sage (#ACBCAC, `--gbs-sage-light`), second bar in the letter colour, third bar red. The icon is those four bars and a length of the horizon line, cut from the lockup (owner instruction 11 Oct 2026); mono marks sew or cut every bar in the one colour.
+
 All SVGs are outlined vectors (no live fonts). Unit X = GBS cap height. Keep clear space of at least 1X on every side. Never stretch, recolour outside the approved set, rotate, add effects, or redraw the bars.
 
 | File | Use |

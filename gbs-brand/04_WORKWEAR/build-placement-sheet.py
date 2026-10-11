@@ -60,7 +60,7 @@ def drawing(title, body_path, detail, art, shade=""):
 CHEST_X, CHEST_Y, CHEST_W, CHEST_H = 377.5, 150, 95, 32.78   # wearer's left = viewer's right
 BACK_X, BACK_Y, BACK_W, BACK_H = 190, 170, 260, 102.95
 BNS_X, BNS_Y, BNS_W, BNS_H = 205, 175, 230, 79.36            # no-strap back 230 (polo optional)
-SLV_X, SLV_Y, SLV_W, SLV_H = 590, 200, 53.46, 40
+SLV_X, SLV_Y, SLV_W, SLV_H = 590, 200, 42.55, 40   # icon 1127.75 x 1060.25 units
 
 def chest_art(file, w=CHEST_W, h=CHEST_H, x=CHEST_X, y=CHEST_Y, hps=60):
     cx = x + w/2
@@ -94,7 +94,7 @@ GARMENTS = [
       front=TEE_FRONT, back=TEE_BACK, fdet=POLO_DETAIL_F, bdet=POLO_DETAIL_B, polo=True, shade="sage",
       chest="GBS_HORIZON_LOGO_REVERSED-NOSTRAP_OFFWHITE-RED_v1.0.svg", backlogo="GBS_HORIZON_LOGO_REVERSED-NOSTRAP_OFFWHITE-RED_v1.0.svg", sleeve="GBS_HORIZON_ICON_SIMPLIFIED_OFFWHITE-RED_v1.0.svg",
       files=["01_LOGO_MASTER/svg/GBS_HORIZON_LOGO_REVERSED-NOSTRAP_OFFWHITE-RED_v1.0.svg (digitise from vector)", "01_LOGO_MASTER/svg/GBS_HORIZON_ICON_SIMPLIFIED_OFFWHITE-RED_v1.0.svg", "See page 7, embroidery brief"],
-      extra="Sew the second (hollow) bar of the icon as a solid bar, as in the simplified icon: the 1 mm outline will not sew at this size."),
+      extra="Sleeve icon carries four thread colours (off-white, light sage, red on sage); if the embroiderer cannot hold the light sage at 40 mm, sew the outer bars and rule off-white and submit both sew-outs."),
  dict(name="Softshell jacket", placement="Chest mark: wearer's left, centre 105 mm from centre front, top edge 90 mm below the shoulder seam at the neck point, 95 mm wide. Sleeve emblem: wearer's left sleeve, centred on the outer sleeve, top edge 90 mm below the shoulder seam, 40 mm high. Back: centred on centre back, top edge 110 mm below the back neck seam, 260 mm wide.", code="W03-A", colour="Sage garment (reversed artwork). If a white or off-white shell is ever ordered, use the primary files from the T-shirt page.", technique="Heat transfer (DTF or cut flex) applied at the temperature and dwell the shell membrane allows: supplier to confirm. Keep transfers clear of seams, zips and pockets.",
       front=JKT_FRONT, back=JKT_BACK, fdet=JKT_DETAIL_F, bdet=JKT_DETAIL_B, jacket=True, shade="sage",
       chest="GBS_HORIZON_LOGO_REVERSED-NOSTRAP_OFFWHITE-RED_v1.0.svg", backlogo="GBS_HORIZON_LOGO_REVERSED_OFFWHITE-RED_v1.0.svg", sleeve="GBS_HORIZON_ICON_OFFWHITE-RED_v1.0.svg",
@@ -171,13 +171,13 @@ BRIEF = '''
         <li>01_LOGO_MASTER/svg/GBS_HORIZON_ICON_SIMPLIFIED_SAGE-RED_v1.0.svg and _OFFWHITE-RED (sleeve emblem, 40 mm high)</li>
         <li>04_WORKWEAR/GBS_HORIZON_WORKWEAR_CHEST_95MM_*.png and SLEEVE_40MM_*.png (300 dpi size references only; digitise from the SVG)</li>
       </ul>
-      <p>Digitise from the vector files without redrawing. Keep the proportions, the clear space (one GBS cap height on every side) and the colour split exactly as supplied. In the lockup, sew the second (hollow) bar of the icon as a solid bar, matching the simplified icon: its 1 mm outline will not sew at chest size.</p>
+      <p>Digitise from the vector files without redrawing. Keep the proportions, the clear space (one GBS cap height on every side) and the colour split exactly as supplied. The first and fourth bars and the horizon line are light sage in every mark; if a fourth thread colour cannot be held at 40 mm, sew them in the main colour of the mark and submit both sew-outs.</p>
       <h3>Sizes and letter heights</h3>
       <table>
         <tr><th>Mark</th><th>Width</th><th>Height</th><th>GBS cap</th><th>Descriptor cap</th></tr>
         <tr><td>Chest lockup</td><td class="num">95 mm</td><td class="num">38 mm</td><td class="num">21.4 mm</td><td class="num">3.9 mm</td></tr>
         <tr><td>Chest lockup (maximum)</td><td class="num">105 mm</td><td class="num">42 mm</td><td class="num">23.6 mm</td><td class="num">4.3 mm</td></tr>
-        <tr><td>Sleeve emblem (simplified icon)</td><td class="num">48 mm</td><td class="num">40 mm</td><td colspan="2">no lettering</td></tr>
+        <tr><td>Sleeve emblem (simplified icon)</td><td class="num">42.5 mm</td><td class="num">40 mm</td><td colspan="2">no lettering</td></tr>
         <tr><td>Back lockup (optional)</td><td class="num">230 mm</td><td class="num">93 mm</td><td class="num">51.8 mm</td><td class="num">9.5 mm</td></tr>
       </table>
     </div>
@@ -185,9 +185,10 @@ BRIEF = '''
       <h3>Thread colour targets</h3>
       <table>
         <tr><th>Colour</th><th>Target (RGB / hex)</th><th>Use</th></tr>
-        <tr><td>Sage</td><td class="num">110 / 127 / 114 &nbsp; #6E7F72</td><td>GBS letters, bars, rule, descriptor on reversed marks is off-white</td></tr>
-        <tr><td>Red</td><td class="num">225 / 6 / 0 &nbsp; #E10600</td><td>Third bar and descriptor (primary); third bar only on reversed marks where supplied</td></tr>
-        <tr><td>Off-white</td><td class="num">249 / 249 / 247 &nbsp; #F9F9F7</td><td>Letters, bars and rule on sage garments</td></tr>
+        <tr><td>Sage</td><td class="num">110 / 127 / 114 &nbsp; #6E7F72</td><td>GBS letters and second bar on white garments</td></tr>
+        <tr><td>Light sage</td><td class="num">172 / 188 / 172 &nbsp; #ACBCAC</td><td>First and fourth bars and the horizon rule on every garment</td></tr>
+        <tr><td>Red</td><td class="num">225 / 6 / 0 &nbsp; #E10600</td><td>Third bar and descriptor on every garment</td></tr>
+        <tr><td>Off-white</td><td class="num">249 / 249 / 247 &nbsp; #F9F9F7</td><td>GBS letters and second bar on sage garments</td></tr>
       </table>
       <p>Propose the two nearest 40 wt polyester shades for each colour and submit thread cards. Final shades are approved against the physical samples held by GBS, not against screen values. No metallic or high-sheen threads.</p>
       <h3>Minimum letter height test</h3>
