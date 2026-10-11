@@ -42,7 +42,9 @@ If a merge does not deploy, open the Worker's Settings tab and look at the Build
 
 ## Enquiry form (contact page)
 
-The form posts to `/api/enquiry`, handled by `worker/index.js` in the same Worker that serves the site. The Worker checks the fields, drops bot submissions (hidden honeypot field), then emails the enquiry to `ENQUIRY_TO` through Resend with reply-to set to the visitor. If the relay is unavailable the page falls back to opening the visitor's email client, so enquiries are never lost.
+The form posts to `/api/enquiry`, handled by `worker/index.js` in the same Worker that serves the site. The Worker checks the fields, drops bot submissions (hidden honeypot field), then emails the enquiry to `ENQUIRY_TO` through Resend with reply-to set to the visitor.
+
+Fields: `name`, `email`, `role` (I am enquiring as: homeowner / individual client, landlord / freeholder, managing agent / property manager, commercial client, other), `phone`, `company` (optional, so individuals can enquire), `service` (type of work: Planned maintenance, Reactive repairs, Refurbishments & improvements, Not sure yet), `trade` (optional specific service from `company.json`), `site` (property address), `message`, `consent`, plus the `website` honeypot. The Worker requires name, email, phone, service, site, message and consent. If the relay is unavailable the page falls back to opening the visitor's email client, so enquiries are never lost.
 
 | Setting | Where | Value |
 |---|---|---|

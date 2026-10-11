@@ -41,6 +41,7 @@ for (const f of fs.readdirSync(path.join(SRC, "pages")).filter(f => f.endsWith("
   const m = raw.match(/<!--META\s*([\s\S]*?)-->/); if (!m) throw new Error(`no META in ${f}`);
   const page = { slug: f.replace(/\.html$/, ""), nav: "", bodyClass: "", noindex: false, ...JSON.parse(m[1]) };
   page.content = raw.replace(m[0], "").trim();
+  page.fullTitle = page.fullTitle || `${page.title} | ${company.tradingName}`;
   page.canonical = page.slug === "index" ? `${company.url}/` : `${company.url}/${page.slug}`;
   page.robots = page.noindex ? "noindex, nofollow" : "index, follow";
   page.navClass = {}; for (const k of ["home", "services", "about", "contact"]) page.navClass[k] = page.nav === k ? ' aria-current="page"' : "";

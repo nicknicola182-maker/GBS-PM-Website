@@ -10,6 +10,7 @@
   "shortName": "GBS",
   "strapline": "BUILD | MAINTAIN | IMPROVE",
   "positioning": "Comprehensive building maintenance, repair, project and fire door services for managing agents, property managers, landlords and commercial clients across London.",
+  "webPositioning": "Property maintenance, repairs and improvements for homes, buildings and managed portfolios across London and the surrounding Home Counties.",
   "domain": "gbs-pm.co.uk",
   "url": "https://gbs-pm.co.uk",
   "phone": "020 8051 9333",
@@ -44,7 +45,7 @@
   },
   "year": "2026",
   "formEndpoint": "/api/enquiry",
-  "clientTypes": "managing agents, property managers, landlords and commercial clients",
+  "clientTypes": "homeowners, landlords, managing agents and commercial clients",
   "approvedFor": [
     "R&R",
     "Savills",
