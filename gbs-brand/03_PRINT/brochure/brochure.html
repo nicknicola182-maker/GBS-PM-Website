@@ -134,9 +134,6 @@
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm 8mm; margin-top: 10mm; max-width: 150mm; }
   .contact-grid .lbl { display: block; font-family: var(--font-heading); font-weight: 600; text-transform: uppercase; font-size: 6.5pt; letter-spacing: 0.12em; opacity: 0.8; margin-bottom: 1mm; }
   .contact-grid .val { font-size: 11pt; font-weight: 500; }
-  .person { margin-top: 10mm; padding-top: 4mm; border-top: 0.5pt solid rgba(249,249,247,0.4); font-size: 10pt; max-width: 150mm; }
-  .person b { font-family: var(--font-heading); font-weight: 600; }
-  .person .sep { opacity: 0.6; padding: 0 1.5mm; }
   .back-legal { margin-top: auto; color: var(--gbs-offwhite); opacity: 0.8; font-size: 7.5pt; line-height: 1.4; max-width: 160mm; }
   .back-horizon i { width: 1.2mm; }
 
@@ -354,7 +351,7 @@
         <span class="card-n">Every job</span>
         <h3>Reporting and commercial clarity</h3>
         <ul class="dash">
-          <li>Scope and priced breakdown, labour and materials separated</li>
+          <li>Written Scope of Works and quotation agreed before we start</li>
           <li>RAMS before works; Job Report with photographs after</li>
           <li>Variations agreed in writing before we proceed</li>
         </ul>
@@ -489,7 +486,7 @@
           <h3>What the handler receives</h3>
           <ul class="dash">
             <li>Schedule of works set out by room and by element</li>
-            <li>Labour and materials shown separately, with a transparent breakdown</li>
+            <li>Quotation set out against the schedule for straightforward approval</li>
             <li>Photographs of the damage, the strip-out and the completed reinstatement</li>
             <li>Variations raised and agreed before the work is done, not after</li>
           </ul>
@@ -545,8 +542,8 @@
       <div class="panel">
         <h3>Commercial clarity</h3>
         <ul class="dash">
-          <li><b>Scope:</b> a short-form Scope of Works for approval, with the detailed breakdown behind it</li>
-          <li><b>Pricing:</b> labour and materials shown separately, with options where there is a genuine choice</li>
+          <li><b>Scope:</b> a written Scope of Works agreed with you before anything starts</li>
+          <li><b>Pricing:</b> the basis agreed up front, with options where there is a genuine choice</li>
           <li><b>Variations:</b> agreed in writing before we proceed, never added to the invoice afterwards</li>
           <li><b>RAMS:</b> risk assessments and method statements issued before works start</li>
           <li><b>Approval:</b> works begin on your written instruction, and your order reference is carried through to the Job Report and the invoice</li>
@@ -597,7 +594,6 @@
       <div><span class="lbl">Web</span><span class="val">{{company.url}}</span></div>
       <div><span class="lbl">Office</span><span class="val">{{company.addressOneLine}}</span></div>
     </div>
-    <div class="person"><b>{{company.people.0.name}}</b><span class="sep">·</span>{{company.people.0.role}}<span class="sep">·</span><span class="num">{{company.people.0.mobile}}</span></div>
     <div class="back-legal">{{company.legalName}} · Registered in {{company.placeOfRegistration}}, company number <span class="num">{{company.companyNumber}}</span> · Registered office: {{company.registeredOffice}} · VAT registration number <span class="num">{{company.vatNumber}}</span></div>
   </div>
 </section>
