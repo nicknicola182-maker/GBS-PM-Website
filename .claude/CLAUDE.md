@@ -11,3 +11,4 @@ This repository is the **GBS Property Maintenance website and Horizon brand prod
 
 ## Hosting (live since 10 Oct 2026)
 - Site is live at https://gbs-pm.co.uk on Cloudflare Worker `gbs-pm-website`, built from `main` (root `gbs-brand/07_WEBSITE`, `npx wrangler deploy`). DNS is on Cloudflare; email stays on Fasthosts LiveMail with mail records DNS-only. Details: `gbs-brand/07_WEBSITE/GO-LIVE.md`.
+- Contact form posts to `/api/enquiry` (Worker `gbs-brand/07_WEBSITE/worker/index.js`), which emails info@ via Resend; the API key is the Cloudflare secret `RESEND_API_KEY`, never in the repo. Tests: `node --test gbs-brand/07_WEBSITE/worker/enquiry.test.mjs`. Verified end to end 11 Oct 2026.
