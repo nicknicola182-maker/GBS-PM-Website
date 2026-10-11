@@ -121,20 +121,20 @@ def rear_page(n):
            '<rect class="plate" x="310" y="1340" width="440" height="110"/><text class="lab" x="530" y="1410" font-size="40" text-anchor="middle">number plate</text>'
            '<circle class="sensor" cx="300" cy="1700" r="14"/><circle class="sensor" cx="760" cy="1700" r="14"/><circle class="sensor" cx="1160" cy="1700" r="14"/><circle class="sensor" cx="1620" cy="1700" r="14"/>'
            '<rect class="sensor" x="945" y="1470" width="30" height="30"/>')
-    livery = (art(LOCK, 610, 415, 700, 277.17)
-              + f'<text class="contact" x="960" y="817" font-size="75.6" text-anchor="middle">{{{{company.phone}}}}</text>'
-              + f'<text class="contact" x="960" y="887" font-size="57.7" text-anchor="middle">{{{{company.domain}}}}</text>'
-              + '<rect class="zone" x="610" y="762" width="700" height="135.5"/>')
+    livery = (art(LOCK, 360, 415, 1200, 475.15)
+              + f'<text class="contact" x="960" y="1215" font-size="75.6" text-anchor="middle">{{{{company.phone}}}}</text>'
+              + f'<text class="contact" x="960" y="1285" font-size="57.7" text-anchor="middle">{{{{company.domain}}}}</text>'
+              + '<rect class="zone" x="610" y="1160" width="700" height="135.5"/>')
     t = 32
-    dims = (hdim(610, 1310, 385, "700 (lockup, split at the door gap)", t=t) + vdim(-120, 65, 415, "350 from roof", t=t) + ext(0, 415, -120, 415) + ext(0, 65, -120, 65)
-            + vdim(1440, 415, 692, "277", left=False, t=t) + ext(1310, 692, 1440, 692) + ext(1310, 415, 1440, 415)
-            + vdim(1440, 762, 897.5, "136 contact block", left=False, t=t) + ext(1310, 762, 1440, 762) + ext(1310, 897.5, 1440, 897.5)
-            + vdim(520, 692, 762, "70", t=t) + ext(610, 692, 520, 692) + ext(610, 762, 520, 762)
+    dims = (hdim(360, 1560, 385, "1200 (lockup, split at the door gap)", t=t) + vdim(-120, 65, 415, "350 from roof", t=t) + ext(0, 415, -120, 415) + ext(0, 65, -120, 65)
+            + vdim(1700, 415, 890.15, "475", left=False, t=t) + ext(1560, 890.15, 1700, 890.15) + ext(1560, 415, 1700, 415)
+            + vdim(1700, 1160, 1295.5, "136 contact block", left=False, t=t) + ext(1310, 1160, 1700, 1160) + ext(1310, 1295.5, 1700, 1295.5)
+            + vdim(270, 890.15, 1160, "270 (clears the handle)", t=t) + ext(360, 890.15, 270, 890.15) + ext(610, 1160, 270, 1160)
             + hdim(0, 1920, -100, "1920 overall width", t=t) + ext(0, -40, 0, -140) + ext(1920, -40, 1920, -140)
             + hdim(100, 950, 1530, "850 door", above=False, t=t) + hdim(970, 1820, 1530, "850 door", above=False, t=t)
-            + lab(960, 1180, "door gap 20: cut artwork on the gap, wrap 10 mm into the shut line only with a proof", 30, "middle")
+            + lab(960, 975, "door gap 20: cut artwork on the gap, wrap 10 mm into the shut line only with a proof", 30, "middle")
             + lab(960, 1760, "parking sensors and reversing camera: keep clear 60", 30, "middle", "keeplab")
-            + lab(960, 1300, "number plate, lamps and high-level brake lamp: keep clear 50", 30, "middle", "keeplab"))
+            + lab(960, 1500, "number plate, lamps, handle and high-level brake lamp: keep clear 50", 30, "middle", "keeplab"))
     svg = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="-320 -220 2250 2320" class="rear"><line class="ground" x1="-300" y1="2000" x2="2250" y2="2000"/>{van}{livery}{dims}{scalebar(-300, 2120, 32)}</svg>'
     return f'''
 <section class="page" data-trim="420 x 297 mm" aria-label="Rear doors">
@@ -142,8 +142,8 @@ def rear_page(n):
   <div class="drawing rear-wrap">{svg}</div>
   <aside class="side-notes">
     <h3>Elements</h3>
-    <ul><li>Rear lockup: primary logo with strapline, 700 x 277 mm, centred on the vehicle centre line across both doors, top edge 350 mm below the roof line. File GBS_HORIZON_VAN_REAR-LOCKUP_700MM_SAGE-RED_v1.0.svg.</li>
-    <li>Contact block: phone (55 mm cap height) over web address (42 mm cap height), Inter SemiBold, centred, 70 mm below the strapline. File GBS_HORIZON_VAN_REAR-CONTACT_700MM_SAGE_v1.0.svg (outlined).</li>
+    <ul><li>Rear lockup: primary logo with strapline, 1200 x 475 mm, centred on the vehicle centre line across both doors, top edge 350 mm below the roof line. File GBS_HORIZON_VAN_REAR-LOCKUP_1200MM_SAGE-RED_v1.0.svg.</li>
+    <li>Contact block: phone (55 mm cap height) over web address (42 mm cap height), Inter SemiBold, centred, 270 mm below the strapline so it sits between the door handle and the number plate. File GBS_HORIZON_VAN_REAR-CONTACT_700MM_SAGE_v1.0.svg (outlined).</li>
     <li>No bars graphic and no descriptor repeat on the rear: the lockup already carries them.</li></ul>
     <h3>Door split</h3>
     <p>Cut the artwork at the door gap on a named cut layer. The split falls through the lockup; align both halves with the doors shut and check from 5 m. Where a door has a glazed window, move the block below the glass and re-dimension.</p>
@@ -229,8 +229,8 @@ def notes_page(n):
         <tr><td>Side lockup (x2)</td><td class="num">1400 x 554</td><td>Rear load panel, 250 below roof line, 341 from rear corner, above the body crease</td><td>GBS_HORIZON_VAN_SIDE-LOCKUP_1400MM_SAGE-RED_v1.0.svg</td></tr>
         <tr><td>Side contact row (x2)</td><td class="num">1300 x 75</td><td>60 below the body crease, aligned to lockup</td><td>GBS_HORIZON_VAN_SIDE-CONTACT_1300MM_SAGE_v1.0.svg</td></tr>
         <tr><td>Rear-quarter bars (x2)</td><td class="num">201 x 460</td><td>Bottom on sill line, 155 from rear corner</td><td>GBS_HORIZON_VAN_REAR-QUARTER-BARS_460MM_SAGE-RED_v1.0.svg</td></tr>
-        <tr><td>Rear lockup</td><td class="num">700 x 277</td><td>Centred across both doors, 350 below roof line</td><td>GBS_HORIZON_VAN_REAR-LOCKUP_700MM_SAGE-RED_v1.0.svg</td></tr>
-        <tr><td>Rear contact block</td><td class="num">700 x 136</td><td>Centred, 70 below strapline</td><td>GBS_HORIZON_VAN_REAR-CONTACT_700MM_SAGE_v1.0.svg</td></tr>
+        <tr><td>Rear lockup</td><td class="num">1200 x 475</td><td>Centred across both doors, 350 below roof line</td><td>GBS_HORIZON_VAN_REAR-LOCKUP_1200MM_SAGE-RED_v1.0.svg</td></tr>
+        <tr><td>Rear contact block</td><td class="num">700 x 136</td><td>Centred, 270 below strapline, between handle and plate</td><td>GBS_HORIZON_VAN_REAR-CONTACT_700MM_SAGE_v1.0.svg</td></tr>
         <tr><td>Bonnet emblem</td><td class="num">250 x 187</td><td>Centred on bonnet, 150 from leading edge</td><td>GBS_HORIZON_VAN_BONNET-ICON_250MM_SAGE-RED_v1.0.svg</td></tr>
       </table>
       <p class="small">Preview: GBS_HORIZON_VAN_SIDE-LOCKUP-PREVIEW-1-10_140MM_SAGE-RED_v1.0.png (300 dpi, 1:10). Contact details on every element come from company.json; the phone number shown is the one verified line.</p>

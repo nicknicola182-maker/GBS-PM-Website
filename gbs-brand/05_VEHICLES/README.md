@@ -12,7 +12,7 @@ Every vehicle dimension in this folder is a placeholder taken from a generic 530
 | `GBS_HORIZON_VAN_SIDE-LOCKUP_1400MM_SAGE-RED_v1.0.svg` | Side lockup: primary logo with strapline (descriptor in red, strapline below) | 1400 x 554.14 mm |
 | `GBS_HORIZON_VAN_SIDE-CONTACT_1300MM_SAGE_v1.0.svg` | Side contact row: web address left, phone right, Inter SemiBold 60 mm cap height, outlined | 1300 x 75 mm |
 | `GBS_HORIZON_VAN_REAR-QUARTER-BARS_460MM_SAGE-RED_v1.0.svg` | Decorative bars for the lower rear quarter (sage, red, sage) | 201 x 460 mm |
-| `GBS_HORIZON_VAN_REAR-LOCKUP_700MM_SAGE-RED_v1.0.svg` | Rear-door lockup: primary logo with strapline, split at the door gap | 700 x 277.07 mm |
+| `GBS_HORIZON_VAN_REAR-LOCKUP_1200MM_SAGE-RED_v1.0.svg` | Rear-door lockup: primary logo with strapline, split at the door gap | 700 x 277.07 mm |
 | `GBS_HORIZON_VAN_REAR-CONTACT_700MM_SAGE_v1.0.svg` | Rear contact block: phone (55 mm cap) over web address (42 mm cap), centred, outlined | 700 x 135.5 mm |
 | `GBS_HORIZON_VAN_BONNET-ICON_250MM_SAGE-RED_v1.0.svg` | Bonnet emblem, icon only | 250 x 187.07 mm |
 | `GBS_HORIZON_VAN_SIDE-LOCKUP-PREVIEW-1-10_140MM_SAGE-RED_v1.0.png` | Side lockup preview at 1:10, 300 dpi, transparent | 140 x 68.01 mm (1656 x 806 px) |
@@ -42,7 +42,7 @@ Every vehicle dimension in this folder is a placeholder taken from a generic 530
 | Rear door widths, door gap | 855 mm each, 20 mm | |
 | Rear lamps, plate, sensors, camera | see sheets 3 and 4 | |
 
-Layout as drawn: side lockup 1400 x 554 mm centred 4290 mm from the front, top edge 250 mm below the roof line and above the body crease; contact row 1300 mm wide 60 mm below the crease; bars 155 mm from the rear corner with the bottom edge on the sill; rear lockup 700 x 277 mm centred across both doors 350 mm below the roof line, contact block 70 mm below it; bonnet icon 250 mm centred, 150 mm back from the leading edge. If the real rear load panel is shorter than 1900 mm, scale the lockup down (not below 1200 mm) so that at least 150 mm of clear panel remains above and below.
+Layout as drawn: side lockup 1400 x 554 mm centred 4290 mm from the front, top edge 250 mm below the roof line and above the body crease; contact row 1300 mm wide 60 mm below the crease; bars 155 mm from the rear corner with the bottom edge on the sill; rear lockup 1200 x 475 mm centred across both doors 350 mm below the roof line, contact block 70 mm below it; bonnet icon 250 mm centred, 150 mm back from the leading edge. If the real rear load panel is shorter than 1900 mm, scale the lockup down (not below 1200 mm) so that at least 150 mm of clear panel remains above and below.
 
 ## Supplier checklist
 

@@ -54,9 +54,9 @@ def text_block(text, cap_mm, x, baseline, align="left", colour=SAGE):
     d = " ".join(parts)
     return f'<path fill="{colour}" transform="translate({fmt(dx)} {fmt(baseline)})" d="{d}"/>', w
 
-# 1. Side lockup 1400 mm, 2. rear lockup 700 mm, 3. bonnet icon 250 mm
+# 1. Side lockup 1400 mm, 2. rear lockup 1200 mm (across both doors), 3. bonnet icon 250 mm
 logo_panel("GBS_HORIZON_LOGO_PRIMARY_SAGE-RED_v1.0.svg", "GBS_HORIZON_VAN_SIDE-LOCKUP_1400MM_SAGE-RED_v1.0.svg", 1400, "GBS Property Maintenance van side lockup, 1400 mm", "side body panel, primary lockup with strapline")
-logo_panel("GBS_HORIZON_LOGO_PRIMARY_SAGE-RED_v1.0.svg", "GBS_HORIZON_VAN_REAR-LOCKUP_700MM_SAGE-RED_v1.0.svg", 700, "GBS Property Maintenance van rear lockup, 700 mm", "rear doors, primary lockup with strapline, split across the door gap")
+logo_panel("GBS_HORIZON_LOGO_PRIMARY_SAGE-RED_v1.0.svg", "GBS_HORIZON_VAN_REAR-LOCKUP_1200MM_SAGE-RED_v1.0.svg", 1200, "GBS Property Maintenance van rear lockup, 1200 mm", "rear doors, primary lockup with strapline, split across the door gap")
 logo_panel("GBS_HORIZON_ICON_SAGE-RED_v1.0.svg", "GBS_HORIZON_VAN_BONNET-ICON_250MM_SAGE-RED_v1.0.svg", 250, "GBS Horizon icon, bonnet emblem 250 mm", "bonnet emblem")
 
 # 4. Side contact row 1400 mm: domain left, phone right, cap height 60 mm
